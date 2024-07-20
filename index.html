@@ -3,20 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Search engines meta keywords -->
+    <meta name="description" content="Saving throw with D20 Bingo, how will you build your XP level?">
+    <meta name="keywords" content="Bingo, D20 dice, 4x4 bingo, roll for initiative, XP level">
+
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Tab title -->
     <title>D20 Bingo</title>
 </head>
 <body>
-    <header>Header</header>
+    <header>
+        <h1 id="logo">D20 Bingo!</h1>
+    </header>
+
     <main>
-        <section>Dice roll</section>
-        <section>Bingo grid</section>
-        <section>Timer</section>
-        <section>Rolled numbers</section>
+        <!-- Dice roll -->
+        <section>
+            <div id="dice-section">
+                <img class="dice-img" src="assets/images/dice-020.webp" alt="D20 dice">
+            </div>
+            <div class="btn">
+                <button id="roll-btn">Roll</button>
+            </div>
+            <div class="btn">
+                <button id="mark-btn">Mark</button>
+            </div>
+        </section>
+
+        <!-- Bingo grid -->
+        <section>
+            <div id="grid">
+                <p>Bingo number grid here</p>
+            </div>
+        </section>
+
+        <!-- Countdown timer -->
+        <section>
+            <div id="countdown">
+                <p>You have <span id="time">0</span>s remaining</p>
+            </div>
+        </section>
+
+        <!-- Called numbers panel -->
+        <section>
+            <div id="called-num">
+                <p>Called numbers section here</p>
+            </div>
+        </section>
     </main>
-    <footer>XP level revealer</footer>
-    
+
+    <!-- Game experience level revealer -->
+    <footer>
+        <div id="xp-level">
+            <p>XP level reveal here</p>
+        </div>
+    </footer>
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/49f8c5c44f.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
