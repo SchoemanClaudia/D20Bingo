@@ -24,30 +24,36 @@ body {
     flex-direction:column;
 }
 
-.btn {
-    max-width: 15em;
+.btn-roll, .btn-mark {
+    display: inline-block;
     text-transform: uppercase;
     color: #ffffff;
     background-color: #9F1514;
-    border: 2px solid #9f1514;
+    border: none;
     font-weight: 600;
+    font-size: 150%;
     letter-spacing: 2px;
     padding: 10px 15px;
+    margin: 2rem;
+    cursor: pointer;
 }
 
 .btn:hover {
-    color: black;
-    border: 2px solid #9f1514;
+    background-color: #CC1B1A;
+    border: 2px solid #CC1B1A;
 }
 
 /* Header */
 header {
     background-color: #9F1514;
-    padding: .5rem 1rem 1rem .5rem;
+    padding: 1rem;
     position: fixed;
     z-index: 99;
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
 
 /* Main content */
@@ -60,11 +66,17 @@ main {
     flex-direction: column;
 }
 
+/* D20 dice */
+.dice-img {
+    margin: 0 auto;
+    max-width: 250px;
+}
+
 /* Bingo number grid */
 #grid {
-    width: 50%;
+    width: 70%;
     border: 1px solid black;
     display: inline-block;
     padding: 5rem;
-    margin: 2rem;
+    margin-bottom: 2rem;
   }
