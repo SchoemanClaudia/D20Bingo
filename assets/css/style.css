@@ -1,0 +1,70 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Anton+SC&family=Inter:wght@100..900&display=swap');
+
+/* Asterisk wildcard selector: override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Generic */
+h1 {
+    font-family: 'Anton SC', sans-serif;
+    color: #ffffff;
+    letter-spacing: 3px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: black;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction:column;
+}
+
+.btn {
+    max-width: 15em;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #9F1514;
+    border: 2px solid #9f1514;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+}
+
+.btn:hover {
+    color: black;
+    border: 2px solid #9f1514;
+}
+
+/* Header */
+header {
+    background-color: #9F1514;
+    padding: .5rem 1rem 1rem .5rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: auto;
+}
+
+/* Main content */
+main {
+    /* Main takes up space to push footer down */
+    flex: 1 0 auto;
+    margin-top: 100px;
+    /* Enable flex properties for child elements */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Bingo number grid */
+#grid {
+    width: 50%;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 5rem;
+    margin: 2rem;
+  }
