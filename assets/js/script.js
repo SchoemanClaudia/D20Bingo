@@ -27,7 +27,7 @@ function diceRoll(){
 function generateRandomArray() {
     const randomArray = [];
     while (randomArray.length < 16) {
-        const randomNumber = Math.floor(Math.random() * 20);
+        const randomNumber = Math.floor(Math.random() * 20 + 1);
 
         if (!randomArray.includes(randomNumber)) {
             randomArray.push(randomNumber);

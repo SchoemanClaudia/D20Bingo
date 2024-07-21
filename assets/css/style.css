@@ -73,11 +73,17 @@ main {
 }
 
 /* Bingo number grid */
-.grid-box {
-    width: 80%;
-    border: 1px solid black;
-    display: inline-block;
+#grid {
     text-align: center;
-    padding: 2rem 0;
-    font-size: 2rem;
-  }
+    background-color: #9F1514;
+    padding: 10px;
+    margin: 0 5rem;
+}
+
+.grid-box {
+    background-color: #ffffff;
+    border: 2px solid #9F1514;
+    padding: 20px;
+    font-size: 150%;
+    text-align: center;
+}
