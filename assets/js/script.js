@@ -12,10 +12,29 @@ sound.addEventListener("click", function(){
  * https://www.youtube.com/watch?v=UkmNL7eJqsU
  */
 function diceRoll(){
-    var random = Math.ceil(Math.random()*20 + 1);
+    var random = Math.ceil(Math.random() * 20 + 1);
     var imagePath = "assets/images/dice" + random + ".webp";
 
     document.querySelectorAll(".dice-img").forEach(function(dice){
         dice.setAttribute("src", imagePath);
     })
 };
+
+/**
+ * Generate a length < 16 numbers for a random array between 1 to 20 
+ * Log unique array of length < 16 random numbers between 1 to 20
+ */
+function generateRandomArray() {
+    const randomArray = [];
+    while (randomArray.length < 16) {
+        const randomNumber = Math.floor(Math.random() * 20);
+
+        if (!randomArray.includes(randomNumber)) {
+            randomArray.push(randomNumber);
+        }
+    }
+    return randomArray;
+  }
+
+// Confirm array logs randomly
+console.log(generateRandomArray());
