@@ -69,7 +69,7 @@ function startTimer(duration, display) {
     var countdown = duration,
         minutes, seconds;
         
-    setInterval(function () {
+    setInterval(function() {
         minutes = parseInt(countdown / 60, 10);
         seconds = parseInt(countdown % 60, 10);
 
@@ -86,9 +86,12 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-window.onload = function () {
-    var countdownTimer = 60 * 2,
-        display = document.querySelector("#timer");
+// Start timer on initial roll with click of roll button
+var onclick = document.querySelector("#start");
 
-    startTimer(countdownTimer, display);
-};
+onclick.addEventListener("click", function() {
+        var countdownTimer = 60 * 2,
+            display = document.querySelector("#timer");
+    
+        startTimer(countdownTimer, display);
+});
