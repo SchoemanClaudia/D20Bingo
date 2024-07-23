@@ -45,8 +45,50 @@ const grid = document.getElementById("grid");
 
 let bingoCard = "";
 uniqueNumbers.forEach(num => {
-    let additional = "<div class='grid-box' id=" + num + ">" + num + "</div>";
+    let additional = "<div class='grid-box' id=" + num + " onclick='mark(" + num + ")'>" + num + "</div>";
     bingoCard = bingoCard + additional;
 });
 
 grid.innerHTML = bingoCard;
+
+/**
+ * Manual mark of bingo grid boxes when dice has rolled 
+ * unique random @param {int} rolledNumber 
+ */
+function mark(rolledNumber) {
+    const markGrid = document.getElementById(rolledNumber);
+    markGrid.style.backgroundImage = "url('assets/images/dabber-mark.webp')";
+    markGrid.style.backgroundSize = "50px";
+}
+
+/**
+ * Creates a countdown timer for min and sec
+ * displayed 2 x 60 second intervals 
+ */
+function startTimer(duration, display) {
+    var countdown = duration,
+        minutes, seconds;
+        
+    setInterval(function () {
+        minutes = parseInt(countdown / 60, 10);
+        seconds = parseInt(countdown % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = "You have " + minutes + ":" + seconds + "s left";
+
+        // Display text when countdown has reached 0s
+        if (--countdown < 0) {
+            clearInterval(countdown);
+            display.textContent = "Your time is up! Ready to roll again?";
+        }
+    }, 1000);
+}
+
+window.onload = function () {
+    var countdownTimer = 60 * 2,
+        display = document.querySelector("#timer");
+
+    startTimer(countdownTimer, display);
+};
