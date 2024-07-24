@@ -17,7 +17,22 @@ function diceRoll() {
 
     document.querySelectorAll(".dice-img").forEach(function (dice) {
         dice.setAttribute("src", imagePath);
+    });
+
+    // Display rolled num from D20 dice
+    var calledNum;
+    if (random === 20) {
+        calledNum = `Natural ` + random + ` <i class="fa-solid fa-hand-fist"></i> Well done!`;
+    } else if (random === 1) {
+        calledNum = `Natural ` + random + ` <i class="fa-solid fa-skull-crossbones"></i> Oh no!`;
+    } else {
+        calledNum = random;
+    }
+
+    document.querySelectorAll("#numPanel").forEach(function (numPanel) {
+        numPanel.innerHTML = calledNum;
     })
+
 };
 
 /**
@@ -68,8 +83,8 @@ function mark(rolledNumber) {
 function startTimer(duration, display) {
     var countdown = duration,
         minutes, seconds;
-        
-    setInterval(function() {
+
+    setInterval(function () {
         minutes = parseInt(countdown / 60, 10);
         seconds = parseInt(countdown % 60, 10);
 
@@ -89,9 +104,9 @@ function startTimer(duration, display) {
 // Start timer on initial roll with click of roll button
 var onclick = document.querySelector("#start");
 
-onclick.addEventListener("click", function() {
-        var countdownTimer = 60 * 2,
-            display = document.querySelector("#timer");
-    
-        startTimer(countdownTimer, display);
+onclick.addEventListener("click", function () {
+    var countdownTimer = 60 * 2,
+        display = document.querySelector("#timer");
+
+    startTimer(countdownTimer, display);
 });
