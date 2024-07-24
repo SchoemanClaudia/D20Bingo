@@ -22,17 +22,19 @@ function diceRoll() {
     // Display rolled num from D20 dice
     var calledNum;
     if (random === 20) {
-        calledNum = `Natural ` + random + ` <i class="fa-solid fa-hand-fist"></i> Well done!`;
+        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-hand-fist"></i> &nbsp; `;
     } else if (random === 1) {
-        calledNum = `Natural ` + random + ` <i class="fa-solid fa-skull-crossbones"></i> Oh no!`;
+        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-skull-crossbones"></i> &nbsp; `;
     } else {
-        calledNum = random;
+        calledNum = ` &nbsp; ` + random + ` &nbsp; `;
     }
 
     document.querySelectorAll("#numPanel").forEach(function (numPanel) {
-        numPanel.innerHTML = calledNum;
+        numPanel.innerHTML += calledNum;
     })
 
+    // Enable display of called numbers
+    console.log(random);
 };
 
 /**
