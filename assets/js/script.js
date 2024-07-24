@@ -12,7 +12,7 @@ sound.addEventListener("click", function () {
  * https://www.youtube.com/watch?v=UkmNL7eJqsU
  */
 function diceRoll() {
-    var random = Math.ceil(Math.random() * 20 + 1);
+    var random = Math.ceil(Math.random() * 20);
     var imagePath = "assets/images/dice" + random + ".webp";
 
     document.querySelectorAll(".dice-img").forEach(function (dice) {
