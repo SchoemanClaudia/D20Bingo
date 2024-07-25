@@ -34,6 +34,11 @@ function diceRoll() {
         document.getElementById("numPanel").innerHTML = calledNum;
     }
 
+    // Keep log of rolled numbers to validate
+    if (!allRolledNum.includes(random)) {
+        allRolledNum.push(random);
+    }
+
     // Make dice roll the previous called num
     previousNumRoll = random;
     console.log(random);
@@ -59,6 +64,7 @@ function generateRandomArray() {
 
 // Display numbers to bingo grid
 const uniqueNumbers = generateRandomArray();
+// Enable display of unique number array
 console.log(uniqueNumbers);
 
 const grid = document.getElementById("grid");
@@ -72,14 +78,25 @@ uniqueNumbers.forEach(num => {
 grid.innerHTML = bingoCard;
 
 /**
- * Manual mark of bingo grid boxes when dice has rolled 
+ * Manual mark of bingo grid boxes only when dice has rolled
  * unique random @param {int} rolledNumber 
  */
 function mark(rolledNumber) {
-    const markGrid = document.getElementById(rolledNumber);
-    markGrid.style.backgroundImage = "url('assets/images/dabber-mark.webp')";
-    markGrid.style.backgroundSize = "50px";
+    if (allRolledNum.includes(rolledNumber)) {
+        const markGrid = document.getElementById(rolledNumber);
+        markGrid.style.backgroundImage = "url('assets/images/dabber-mark.webp')";
+        markGrid.style.backgroundSize = "50px";
+
+        if (!markedNumbers.includes(rolledNumber)) {
+            markedNumbers.push(rolledNumber);
+        }
+    } else {
+        console.log("Number not rolled");
+    }
 }
+
+let markedNumbers = [];
+let allRolledNum = [];
 
 /**
  * Creates a countdown timer for min and sec
