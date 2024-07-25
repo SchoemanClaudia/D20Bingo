@@ -19,20 +19,19 @@ function diceRoll() {
         dice.setAttribute("src", imagePath);
     });
 
-    // Display rolled num from D20 dice
-    var calledNum;
-    if (random === 20) {
-        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-hand-fist"></i>`;
-    } else if (random === 1) {
-        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-skull-crossbones"></i>`;
-    } else {
-        calledNum = ` &nbsp; ` + random;
+    /// Variable to store the display text for the previous roll
+    let previousDisplay = '';
+    // Update and recall the previous roll display
+    if (previousNumRoll === 20) {
+        previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-hand-fist"></i>`;
+    } else if (previousNumRoll === 1) {
+        previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-skull-crossbones"></i>`;
+    } else if (previousNumRoll !== null) {
+        previousDisplay = ` &nbsp; ${previousNumRoll}`;
     }
 
-    // Update and recall the previous roll display
-    if (previousNumRoll !== null) {
-        document.getElementById("numPanel").innerHTML = calledNum;
-    }
+    // Update numPanel with previous num roll display
+    document.getElementById("numPanel").innerHTML = `Previous Roll: ${previousDisplay}`;
 
     // Keep log of rolled numbers to validate
     if (!allRolledNum.includes(random)) {
