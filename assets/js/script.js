@@ -35,7 +35,7 @@ function diceRoll() {
 
     // Enable display of called numbers
     console.log(random);
-};
+}
 
 /**
  * Generate a length < 16 numbers for a random array between 1 to 20 
@@ -104,11 +104,16 @@ function startTimer(duration, display) {
 }
 
 // Start timer on initial roll with click of roll button
-var onclick = document.querySelector("#start");
+var startGame = document.querySelector("#start");
 
-onclick.addEventListener("click", function () {
+function onStartRoll() {
     var countdownTimer = 60 * 2,
         display = document.querySelector("#timer");
 
     startTimer(countdownTimer, display);
-});
+
+    // Remove event listener to prevent re-starting timer
+    startGame.removeEventListener("click", onStartRoll);
+}
+
+startGame.addEventListener("click", onStartRoll);
