@@ -22,20 +22,24 @@ function diceRoll() {
     // Display rolled num from D20 dice
     var calledNum;
     if (random === 20) {
-        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-hand-fist"></i> &nbsp; `;
+        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-hand-fist"></i>`;
     } else if (random === 1) {
-        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-skull-crossbones"></i> &nbsp; `;
+        calledNum = ` &nbsp; ` + random + ` <i class="fa-solid fa-skull-crossbones"></i>`;
     } else {
-        calledNum = ` &nbsp; ` + random + ` &nbsp; `;
+        calledNum = ` &nbsp; ` + random;
     }
 
-    document.querySelectorAll("#numPanel").forEach(function (numPanel) {
-        numPanel.innerHTML += calledNum;
-    })
+    // Update and recall the previous roll display
+    if (previousNumRoll !== null) {
+        document.getElementById("numPanel").innerHTML = calledNum;
+    }
 
-    // Enable display of called numbers
+    // Make dice roll the previous called num
+    previousNumRoll = random;
     console.log(random);
 }
+
+let previousNumRoll = null;
 
 /**
  * Generate a length < 16 numbers for a random array between 1 to 20 
@@ -55,7 +59,6 @@ function generateRandomArray() {
 
 // Display numbers to bingo grid
 const uniqueNumbers = generateRandomArray();
-// Enable display of unique number array
 console.log(uniqueNumbers);
 
 const grid = document.getElementById("grid");
