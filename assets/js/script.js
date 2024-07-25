@@ -98,6 +98,28 @@ let markedNumbers = [];
 let allRolledNum = [];
 
 /**
+ * Validate if all numbers in the bingo grid have been marked 
+ * match marked grid to rolled numbers logged 
+ * If rolled num is not marked on grid = false
+ */
+function validateWin() {
+    // Check if all unique numbers have been marked
+    const isValid = uniqueNumbers.every(num => markedNumbers.includes(num));
+    if (isValid) {
+        alert("Bingo! You earned an XP level");
+    } else {
+        alert("Oops! Your bingo card isn't complete yet");
+    }
+
+    console.log(isValid);
+}
+
+const callBingo = document.getElementById("bingo");
+if (bingo) {
+    bingo.addEventListener("click", validateWin);
+}
+
+/**
  * Creates a countdown timer for min and sec
  * displayed 2 x 60 second intervals 
  */
