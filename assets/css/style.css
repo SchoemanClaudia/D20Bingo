@@ -24,7 +24,7 @@ body {
     flex-direction:column;
 }
 
-.btn-roll, .btn-mark {
+.btn-roll, .btn-bingo {
     display: inline-block;
     text-transform: uppercase;
     color: #ffffff;
