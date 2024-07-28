@@ -147,12 +147,13 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = "You have " + minutes + ":" + seconds + "s left";
+        display.textContent = minutes + ":" + seconds;
 
         // Display text when countdown has reached 0s
         if (--countdown < 0) {
             clearInterval(timerInterval);
-            display.textContent = "Your time is up!";
+            display.textContent = "00:00";
+            alert("Your time is up!")
             // Flag as true when time is up
             isTimeUp = true;
         }
@@ -168,17 +169,16 @@ function autoDiceRoll() {
     }, 3000);
 }
 
-autoDiceRoll();
-
 // Start timer on initial roll with click of roll button
 var startGame = document.querySelector("#start");
 
 function onStartRoll() {
-    var countdownTimer = 60 * 2,
+    var countdownTimer = 60 * 0.15,
         display = document.querySelector("#timer");
     // Reset when game starts again
     isTimeUp = false;
     startTimer(countdownTimer, display);
+    autoDiceRoll();
 
     // Remove event listener to prevent re-starting timer
     startGame.removeEventListener("click", onStartRoll);
