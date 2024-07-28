@@ -89,7 +89,7 @@ grid.innerHTML = bingoCard;
  * unique random @param {int} rolledNumber 
  */
 function mark(rolledNumber) {
-     // No mark allowed if time is up
+    // No mark allowed if time is up
     if (isTimeUp) {
         return;
     }
@@ -140,24 +140,35 @@ function startTimer(duration, display) {
     var countdown = duration,
         minutes, seconds;
 
-        let timerInterval = setInterval(function () {
-            minutes = parseInt(countdown / 60, 10);
-            seconds = parseInt(countdown % 60, 10);
-    
-            minutes = minutes < 10 ? "0" + minutes : minutes;
-            seconds = seconds < 10 ? "0" + seconds : seconds;
-    
-            display.textContent = "You have " + minutes + ":" + seconds + "s left";
-    
-            // Display text when countdown has reached 0s
-            if (--countdown < 0) {
-                clearInterval(timerInterval);
-                display.textContent = "Your time is up!";
-                // Flag as true when time is up
-                isTimeUp = true;
-            }
-        }, 1000);
-    }
+    let timerInterval = setInterval(function () {
+        minutes = parseInt(countdown / 60, 10);
+        seconds = parseInt(countdown % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = "You have " + minutes + ":" + seconds + "s left";
+
+        // Display text when countdown has reached 0s
+        if (--countdown < 0) {
+            clearInterval(timerInterval);
+            display.textContent = "Your time is up!";
+            // Flag as true when time is up
+            isTimeUp = true;
+        }
+    }, 1000);
+}
+
+// Auto roll dice on game start
+function autoDiceRoll() {
+    autoRollInterval = setInterval(function () {
+        diceRoll();
+
+    // 3000ms = 3sec (Dice roll interval)
+    }, 3000);
+}
+
+autoDiceRoll();
 
 // Start timer on initial roll with click of roll button
 var startGame = document.querySelector("#start");
@@ -165,9 +176,9 @@ var startGame = document.querySelector("#start");
 function onStartRoll() {
     var countdownTimer = 60 * 2,
         display = document.querySelector("#timer");
-        // Reset when game starts again
-        isTimeUp = false;
-        startTimer(countdownTimer, display);
+    // Reset when game starts again
+    isTimeUp = false;
+    startTimer(countdownTimer, display);
 
     // Remove event listener to prevent re-starting timer
     startGame.removeEventListener("click", onStartRoll);
