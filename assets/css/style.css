@@ -71,6 +71,13 @@ main {
     max-width: 250px;
 }
 
+#countdown {
+    color:#9F1514;
+    font-size:x-large;
+    padding: 10px;
+    font-weight: 700;
+}
+
 /* Bingo number grid */
 #grid {
     display: grid;

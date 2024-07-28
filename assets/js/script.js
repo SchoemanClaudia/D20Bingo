@@ -181,7 +181,7 @@ var startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    var countdownTimer = 60 * .15,
+    var countdownTimer = 60 * 2,
         display = document.querySelector("#timer");
     // Reset when game starts again
     isTimeUp = false;
