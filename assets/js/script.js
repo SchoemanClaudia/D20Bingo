@@ -9,6 +9,7 @@ sound.addEventListener("click", function () {
 
 // Track and check state of countdown timer
 let isTimeUp = false;
+let autoRollInterval;
 
 /**
  * Rolls through D20 dice img at random from 1 to 20
@@ -160,7 +161,10 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-// Auto roll dice on game start
+/**
+ * Activates auto loop function on game start
+ * @param {int} 3000ms interval per dice roll
+ */
 function autoDiceRoll() {
     autoRollInterval = setInterval(function () {
         diceRoll();
@@ -172,16 +176,35 @@ function autoDiceRoll() {
 // Start timer on initial roll with click of roll button
 var startGame = document.querySelector("#start");
 
+/**
+ * Countdown timer activates only on game start
+ * timer starts on initial btn-roll click
+ */
 function onStartRoll() {
-    var countdownTimer = 60 * 0.15,
+    var countdownTimer = 60 * .15,
         display = document.querySelector("#timer");
     // Reset when game starts again
     isTimeUp = false;
     startTimer(countdownTimer, display);
     autoDiceRoll();
 
+    // Disable the btn-roll with placeholder text
+    sound.disabled = true;
+    sound.textContent = "Rolling...";
+
     // Remove event listener to prevent re-starting timer
     startGame.removeEventListener("click", onStartRoll);
 }
+
+/**
+ * Re activate roll button for new game start
+ * timer starts on initial btn-roll click
+ */
+function enableRollBtn() {
+    // Reset button text
+    sound.textContent = "Roll";
+}
+
+enableRollBtn()
 
 startGame.addEventListener("click", onStartRoll);
