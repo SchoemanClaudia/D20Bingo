@@ -140,24 +140,24 @@ function startTimer(duration, display) {
     var countdown = duration,
         minutes, seconds;
 
-    setInterval(function () {
-        minutes = parseInt(countdown / 60, 10);
-        seconds = parseInt(countdown % 60, 10);
-
-        minutes = minutes < 10 ? "0" + minutes : minutes;
-        seconds = seconds < 10 ? "0" + seconds : seconds;
-
-        display.textContent = "You have " + minutes + ":" + seconds + "s left";
-
-        // Display text when countdown has reached 0s
-        if (--countdown < 0) {
-            clearInterval(countdown);
-            display.textContent = "Your time is up! Ready to roll again?";
-            // Flag as true when time is up
-            isTimeUp = true;
-        }
-    }, 1000);
-}
+        let timerInterval = setInterval(function () {
+            minutes = parseInt(countdown / 60, 10);
+            seconds = parseInt(countdown % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = "You have " + minutes + ":" + seconds + "s left";
+    
+            // Display text when countdown has reached 0s
+            if (--countdown < 0) {
+                clearInterval(timerInterval);
+                display.textContent = "Your time is up!";
+                // Flag as true when time is up
+                isTimeUp = true;
+            }
+        }, 1000);
+    }
 
 // Start timer on initial roll with click of roll button
 var startGame = document.querySelector("#start");
