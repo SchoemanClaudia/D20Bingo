@@ -7,11 +7,19 @@ sound.addEventListener("click", function () {
     diceRoll();
 });
 
+// Track and check state of countdown timer
+let isTimeUp = false;
+
 /**
  * Rolls through D20 dice img at random from 1 to 20
  * https://www.youtube.com/watch?v=UkmNL7eJqsU
  */
 function diceRoll() {
+    // Check and stop game play if time is up
+    if (isTimeUp) {
+        return;
+    }
+
     var random = Math.ceil(Math.random() * 20);
     var imagePath = "assets/images/dice" + random + ".webp";
 
@@ -81,6 +89,11 @@ grid.innerHTML = bingoCard;
  * unique random @param {int} rolledNumber 
  */
 function mark(rolledNumber) {
+     // No mark allowed if time is up
+    if (isTimeUp) {
+        return;
+    }
+
     if (allRolledNum.includes(rolledNumber)) {
         const markGrid = document.getElementById(rolledNumber);
         markGrid.style.backgroundImage = "url('assets/images/dabber-mark.webp')";
@@ -140,6 +153,8 @@ function startTimer(duration, display) {
         if (--countdown < 0) {
             clearInterval(countdown);
             display.textContent = "Your time is up! Ready to roll again?";
+            // Flag as true when time is up
+            isTimeUp = true;
         }
     }, 1000);
 }
@@ -150,8 +165,9 @@ var startGame = document.querySelector("#start");
 function onStartRoll() {
     var countdownTimer = 60 * 2,
         display = document.querySelector("#timer");
-
-    startTimer(countdownTimer, display);
+        // Reset when game starts again
+        isTimeUp = false;
+        startTimer(countdownTimer, display);
 
     // Remove event listener to prevent re-starting timer
     startGame.removeEventListener("click", onStartRoll);
