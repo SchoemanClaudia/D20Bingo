@@ -136,6 +136,8 @@ if (bingo) {
     bingo.addEventListener("click", validateWin);
 }
 
+let timerInterval;
+
 /**
  * Creates a countdown timer for min and sec
  * displayed 2 x 60 second intervals 
@@ -187,7 +189,7 @@ var startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    var countdownTimer = 60 * 2,
+    var countdownTimer = 60 * .15,
         display = document.querySelector("#timer");
     // Reset when game starts again
     isTimeUp = false;
@@ -203,6 +205,26 @@ function onStartRoll() {
 }
 
 /**
+ * Resets game play variables to default
+ * load new bingo grid for new game
+ */
+function resetGame() {
+    // Clear the arrays
+    markedNumbers = [];
+    allRolledNum = [];
+
+    // Refresh bingo grid with new unique int array
+    uniqueNumbers.forEach(num => {
+        // Remove marks from gird and refresh
+        const markGrid = document.getElementById(num);
+        markGrid.style.backgroundImage = "none";
+    });
+
+    previousNumRoll = null;
+    document.getElementById("numPanel").innerHTML = null;
+}
+
+/**
  * Re activate roll button for new game start
  * timer starts on initial btn-roll click
  */
@@ -213,6 +235,9 @@ function enableRollBtn() {
 
     // Add the event listener back to start a new game
     startGame.addEventListener("click", onStartRoll);
+
+    // Call resetGame to clear the game state
+    resetGame();
 }
 
 enableRollBtn();
