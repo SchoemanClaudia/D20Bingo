@@ -7,49 +7,90 @@ sound.addEventListener("click", function () {
     diceRoll();
 });
 
+/*
+var frameInterval = 150; // Time between each dice roll frame in ms
+var frames = 5; // Number of frame in animated dice roll
+var currentFrame = 0; // Track current frame
+
+var animatedDice = diceAnimatedInterval(function(){
+    var frameImagePath = "assets/images/frame" + currentFrame + 1 + ".webp";
+
+    document.querySelectorAll(".dice-img")forEach(function(dice){
+        dice.setAttribute("src", frameImagePath);
+    });
+    currentFrame++
+    if (currentFrame >= frames){
+        // Stop animation after all frames shown
+        clearInterval(animatedDice);
+    }
+}; frameInterval); */
+
 // Track and check state of countdown timer
 let isTimeUp = false;
 let autoRollInterval;
+
+const diceFrames = [
+    "assets/images/frame1.webp",
+    "assets/images/frame2.webp",
+    "assets/images/frame3.webp",
+    "assets/images/frame4.webp",
+    "assets/images/frame5.webp",
+    "assets/images/frame6.webp"
+];
 
 /**
  * Rolls through D20 dice img at random from 1 to 20
  * https://www.youtube.com/watch?v=UkmNL7eJqsU
  */
 function diceRoll() {
-    // Check and stop game play if time is up
     if (isTimeUp) {
         return;
     }
 
-    var random = Math.ceil(Math.random() * 20);
-    var imagePath = "assets/images/dice" + random + ".webp";
+    // Get a random number between 1 and 20
+    const finalRoll = Math.ceil(Math.random() * 20);
+    const finalImagePath = `assets/images/dice${finalRoll}.webp`;
 
-    document.querySelectorAll(".dice-img").forEach(function (dice) {
-        dice.setAttribute("src", imagePath);
-    });
+    // Animate D20 roll
+    let frameIndex = 0;
+    const totalFrames = diceFrames.length;
+    const animationDuration = 100; // Duration for each frame in ms
+    const animationTime = 1000; // Total time for the animation in ms
 
-    /// Variable to store the display text for the previous roll
-    let previousDisplay = '';
-    // Update and recall the previous roll display
-    if (previousNumRoll === 20) {
-        previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-hand-fist"></i>`;
-    } else if (previousNumRoll === 1) {
-        previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-skull-crossbones"></i>`;
-    } else if (previousNumRoll !== null) {
-        previousDisplay = ` &nbsp; ${previousNumRoll}`;
-    }
+    // Set an interval to cycle through frames
+    const animationInterval = setInterval(() => {
+        document.querySelectorAll(".dice-img").forEach(function (dice) {
+            dice.setAttribute("src", diceFrames[frameIndex]);
+        });
 
-    // Update numPanel with previous num roll display
-    document.getElementById("numPanel").innerHTML = `Previous Roll: ${previousDisplay}`;
+        frameIndex = (frameIndex + 1) % totalFrames;
+    }, animationDuration);
 
-    // Keep log of rolled numbers to validate
-    if (!allRolledNum.includes(random)) {
-        allRolledNum.push(random);
-    }
+    // Set the final dice img after animation
+    setTimeout(() => {
+        clearInterval(animationInterval);
+        document.querySelectorAll(".dice-img").forEach(function (dice) {
+            dice.setAttribute("src", finalImagePath);
+        });
 
-    // Make dice roll the previous called num
-    previousNumRoll = random;
-    console.log(random);
+        // Update the previous roll display
+        let previousDisplay = '';
+        if (previousNumRoll === 20) {
+            previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-hand-fist"></i>`;
+        } else if (previousNumRoll === 1) {
+            previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-skull-crossbones"></i>`;
+        } else if (previousNumRoll !== null) {
+            previousDisplay = ` &nbsp; ${previousNumRoll}`;
+        }
+        document.getElementById("numPanel").innerHTML = `Previous Roll: ${previousDisplay}`;
+
+        // Log the result and keep track
+        if (!allRolledNum.includes(finalRoll)) {
+            allRolledNum.push(finalRoll);
+        }
+        previousNumRoll = finalRoll;
+        console.log(finalRoll);
+    }, animationTime);
 }
 
 let previousNumRoll = null;
@@ -177,8 +218,8 @@ function autoDiceRoll() {
     autoRollInterval = setInterval(function () {
         diceRoll();
 
-    // 3000ms = 3sec (Dice roll interval)
-    }, 2000);
+        // 3000ms = 3sec (Dice roll interval)
+    }, 3000);
 }
 
 // Start timer on initial roll with click of roll button
