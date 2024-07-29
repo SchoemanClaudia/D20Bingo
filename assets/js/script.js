@@ -1,5 +1,22 @@
 var sound = document.querySelector(".btn-roll");
 
+// Create an Audio object for background music
+const backgroundMusic = new Audio("assets/sounds/background-music.mp3");
+backgroundMusic.loop = true; // Loop background music
+
+// Mute background music on site load
+window.addEventListener("load", function() {
+    backgroundMusic.pause();
+});
+
+// Controls for sound playback
+document.getElementById("btn-on").addEventListener("click", function() {
+    backgroundMusic.play();
+});
+document.getElementById("btn-mute").addEventListener("click", function() {
+    backgroundMusic.pause();
+});
+
 // Sound added to dice roll - https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
 sound.addEventListener("click", function () {
     new Audio("assets/sounds/diceSound.mp3").play();
