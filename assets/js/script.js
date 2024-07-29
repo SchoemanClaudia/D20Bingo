@@ -126,6 +126,9 @@ function validateWin() {
     }
 
     console.log(isValid);
+
+    // Call enableRollBtn to reset the button after validation
+    enableRollBtn();
 }
 
 const callBingo = document.getElementById("bingo");
@@ -157,6 +160,9 @@ function startTimer(duration, display) {
             alert("Your time is up!")
             // Flag as true when time is up
             isTimeUp = true;
+
+            // Call enableRollBtn to reset the button
+            enableRollBtn();
         }
     }, 1000);
 }
@@ -203,8 +209,10 @@ function onStartRoll() {
 function enableRollBtn() {
     // Reset button text
     sound.textContent = "Roll";
+    sound.disabled = false; // Re-enable the button
+
+    // Add the event listener back to start a new game
+    startGame.addEventListener("click", onStartRoll);
 }
 
-enableRollBtn()
-
-startGame.addEventListener("click", onStartRoll);
+enableRollBtn();
