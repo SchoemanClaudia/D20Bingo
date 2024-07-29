@@ -25,6 +25,13 @@ body {
     flex-direction:column;
 }
 
+/* Hero image */
+#background {
+    background: url("../images/background.webp") no-repeat center center/cover;
+    position: relative;
+    width: auto;
+}
+
 .btn-roll, .btn-bingo {
     display: inline-block;
     text-transform: uppercase;
