@@ -25,7 +25,7 @@ body {
     flex-direction:column;
 }
 
-/* Hero image */
+/* Background image */
 #background {
     background: url("../images/background.webp") no-repeat center center/cover;
     position: relative;
