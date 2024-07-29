@@ -9,18 +9,23 @@ window.addEventListener("load", function() {
     backgroundMusic.pause();
 });
 
+let isMuted = true; // Check if sounds are muted
+
 // Controls for sound playback
 document.getElementById("btn-on").addEventListener("click", function() {
+    isMuted = false;
     backgroundMusic.play();
 });
 document.getElementById("btn-mute").addEventListener("click", function() {
+    isMuted = true;
     backgroundMusic.pause();
 });
 
 // Sound added to dice roll - https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
 sound.addEventListener("click", function () {
+    if (!isMuted) {
     new Audio("assets/sounds/diceSound.mp3").play();
-
+    }
     diceRoll();
 });
 
