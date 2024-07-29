@@ -1,22 +1,22 @@
 var sound = document.querySelector(".btn-roll");
 
-// Create an Audio object for background music
+// Create loop for background music -https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
 const backgroundMusic = new Audio("assets/sounds/background-music.mp3");
 backgroundMusic.loop = true; // Loop background music
 
 // Mute background music on site load
-window.addEventListener("load", function() {
+window.addEventListener("load", function () {
     backgroundMusic.pause();
 });
 
 let isMuted = true; // Check if sounds are muted
 
 // Controls for sound playback
-document.getElementById("btn-on").addEventListener("click", function() {
+document.getElementById("btn-on").addEventListener("click", function () {
     isMuted = false;
     backgroundMusic.play();
 });
-document.getElementById("btn-mute").addEventListener("click", function() {
+document.getElementById("btn-mute").addEventListener("click", function () {
     isMuted = true;
     backgroundMusic.pause();
 });
@@ -24,12 +24,12 @@ document.getElementById("btn-mute").addEventListener("click", function() {
 // Sound added to dice roll - https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
 sound.addEventListener("click", function () {
     if (!isMuted) {
-    new Audio("assets/sounds/diceSound.mp3").play();
+        new Audio("assets/sounds/diceSound.mp3").play();
     }
     diceRoll();
 });
 
-// Track and check state of countdown timer
+// Track time on countdown
 let isTimeUp = false;
 let autoRollInterval;
 
@@ -61,7 +61,7 @@ function diceRoll() {
     const animationDuration = 100; // Duration for each frame in ms
     const animationTime = 1000; // Total time for the animation in ms
 
-    // Set an interval to cycle through frames
+    // Add animated interval to run through frames
     const animationInterval = setInterval(() => {
         document.querySelectorAll(".dice-img").forEach(function (dice) {
             dice.setAttribute("src", diceFrames[frameIndex]);
@@ -135,7 +135,7 @@ grid.innerHTML = bingoCard;
  * unique random @param {int} rolledNumber 
  */
 function mark(rolledNumber) {
-    // No mark allowed if time is up
+    // No grid mark allowed if time is up
     if (isTimeUp) {
         return;
     }
@@ -234,7 +234,7 @@ var startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    var countdownTimer = 60 * 2.5,
+    var countdownTimer = 60 * .15,
         display = document.querySelector("#timer");
     // Reset when game starts again
     isTimeUp = false;

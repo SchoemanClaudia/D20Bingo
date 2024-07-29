@@ -22,7 +22,7 @@ body {
     text-align: center;
     min-height: 100vh;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 /* Background image */
@@ -32,7 +32,8 @@ body {
     width: auto;
 }
 
-.btn-roll, .btn-bingo {
+.btn-roll,
+.btn-bingo {
     display: inline-block;
     text-transform: uppercase;
     color: #ffffff;
@@ -80,8 +81,8 @@ main {
 }
 
 #countdown {
-    color:#ce6228;
-    font-size:x-large;
+    color: #ce6228;
+    font-size: x-large;
     padding: 10px;
     font-weight: 700;
 }
