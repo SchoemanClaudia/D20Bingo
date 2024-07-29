@@ -238,6 +238,10 @@ function enableRollBtn() {
 
     // Call resetGame to clear the game state
     resetGame();
+
+    // Remove all existing countdowns
+    clearInterval(timerInterval);
+    clearInterval(autoRollInterval);
 }
 
 enableRollBtn();
