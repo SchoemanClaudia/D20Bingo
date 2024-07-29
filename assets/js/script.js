@@ -24,24 +24,6 @@ sound.addEventListener("click", function () {
     diceRoll();
 });
 
-/*
-var frameInterval = 150; // Time between each dice roll frame in ms
-var frames = 5; // Number of frame in animated dice roll
-var currentFrame = 0; // Track current frame
-
-var animatedDice = diceAnimatedInterval(function(){
-    var frameImagePath = "assets/images/frame" + currentFrame + 1 + ".webp";
-
-    document.querySelectorAll(".dice-img")forEach(function(dice){
-        dice.setAttribute("src", frameImagePath);
-    });
-    currentFrame++
-    if (currentFrame >= frames){
-        // Stop animation after all frames shown
-        clearInterval(animatedDice);
-    }
-}; frameInterval); */
-
 // Track and check state of countdown timer
 let isTimeUp = false;
 let autoRollInterval;
