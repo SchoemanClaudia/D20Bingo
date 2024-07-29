@@ -121,14 +121,14 @@ function validateWin() {
     const isValid = uniqueNumbers.every(num => markedNumbers.includes(num));
     if (isValid) {
         alert("Bingo! You earned an XP level");
+        // Call enableRollBtn to reset the button after validation
+        enableRollBtn();
+        document.querySelector("#timer").textContent = "Roll to play again";
     } else {
         alert("Oops! Your bingo card isn't complete yet");
     }
 
     console.log(isValid);
-
-    // Call enableRollBtn to reset the button after validation
-    enableRollBtn();
 }
 
 const callBingo = document.getElementById("bingo");
@@ -146,7 +146,7 @@ function startTimer(duration, display) {
     var countdown = duration,
         minutes, seconds;
 
-    let timerInterval = setInterval(function () {
+    timerInterval = setInterval(function () {
         minutes = parseInt(countdown / 60, 10);
         seconds = parseInt(countdown % 60, 10);
 
@@ -178,7 +178,7 @@ function autoDiceRoll() {
         diceRoll();
 
     // 3000ms = 3sec (Dice roll interval)
-    }, 3000);
+    }, 2000);
 }
 
 // Start timer on initial roll with click of roll button
@@ -189,7 +189,7 @@ var startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    var countdownTimer = 60 * .15,
+    var countdownTimer = 60 * 2.5,
         display = document.querySelector("#timer");
     // Reset when game starts again
     isTimeUp = false;
