@@ -25,6 +25,11 @@ body {
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /* Background image */
 #background {
     background: url("../images/background.webp") no-repeat center center/cover;
@@ -60,8 +65,42 @@ header {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: start;
+}
+
+#navbar>li {
+    margin: 2em 0;
+    list-style: none;
+}
+
+/* Dropdown toggle in navbar */
+nav {
+    position: absolute;
+    background-color: #ce6228;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    display: none;
+    top: 100%;
+}
+
+/* Nav menu */
+#nav-menu:checked~nav {
+    display: block;
+}
+
+#nav-menu {
+    display: none;
+}
+
+.nav-menu-toggle {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.active {
+    border-bottom: 2px solid #ffffff;
 }
 
 /* Main content */

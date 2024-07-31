@@ -1,29 +1,63 @@
-var sound = document.querySelector(".btn-roll");
+var diceActivate = document.querySelector(".btn-roll");
+
+/**
+ * Activates auto loop function on game start
+ * @param {int} 3000ms interval per dice roll
+ */
+function autoDiceRoll() {
+    autoRollInterval = setInterval(function () {
+        diceRoll();
+        // 3000ms = 3sec (Dice roll interval)
+    }, 3000);
+}
+
+// Start timer on initial roll with click of roll button
+var startGame = document.querySelector("#start");
+
+/**
+ * Countdown timer activates only on game start
+ * timer starts on initial btn-roll click
+ */
+function onStartRoll() {
+    var countdownTimer = 60 * 3,
+        display = document.querySelector("#timer");
+    // Reset when game starts again
+    isTimeUp = false;
+    startTimer(countdownTimer, display);
+    autoDiceRoll();
+
+    // Disable the btn-roll with placeholder text
+    diceActivate.disabled = true;
+    diceActivate.textContent = "Rolling...";
+
+    // Remove event listener to prevent re-starting timer
+    startGame.removeEventListener("click", onStartRoll);
+}
 
 // Create loop for background music -https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
-const backgroundMusic = new Audio("assets/sounds/background-music.mp3");
-backgroundMusic.loop = true; // Loop background music
+const backgroundMusic = new Audio("assets/sounds/backgroundMusic.mp3");
+backgroundMusic.loop = true;
 
 // Mute background music on site load
 window.addEventListener("load", function () {
     backgroundMusic.pause();
 });
 
-let isMuted = true; // Check if sounds are muted
+let soundMute = true;
 
 // Controls for sound playback
 document.getElementById("btn-on").addEventListener("click", function () {
-    isMuted = false;
+    soundMute = false;
     backgroundMusic.play();
 });
 document.getElementById("btn-mute").addEventListener("click", function () {
-    isMuted = true;
+    soundMute = true;
     backgroundMusic.pause();
 });
 
 // Sound added to dice roll - https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
-sound.addEventListener("click", function () {
-    if (!isMuted) {
+diceActivate.addEventListener("click", function () {
+    if (!soundMute) {
         new Audio("assets/sounds/diceSound.mp3").play();
     }
     diceRoll();
@@ -52,29 +86,28 @@ function diceRoll() {
     }
 
     // Get a random number between 1 and 20
-    const finalRoll = Math.ceil(Math.random() * 20);
-    const finalImagePath = `assets/images/dice${finalRoll}.webp`;
+    const randomRoll = Math.ceil(Math.random() * 20);
+    const diceImage = "assets/images/dice" + randomRoll + ".webp";
 
-    // Animate D20 roll
+    // Animate D20 roll - https://learn.newmedia.dog/tutorials/p5-js/remainder/
     let frameIndex = 0;
     const totalFrames = diceFrames.length;
-    const animationDuration = 100; // Duration for each frame in ms
-    const animationTime = 1000; // Total time for the animation in ms
+    const animateDuration = 100; // Duration for each frame in ms
+    const animateTimeFrame = 1000; // Total time for the animation in ms
 
     // Add animated interval to run through frames
-    const animationInterval = setInterval(() => {
+    const animateInterval = setInterval(() => {
         document.querySelectorAll(".dice-img").forEach(function (dice) {
             dice.setAttribute("src", diceFrames[frameIndex]);
         });
-
         frameIndex = (frameIndex + 1) % totalFrames;
-    }, animationDuration);
+    }, animateDuration);
 
-    // Set the final dice img after animation
+    // Set the final dice img after animation - https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
     setTimeout(() => {
-        clearInterval(animationInterval);
+        clearInterval(animateInterval); // https://developer.mozilla.org/en-US/docs/Web/API/setInterval
         document.querySelectorAll(".dice-img").forEach(function (dice) {
-            dice.setAttribute("src", finalImagePath);
+            dice.setAttribute("src", diceImage);
         });
 
         // Update the previous roll display
@@ -89,12 +122,12 @@ function diceRoll() {
         document.getElementById("numPanel").innerHTML = `Previous Roll: ${previousDisplay}`;
 
         // Log the result and keep track
-        if (!allRolledNum.includes(finalRoll)) {
-            allRolledNum.push(finalRoll);
+        if (!allRolledNum.includes(randomRoll)) {
+            allRolledNum.push(randomRoll);
         }
-        previousNumRoll = finalRoll;
-        console.log(finalRoll);
-    }, animationTime);
+        previousNumRoll = randomRoll;
+        console.log(randomRoll);
+    }, animateTimeFrame);
 }
 
 let previousNumRoll = null;
@@ -215,41 +248,6 @@ function startTimer(duration, display) {
 }
 
 /**
- * Activates auto loop function on game start
- * @param {int} 3000ms interval per dice roll
- */
-function autoDiceRoll() {
-    autoRollInterval = setInterval(function () {
-        diceRoll();
-
-        // 3000ms = 3sec (Dice roll interval)
-    }, 3000);
-}
-
-// Start timer on initial roll with click of roll button
-var startGame = document.querySelector("#start");
-
-/**
- * Countdown timer activates only on game start
- * timer starts on initial btn-roll click
- */
-function onStartRoll() {
-    var countdownTimer = 60 * .15,
-        display = document.querySelector("#timer");
-    // Reset when game starts again
-    isTimeUp = false;
-    startTimer(countdownTimer, display);
-    autoDiceRoll();
-
-    // Disable the btn-roll with placeholder text
-    sound.disabled = true;
-    sound.textContent = "Rolling...";
-
-    // Remove event listener to prevent re-starting timer
-    startGame.removeEventListener("click", onStartRoll);
-}
-
-/**
  * Resets game play variables to default
  * load new bingo grid for new game
  */
@@ -274,9 +272,9 @@ function resetGame() {
  * timer starts on initial btn-roll click
  */
 function enableRollBtn() {
-    // Reset button text
-    sound.textContent = "Roll";
-    sound.disabled = false; // Re-enable the button
+    // Reset btn-roll
+    diceActivate.textContent = "Roll";
+    diceActivate.disabled = false;
 
     // Add the event listener back to start a new game
     startGame.addEventListener("click", onStartRoll);
