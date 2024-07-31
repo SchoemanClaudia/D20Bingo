@@ -264,7 +264,7 @@ function resetGame() {
     });
 
     previousNumRoll = null;
-    document.getElementById("numPanel").innerHTML = null;
+    document.getElementById("numPanel").innerHTML = "";
 }
 
 /**

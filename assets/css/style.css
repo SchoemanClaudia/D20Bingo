@@ -103,6 +103,20 @@ nav {
     border-bottom: 2px solid #ffffff;
 }
 
+#btn-on,
+#btn-mute {
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: #ffffff;
+    color: #ce6228;
+    border: 1px solid #ce6228;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
 /* Main content */
 main {
     /* Main takes up space to push footer down */
