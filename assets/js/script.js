@@ -19,11 +19,12 @@ var startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    var countdownTimer = 60 * 3,
-        display = document.querySelector("#timer");
+    var countdownTimer = 60 * 3;
+    display = document.querySelector("#timer");
+    timeAdjust = countdownTimer;
     // Reset when game starts again
     isTimeUp = false;
-    startTimer(countdownTimer, display);
+    startTimer(timeAdjust, display);
     autoDiceRoll();
 
     // Disable the btn-roll with placeholder text
@@ -66,6 +67,7 @@ diceActivate.addEventListener("click", function () {
 // Track time on countdown
 let isTimeUp = false;
 let autoRollInterval;
+let timeAdjust;
 
 const diceFrames = [
     "assets/images/frame1.webp",
@@ -127,6 +129,11 @@ function diceRoll() {
         }
         previousNumRoll = randomRoll;
         console.log(randomRoll);
+
+        // Adjust countdown to +10 seconds if 20 rolled
+        if (randomRoll === 20) {
+            timeAdjust += 10; 
+        } 
     }, animateTimeFrame);
 }
 
@@ -219,14 +226,15 @@ let timerInterval;
 /**
  * Creates a countdown timer for min and sec
  * displayed 2 x 60 second intervals 
+ * https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-javascript
  */
 function startTimer(duration, display) {
-    var countdown = duration,
-        minutes, seconds;
+    timeAdjust = duration;
+    var minutes, seconds;
 
     timerInterval = setInterval(function () {
-        minutes = parseInt(countdown / 60, 10);
-        seconds = parseInt(countdown % 60, 10);
+        minutes = parseInt(timeAdjust / 60, 10);
+        seconds = parseInt(timeAdjust % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
@@ -234,14 +242,13 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         // Display text when countdown has reached 0s
-        if (--countdown < 0) {
+        if (--timeAdjust < 0) {
             clearInterval(timerInterval);
             display.textContent = "00:00";
             alert("Your time is up!")
-            // Flag as true when time is up
             isTimeUp = true;
 
-            // Call enableRollBtn to reset the button
+            // Reset btn-roll for new game
             enableRollBtn();
         }
     }, 1000);
@@ -264,7 +271,7 @@ function resetGame() {
     });
 
     previousNumRoll = null;
-    document.getElementById("numPanel").innerHTML = "";
+    document.getElementById("numPanel").innerHTML = null;
 }
 
 /**
