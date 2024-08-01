@@ -133,9 +133,15 @@ main {
     max-width: 250px;
 }
 
+#message {
+    color: #ffffff;
+    font-size: 120%;
+    padding-top: 15px;
+}
+
 #countdown {
     color: #ce6228;
-    font-size: x-large;
+    font-size: 220%;
     padding: 10px;
     font-weight: 700;
 }
