@@ -247,7 +247,7 @@ function validateWin() {
     });
 
     if (isValid) {
-        message.innerHTML = `<p>Bingo! You earned an XP level <i class="fa-solid fa-hand-fist"></p>`;
+        message.innerHTML = `<p>Bingo! You earned an XP level <i class="fa-solid fa-hand-fist"></i></p>`;
         // Stop all game play functions
         clearInterval(autoRollInterval);
         clearInterval(timerInterval);
