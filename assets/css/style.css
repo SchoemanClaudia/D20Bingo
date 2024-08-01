@@ -70,6 +70,8 @@ header {
 }
 
 #navbar>li {
+    font-size: 150%;
+    font-weight: 700;
     margin: 2em 0;
     list-style: none;
 }
