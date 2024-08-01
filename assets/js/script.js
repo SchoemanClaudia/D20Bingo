@@ -1,5 +1,4 @@
 const diceActivate = document.querySelector(".btn-roll");
-const playAgain = document.getElementById("playAgain");
 const message = document.getElementById("message");
 
 /**
@@ -21,7 +20,7 @@ const startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    let countdownTimer = 60 * 3;
+    let countdownTimer = 60 * .15;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -208,12 +207,7 @@ function validateWin() {
     // Check if all unique numbers have been marked
     const isValid = uniqueNumbers.every(num => markedNumbers.includes(num));
     if (isValid) {
-        // alert("Bingo! You earned an XP level");
         message.innerHTML = "<p>Bingo! You earned an XP level</p>";
-        playAgain.style.visibility = "visible";
-        // Call enableRollBtn to reset the button after validation
-        // enableRollBtn();
-        // document.querySelector("#timer").textContent = "Roll to play again";
     } else {
         message.innerHTML = "<p>Oops! Your bingo card isn't complete yet</p>";
     }
@@ -249,8 +243,8 @@ function startTimer(duration, display) {
         // Display text when countdown has reached 0s
         if (--timeAdjust < 0) {
             clearInterval(timerInterval);
-            display.textContent = "00:00";
-            alert("Your time is up!")
+            display.textContent = "Play again?";
+            message.innerHTML = "<p>Your time is up!</p>";
             isTimeUp = true;
 
             // Reset btn-roll for new game
