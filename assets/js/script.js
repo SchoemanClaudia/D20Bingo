@@ -123,13 +123,13 @@ function diceRoll() {
         // Update the previous roll display
         let previousDisplay = '';
         if (previousNumRoll === 20) {
-            previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-hand-fist"></i>`;
+            previousDisplay = ` &nbsp; <span>${previousNumRoll}</span> <i class="fa-solid fa-hand-fist"></i>`;
         } else if (previousNumRoll === 1) {
-            previousDisplay = ` &nbsp; ${previousNumRoll} <i class="fa-solid fa-skull-crossbones"></i>`;
+            previousDisplay = ` &nbsp; <span>${previousNumRoll}</span> <i class="fa-solid fa-skull-crossbones"></i>`;
         } else if (previousNumRoll !== null) {
-            previousDisplay = ` &nbsp; ${previousNumRoll}`;
+            previousDisplay = ` &nbsp; <span>${previousNumRoll}</span>`;
         }
-        document.getElementById("numPanel").innerHTML = `Previous Roll: ${previousDisplay}`;
+        document.getElementById("numPanel").innerHTML = `Previous Roll: <span>${previousDisplay}</span>`;
 
         // Log the result and keep track
         if (!allRolledNum.includes(randomRoll)) {

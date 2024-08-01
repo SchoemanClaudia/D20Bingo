@@ -135,7 +135,7 @@ main {
 
 #message {
     color: #ffffff;
-    font-size: 120%;
+    font-size: 130%;
     padding-top: 15px;
 }
 
@@ -143,6 +143,12 @@ main {
     color: #ce6228;
     font-size: 220%;
     padding: 10px;
+    font-weight: 700;
+}
+
+span {
+    color: #ce6228;
+    font-size: 110%;
     font-weight: 700;
 }
 
