@@ -65,7 +65,9 @@ diceActivate.addEventListener("click", function () {
     diceRoll();
 });
 
-let isTimeUp = false; // Track time on countdown
+// Track time on countdown
+let isTimeUp = false;
+
 let autoRollInterval;
 let timerInterval;
 let timeAdjust;
@@ -89,10 +91,10 @@ const diceFrames = [
 function diceRoll() {
     // Hides message panel when alert completed
     message.innerHTML = "";
-    
+
     // Get a random number between 1 and 20
     const randomRoll = Math.ceil(Math.random() * 20);
-    const diceImage = "assets/images/dice" + randomRoll + ".webp";
+    const diceImage = `assets/images/dice${randomRoll}.webp`;
 
     // Animate D20 roll - https://learn.newmedia.dog/tutorials/p5-js/remainder/
     let frameIndex = 0;
@@ -165,8 +167,8 @@ const grid = document.getElementById("grid");
 
 let bingoCard = "";
 uniqueNumbers.forEach(num => {
-    let additional = "<div class='grid-box' id=" + num + " onclick='mark(" + num + ")'>" + num + "</div>";
-    bingoCard = bingoCard + additional;
+    let additional = `<div class='grid-box' id='${num}' onclick='mark(${num})'>${num}</div>`;
+    bingoCard += additional;
 });
 
 grid.innerHTML = bingoCard;
@@ -177,9 +179,7 @@ grid.innerHTML = bingoCard;
  */
 function mark(rolledNumber) {
     // No grid mark allowed if time is up
-    if (isTimeUp) {
-        return;
-    }
+    if (isTimeUp) return;
 
     if (allRolledNum.includes(rolledNumber)) {
         const markGrid = document.getElementById(rolledNumber);
@@ -202,10 +202,14 @@ function mark(rolledNumber) {
  * https://www.geeksforgeeks.org/create-a-bingo-game-using-javascript/
  */
 function validateWin() {
-    const gridSize = 4; // 16 blocks in 4x4 grid
+    // 16 blocks in 4x4 grid
+    const gridSize = 4;
     const rows = [];
     const cols = [];
-    const diagonals = [[], []];
+    const diagonals = [
+        [],
+        []
+    ];
     const lines = [];
 
     // Rows and columns within grid
@@ -218,8 +222,7 @@ function validateWin() {
         }
         rows.push(row);
         cols.push(col);
-        lines.push(row);
-        lines.push(col);
+        lines.push(row, col);
     }
 
     // Diagonal lines within grid
@@ -227,16 +230,15 @@ function validateWin() {
         diagonals[0].push(rows[i][i]);
         diagonals[1].push(rows[i][gridSize - 1 - i]);
     }
-    lines.push(diagonals[0]);
-    lines.push(diagonals[1]);
+    lines.push(diagonals[0], diagonals[1]);
 
     let isValid = false;
 
     // Validate lines marked in grid
-    lines.forEach(function(line) {
-        if (line.every(function(num) {
-            return markedNumbers.includes(num);
-        })) {
+    lines.forEach(function (line) {
+        if (line.every(function (num) {
+                return markedNumbers.includes(num);
+            })) {
             isValid = true;
         }
     });
@@ -255,8 +257,8 @@ function validateWin() {
 }
 
 const callBingo = document.getElementById("bingo");
-if (bingo) {
-    bingo.addEventListener("click", validateWin);
+if (callBingo) {
+    callBingo.addEventListener("click", validateWin);
 }
 
 /**
@@ -275,7 +277,7 @@ function startTimer(duration, display) {
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
 
-        display.textContent = minutes + ":" + seconds;
+        display.textContent = `${minutes}:${seconds}`;
 
         // Display text when countdown has reached 0s
         if (--timeAdjust < 0) {
