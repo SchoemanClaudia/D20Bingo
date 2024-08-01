@@ -200,11 +200,6 @@ let allRolledNum = [];
  * Validate only one diagonal, horizontal or vertical line in grid
  * match marked grid to rolled numbers logged 
  * If line is marked correctly, game is won
- */
-/**
- * Validate if one diagonal, horizontal, or vertical line in the bingo grid has been marked
- * match marked grid to rolled numbers logged
- * If one line is marked, the game is won
  * https://stackoverflow.com/questions/36840363/three-in-a-row-check-bingo
  * https://www.geeksforgeeks.org/create-a-bingo-game-using-javascript/
  */
@@ -250,6 +245,10 @@ function validateWin() {
 
     if (isValid) {
         message.innerHTML = `<p>Bingo! You earned an XP level <i class="fa-solid fa-hand-fist"></p>`;
+        // Stop all game play functions
+        clearInterval(autoRollInterval);
+        clearInterval(timerInterval);
+        document.getElementById("bingo").disabled = true;
     } else {
         message.innerHTML = `<p>Oops! No bingo just yet <i class="fa-solid fa-skull-crossbones"></i></p>`;
     }
