@@ -65,10 +65,13 @@ diceActivate.addEventListener("click", function () {
     diceRoll();
 });
 
-// Track time on countdown
-let isTimeUp = false;
+let isTimeUp = false; // Track time on countdown
 let autoRollInterval;
+let timerInterval;
 let timeAdjust;
+let previousNumRoll = null;
+let markedNumbers = [];
+let allRolledNum = [];
 
 const diceFrames = [
     "assets/images/frame1.webp",
@@ -137,8 +140,6 @@ function diceRoll() {
     }, animateTimeFrame);
 }
 
-let previousNumRoll = null;
-
 /**
  * Generate a length < 16 numbers for a random array between 1 to 20 
  * Log unique array of length < 16 random numbers between 1 to 20
@@ -192,9 +193,6 @@ function mark(rolledNumber) {
         console.log("Number not rolled");
     }
 }
-
-let markedNumbers = [];
-let allRolledNum = [];
 
 /**
  * Validate only one diagonal, horizontal or vertical line in grid
@@ -260,8 +258,6 @@ const callBingo = document.getElementById("bingo");
 if (bingo) {
     bingo.addEventListener("click", validateWin);
 }
-
-let timerInterval;
 
 /**
  * Creates a countdown timer for min and sec
