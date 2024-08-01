@@ -1,4 +1,6 @@
-var diceActivate = document.querySelector(".btn-roll");
+const diceActivate = document.querySelector(".btn-roll");
+const playAgain = document.getElementById("playAgain");
+const message = document.getElementById("message");
 
 /**
  * Activates auto loop function on game start
@@ -12,14 +14,14 @@ function autoDiceRoll() {
 }
 
 // Start timer on initial roll with click of roll button
-var startGame = document.querySelector("#start");
+const startGame = document.querySelector("#start");
 
 /**
  * Countdown timer activates only on game start
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    var countdownTimer = 60 * 3;
+    let countdownTimer = 60 * 3;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -132,8 +134,8 @@ function diceRoll() {
 
         // Adjust countdown to +10 seconds if 20 rolled
         if (randomRoll === 20) {
-            timeAdjust += 10; 
-        } 
+            timeAdjust += 10;
+        }
     }, animateTimeFrame);
 }
 
@@ -205,12 +207,14 @@ function validateWin() {
     // Check if all unique numbers have been marked
     const isValid = uniqueNumbers.every(num => markedNumbers.includes(num));
     if (isValid) {
-        alert("Bingo! You earned an XP level");
+        // alert("Bingo! You earned an XP level");
+        message.innerHTML = "<p>Bingo! You earned an XP level</p>";
+        playAgain.style.visibility = "visible";
         // Call enableRollBtn to reset the button after validation
-        enableRollBtn();
-        document.querySelector("#timer").textContent = "Roll to play again";
+        // enableRollBtn();
+        // document.querySelector("#timer").textContent = "Roll to play again";
     } else {
-        alert("Oops! Your bingo card isn't complete yet");
+        message.innerHTML = "<p>Oops! Your bingo card isn't complete yet</p>";
     }
 
     console.log(isValid);
