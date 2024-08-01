@@ -20,7 +20,7 @@ const startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    let countdownTimer = 60 * .15;
+    let countdownTimer = 60 * 1.5;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -197,17 +197,61 @@ let markedNumbers = [];
 let allRolledNum = [];
 
 /**
- * Validate if all numbers in the bingo grid have been marked 
+ * Validate only one diagonal, horizontal or vertical line in grid
  * match marked grid to rolled numbers logged 
- * If rolled num is not marked on grid = false
+ * If line is marked correctly, game is won
+ */
+/**
+ * Validate if one diagonal, horizontal, or vertical line in the bingo grid has been marked
+ * match marked grid to rolled numbers logged
+ * If one line is marked, the game is won
+ * https://stackoverflow.com/questions/36840363/three-in-a-row-check-bingo
+ * https://www.geeksforgeeks.org/create-a-bingo-game-using-javascript/
  */
 function validateWin() {
-    // Check if all unique numbers have been marked
-    const isValid = uniqueNumbers.every(num => markedNumbers.includes(num));
+    const gridSize = 4; // 16 blocks in 4x4 grid
+    const rows = [];
+    const cols = [];
+    const diagonals = [[], []];
+    const lines = [];
+
+    // Rows and columns within grid
+    for (let i = 0; i < gridSize; i++) {
+        const row = [];
+        const col = [];
+        for (let j = 0; j < gridSize; j++) {
+            row.push(uniqueNumbers[i * gridSize + j]);
+            col.push(uniqueNumbers[j * gridSize + i]);
+        }
+        rows.push(row);
+        cols.push(col);
+        lines.push(row);
+        lines.push(col);
+    }
+
+    // Diagonal lines within grid
+    for (let i = 0; i < gridSize; i++) {
+        diagonals[0].push(rows[i][i]);
+        diagonals[1].push(rows[i][gridSize - 1 - i]);
+    }
+    lines.push(diagonals[0]);
+    lines.push(diagonals[1]);
+
+    let isValid = false;
+
+    // Validate lines marked in grid
+    lines.forEach(function(line) {
+        if (line.every(function(num) {
+            return markedNumbers.includes(num);
+        })) {
+            isValid = true;
+        }
+    });
+
     if (isValid) {
-        message.innerHTML = "<p>Bingo! You earned an XP level</p>";
+        message.innerHTML = `<p>Bingo! You earned an XP level <i class="fa-solid fa-hand-fist"></p>`;
     } else {
-        message.innerHTML = "<p>Oops! Your bingo card isn't complete yet</p>";
+        message.innerHTML = `<p>Oops! No bingo just yet <i class="fa-solid fa-skull-crossbones"></i></p>`;
     }
 
     console.log(isValid);
