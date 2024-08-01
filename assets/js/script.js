@@ -20,7 +20,7 @@ const startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    let countdownTimer = 60 * 1.5;
+    let countdownTimer = 60 * .15;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -34,6 +34,9 @@ function onStartRoll() {
 
     // Remove event listener to prevent re-starting timer
     startGame.removeEventListener("click", onStartRoll);
+
+    // Reset the game state
+    resetGame();
 }
 
 // Create loop for background music -https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
@@ -249,6 +252,8 @@ function validateWin() {
         clearInterval(autoRollInterval);
         clearInterval(timerInterval);
         document.getElementById("bingo").disabled = true;
+        // Re-enable the roll button and reset the game state
+        enableRollBtn();
     } else {
         message.innerHTML = `<p>Oops! No bingo just yet <i class="fa-solid fa-skull-crossbones"></i></p>`;
     }
@@ -324,8 +329,8 @@ function enableRollBtn() {
     // Add the event listener back to start a new game
     startGame.addEventListener("click", onStartRoll);
 
-    // Call resetGame to clear the game state
-    resetGame();
+    // Re-enable the bingo button after each game
+    document.getElementById("bingo").disabled = false;
 
     // Remove all existing countdowns
     clearInterval(timerInterval);
