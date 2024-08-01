@@ -37,8 +37,7 @@ a {
     width: auto;
 }
 
-.btn-roll,
-.btn-bingo {
+.btn-roll {
     display: inline-block;
     text-transform: uppercase;
     color: #ffffff;
@@ -171,4 +170,17 @@ span {
     padding: 10px;
     font-size: 150%;
     text-align: center;
+}
+
+.btn-bingo {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ce6228;
+    border: none;
+    font-weight: 600;
+    font-size: 120%;
+    letter-spacing: 2px;
+    padding: 10px 4em;
+    margin-bottom: 30px;
 }
