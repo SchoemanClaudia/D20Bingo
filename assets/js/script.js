@@ -84,11 +84,9 @@ const diceFrames = [
  * https://www.youtube.com/watch?v=UkmNL7eJqsU
  */
 function diceRoll() {
-    if (isTimeUp) {
-        return;
-    }
     // Hides message panel when alert completed
     message.innerHTML = "";
+    
     // Get a random number between 1 and 20
     const randomRoll = Math.ceil(Math.random() * 20);
     const diceImage = "assets/images/dice" + randomRoll + ".webp";
