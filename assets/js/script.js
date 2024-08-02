@@ -20,7 +20,7 @@ const startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    let countdownTimer = 60 * .15;
+    let countdownTimer = 60 * 1;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -306,12 +306,19 @@ function resetGame() {
     markedNumbers = [];
     allRolledNum = [];
 
-    // Refresh bingo grid with new unique int array
-    uniqueNumbers.forEach(num => {
-        // Remove marks from gird and refresh
-        const markGrid = document.getElementById(num);
-        markGrid.style.backgroundImage = "none";
+    // Display new unique number array within bingo grid
+    const newUniqueNumbers = generateRandomArray();
+    uniqueNumbers.length = 0;
+    newUniqueNumbers.forEach(num => uniqueNumbers.push(num));
+
+    // Refresh bingo grid in array with new game roll
+    let bingoCard = "";
+    newUniqueNumbers.forEach(num => {
+        let additional = `<div class='grid-box' id='${num}' onclick='mark(${num})'>${num}</div>`;
+        bingoCard += additional;
     });
+
+    grid.innerHTML = bingoCard;
 
     previousNumRoll = null;
     document.getElementById("numPanel").innerHTML = null;
