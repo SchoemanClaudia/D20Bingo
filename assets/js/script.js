@@ -141,12 +141,12 @@ function diceRoll() {
         // Adjust countdown to +10sec if 20 rolled
         if (randomRoll === 20) {
             timeAdjust += 10;
-            message.innerHTML = `<span><i class="fa-solid fa-plus"></i> &nbsp; 10 seconds</span>`;
+            message.innerHTML = `<span>Saving throw &nbsp; <i class="fa-solid fa-hand-fist"></i></span>`;
         }
         // Adjust countdown to -10sec if 1 rolled
         if (randomRoll === 1) {
             timeAdjust -= 10;
-            message.innerHTML = `<span><i class="fa-solid fa-minus"></i> &nbsp; 10 seconds</span>`;
+            message.innerHTML = `<span>Death throw &nbsp; <i class="fa-solid fa-skull-crossbones"></i></span>`;
         }
     }, animateTimeFrame);
 }
@@ -253,7 +253,7 @@ function validateWin() {
     });
 
     if (isValid) {
-        message.innerHTML = `<p>Bingo! You earned an XP level <i class="fa-solid fa-hand-fist"></i></p>`;
+        message.innerHTML = `<span>You beat the clock & won!</span><p>The roll of the D20 was in your favour</p>`;
         // Stop all game play functions
         clearInterval(autoRollInterval);
         clearInterval(timerInterval);
@@ -261,7 +261,7 @@ function validateWin() {
         // Re-enable the roll button and reset the game state
         enableRollBtn();
     } else {
-        message.innerHTML = `<p>Oops! No bingo just yet <i class="fa-solid fa-skull-crossbones"></i></p>`;
+        message.innerHTML = `<span>Oops!</span><p>No bingo just yet</p>`;
     }
 
     console.log(isValid);
@@ -293,8 +293,8 @@ function startTimer(duration, display) {
         // Display text when countdown has reached 0s
         if (--timeAdjust < 0) {
             clearInterval(timerInterval);
-            display.textContent = "Play again?";
-            message.innerHTML = "<p>Your time is up!</p>";
+            display.textContent = "00:00";
+            message.innerHTML = `<span>Your time ran out!</span><p>Better luck on next roll</p>`;
             isTimeUp = true;
 
             // Reset btn-roll for new game
