@@ -20,7 +20,7 @@ const startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    let countdownTimer = 60 * 1;
+    let countdownTimer = 60 * .75;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -138,9 +138,15 @@ function diceRoll() {
         previousNumRoll = randomRoll;
         console.log(randomRoll);
 
-        // Adjust countdown to +10 seconds if 20 rolled
+        // Adjust countdown to +10sec if 20 rolled
         if (randomRoll === 20) {
             timeAdjust += 10;
+            message.innerHTML = `<span><i class="fa-solid fa-plus"></i> &nbsp; 10 seconds</span>`;
+        }
+        // Adjust countdown to -10sec if 1 rolled
+        if (randomRoll === 1) {
+            timeAdjust -= 10;
+            message.innerHTML = `<span><i class="fa-solid fa-minus"></i> &nbsp; 10 seconds</span>`;
         }
     }, animateTimeFrame);
 }
