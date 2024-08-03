@@ -98,6 +98,13 @@ nav {
 }
 
 /* Main content */
+/* Background image */
+#background {
+    background: url("../images/background.webp") no-repeat center center/cover;
+    position: relative;
+    width: auto;
+}
+
 main {
     /* Main takes up space to push footer down */
     flex: 1 0 auto;
@@ -108,13 +115,6 @@ main {
 }
 
 /* Landing/Rulebook Page */
-/* Background image */
-#background-scroll {
-    background: url("../images/background-scroll.webp") no-repeat center center/cover;
-    position: relative;
-    width: auto;
-}
-
 /* About & Rules sections */
 #scroll-text {
     display:flex;
@@ -158,13 +158,6 @@ h2 {
 }
 
 /* Game Page */
-/* Background image game.html */
-#background {
-    background: url("../images/background.webp") no-repeat center center/cover;
-    position: relative;
-    width: auto;
-}
-
 .btn-roll {
     display: inline-block;
     text-transform: uppercase;
