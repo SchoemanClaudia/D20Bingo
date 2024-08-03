@@ -65,7 +65,7 @@ header {
 
 /* Show which button is active */
 /* https://www.reddit.com/r/twinegames/comments/tn4hhi/help_keeping_an_element_active_after_clicking_on/ */
-#btn-on:focus, 
+#btn-on:focus,
 #btn-mute:focus {
     background-color: #ffffff;
     color: #b5562c;
@@ -92,7 +92,7 @@ main {
 /* Landing/Rulebook Page */
 /* About & Rules sections */
 #scroll-text {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-align: center;
     margin: 5px;
@@ -100,7 +100,7 @@ main {
 
 #about-section,
 #rules-section {
-    background-color: rgba(181, 86, 44, .8);
+    background-color: rgba(0, 0, 0, .8);
     padding: 15px;
     margin: 0 20px 10px 20px;
 }
@@ -114,13 +114,15 @@ main {
 .panel {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-  }
+}
 
 .text-panel {
     text-align: left;
+    line-height: 20px;
 }
 
 .text-panel>h3 {
+    color: #ce6228;
     font-size: 90%;
     padding-top: 10px;
     padding-bottom: 5px;
@@ -132,6 +134,7 @@ main {
 
 h2 {
     font-family: 'Anton SC', sans-serif;
+    font-size: 125%;
     color: #ffffff;
     letter-spacing: 2px;
     text-decoration: 2px overline #ce6228;
@@ -212,4 +215,9 @@ span {
     letter-spacing: 2px;
     padding: 10px 4em;
     margin-bottom: 30px;
+}
+
+footer {
+    background-color: #000000;
+    padding: 15px;
 }
