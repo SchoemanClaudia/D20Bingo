@@ -39,29 +39,23 @@ function onStartRoll() {
     resetGame();
 }
 
-// Create loop for background music - https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
+// Create loop for background music -https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
 const backgroundMusic = new Audio("assets/sounds/backgroundMusic.mp3");
 backgroundMusic.loop = true;
 
 // Mute background music on site load
 window.addEventListener("load", function () {
     backgroundMusic.pause();
-    console.log("Background music paused on load");
 });
 
 let soundMute = true;
 
 // Controls for sound playback
 document.getElementById("btn-on").addEventListener("click", function () {
-    console.log("Sound On button clicked");
     soundMute = false;
-    backgroundMusic.play().catch(function(error) {
-        console.error("Audio playback failed:", error);
-    });
+    backgroundMusic.play();
 });
-
 document.getElementById("btn-mute").addEventListener("click", function () {
-    console.log("Sound Mute button clicked");
     soundMute = true;
     backgroundMusic.pause();
 });
@@ -69,9 +63,7 @@ document.getElementById("btn-mute").addEventListener("click", function () {
 // Sound added to dice roll - https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
 diceActivate.addEventListener("click", function () {
     if (!soundMute) {
-        new Audio("assets/sounds/diceSound.mp3").play().catch(function(error) {
-            console.error("Dice sound playback failed:", error);
-        });
+        new Audio("assets/sounds/diceSound.mp3").play();
     }
     diceRoll();
 });
