@@ -30,6 +30,22 @@ a {
     color: inherit;
 }
 
+/* Sound Buttons */
+#btn-on,
+#btn-mute {
+    display: inline-block;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ce6228;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 2px 5px;
+    cursor: pointer;
+    margin-bottom: 2em;
+}
+
 .hidden {
     display: none;
 }
@@ -83,20 +99,6 @@ nav {
     border-bottom: 2px solid #ffffff;
 }
 
-#btn-on,
-#btn-mute {
-    display: inline-block;
-    text-transform: uppercase;
-    background-color: #ffffff;
-    color: #ce6228;
-    border: 1px solid #ce6228;
-    border-radius: 4px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    padding: 2px 5px;
-    cursor: pointer;
-}
-
 /* Main content */
 /* Background image */
 #background {
@@ -117,7 +119,7 @@ main {
 /* Landing/Rulebook Page */
 /* About & Rules sections */
 #scroll-text {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-align: left;
     background-color: rgba(184, 86, 44, .6);
