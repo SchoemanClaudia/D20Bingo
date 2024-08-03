@@ -34,38 +34,6 @@ a {
     display: none;
 }
 
-/* Background image game.html */
-#background {
-    background: url("../images/background.webp") no-repeat center center/cover;
-    position: relative;
-    width: auto;
-}
-
-/* Background image index.html */
-#background-scroll {
-    background: url("../images/background-scroll.webp") no-repeat center center/cover;
-    position: relative;
-    width: auto;
-}
-
-.btn-roll {
-    display: inline-block;
-    text-transform: uppercase;
-    color: #ffffff;
-    background-color: #ce6228;
-    border: none;
-    font-weight: 600;
-    font-size: 150%;
-    letter-spacing: 2px;
-    padding: 10px 15px;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #ce6228;
-    border: 2px solid #ce6228;
-}
-
 /* Header */
 header {
     background-color: #b5562c;
@@ -137,6 +105,68 @@ main {
     /* Enable flex properties for child elements */
     display: flex;
     flex-direction: column;
+}
+
+
+/* Landing/Rulebook Page */
+/* Background image */
+#background-scroll {
+    background: url("../images/background-scroll.webp") no-repeat center center/cover;
+    position: relative;
+    width: auto;
+}
+
+#scroll-text {
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-start {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: transparent;
+    border: 3px solid #ce6228;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+
+
+/* Game Page */
+/* Background image game.html */
+#background {
+    background: url("../images/background.webp") no-repeat center center/cover;
+    position: relative;
+    width: auto;
+}
+
+h2 {
+    font-family: 'Anton SC', sans-serif;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-decoration: 2px overline #ce6228;
+}
+
+.btn-roll {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ce6228;
+    border: none;
+    font-weight: 600;
+    font-size: 150%;
+    letter-spacing: 2px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #ce6228;
+    border: 2px solid #ce6228;
 }
 
 /* D20 dice */
