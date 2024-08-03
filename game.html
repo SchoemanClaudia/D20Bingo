@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Search engines meta keywords -->
+    <meta name="description" content="Saving throw with D20 Bingo, how will you build your XP level?">
+    <meta name="keywords" content="Bingo, D20 dice, 4x4 bingo, roll for initiative, XP level">
+    <!-- Tab title -->
+    <title>D20 Bingo</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <h1 id="logo">D20 Bingo!</h1>
+        </a>
+        <input type="checkbox" id="nav-menu" name="nav-menu">
+        <label for="nav-menu" class="nav-menu-toggle" aria-label="Menu toggle (opens navigation for mobile)">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html" aria-label="Rules page navigation (opens home page)">Rulebook</a></li>
+                <li><a href="game.html" class="active" aria-label="Game page navigation (opens game page)">New Game</a></li>
+                <li><a href="https://theroarbots.com/roll-the-dice-a-brief-history-of-the-humble-d20/" target="_blank"
+                        aria-label="A Brief History of the Humble D20 (opens external link)">What is a D20?</a></li>
+                <li><button id="btn-on" aria-label="Sound on"><i class="fa-solid fa-volume-high"></i></button>&nbsp;
+                    <button id="btn-mute" aria-label="Sound off"><i class="fa-solid fa-volume-xmark"></i></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="background" title="Dimly lit secluded passage towards a locked dungeon door">
+        <!-- Dice roll -->
+        <section id="dice-section">
+            <div>
+                <h2 class="hidden">D20 Dice Roll</h2>
+                <img class="dice-img" src="assets/images/dice20.webp" alt="D20 dice">
+            </div>
+            <div>
+                <button type="button" id="start" class="btn-roll"></button>
+            </div>
+        </section>
+
+        <!-- Message Panel -->
+        <section>
+            <h2 class="hidden">Game Play Message</h2>
+            <div id="message"></div>
+        </section>
+
+        <!-- Countdown timer -->
+        <section>
+            <div id="countdown">
+                <h2 class="hidden">Countdown Timer</h2>
+                <p id="timer">Roll dice to start</p>
+            </div>
+        </section>
+
+        <!-- Called numbers panel -->
+        <section>
+            <div id="called-num">
+                <h2 class="hidden">Previous Number Rolled</h2>
+                <p id="numPanel"></p>
+            </div>
+        </section>
+
+        <!-- Bingo grid -->
+        <section id="grid">
+            <h2 class="hidden">Bingo Grid Box</h2>
+            <div class="grid-box"></div>
+        </section>
+
+        <!-- Bingo Button -->
+        <section>
+            <div>
+                <h2 class="hidden">Call Bingo</h2>
+                <button type="button" id="bingo" class="btn-bingo">Bingo!</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div>
+            <h2 class="hidden">Footer</h2>
+        </div>
+    </footer>
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/49f8c5c44f.js" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
