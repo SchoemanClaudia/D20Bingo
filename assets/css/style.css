@@ -89,7 +89,6 @@ main {
     flex-direction: column;
 }
 
-/* Landing/Rulebook Page */
 /* About & Rules sections */
 #scroll-text {
     display: flex;
@@ -220,4 +219,24 @@ span {
 footer {
     background-color: #000000;
     padding: 15px;
+}
+
+/* Media query: large or landscape phones (576px and up) */
+@media screen and (min-width: 576px) {
+
+    /* About & Rules sections */
+    #scroll-text {
+        margin: 20px;
+    }
+
+    #about-section,
+    #rules-section {
+        padding: 15px 50px;
+        margin: 0 40px 10px 40px;
+    }
+
+    .text-panel {
+        text-align: center;
+    }
+
 }
