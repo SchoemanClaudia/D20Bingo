@@ -68,6 +68,21 @@ diceActivate.addEventListener("click", function () {
     diceRoll();
 });
 
+/* Dropdown on text sections - https://www.w3schools.com/howto/howto_js_accordion.asp */
+const dropdowns = document.getElementsByClassName("dropdown");
+for (let dropdownSections of dropdowns) {
+    dropdownSections.addEventListener('click', function () {
+
+        /* Toggle between showing & hiding panels */
+        let panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+
 // Track time on countdown
 let isTimeUp = false;
 
