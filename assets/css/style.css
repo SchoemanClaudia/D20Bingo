@@ -11,6 +11,7 @@
 /* Generic */
 h1 {
     font-family: 'Anton SC', sans-serif;
+    font-size: 200%;
     color: #ffffff;
     letter-spacing: 3px;
 }
@@ -59,7 +60,7 @@ header {
     letter-spacing: 2px;
     padding: 2px 5px;
     cursor: pointer;
-    margin-top: 8px;
+    margin-top: 15px;
 }
 
 /* Show which button is active */
@@ -93,21 +94,39 @@ main {
 #scroll-text {
     display:flex;
     flex-direction: column;
+    text-align: center;
+    margin: 5px;
+}
+
+#about-section,
+#rules-section {
+    background-color: rgba(181, 86, 44, .8);
+    padding: 15px;
+    margin: 0 20px 10px 20px;
+}
+
+.dropdown {
+    cursor: pointer;
+    transition: 0.5s;
+    width: 100%;
+}
+
+.panel {
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+.text-panel {
     text-align: left;
-    background-color: rgba(184, 86, 44, .6);
-    margin: 20px;
 }
 
-.content {
-    margin: auto 1.5em;
-}
-
-.content>h3 {
+.text-panel>h3 {
     font-size: 90%;
-    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 5px;
 }
 
-.content>p {
+.text-panel>p {
     font-size: 80%;
 }
 
@@ -116,7 +135,6 @@ h2 {
     color: #ffffff;
     letter-spacing: 2px;
     text-decoration: 2px overline #ce6228;
-    padding: 30px 0 10px 0;
 }
 
 /* Game Section */
