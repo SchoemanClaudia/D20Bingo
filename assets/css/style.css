@@ -34,9 +34,16 @@ a {
     display: none;
 }
 
-/* Background image */
+/* Background image game.html */
 #background {
     background: url("../images/background.webp") no-repeat center center/cover;
+    position: relative;
+    width: auto;
+}
+
+/* Background image index.html */
+#background-scroll {
+    background: url("../images/background-scroll.webp") no-repeat center center/cover;
     position: relative;
     width: auto;
 }
