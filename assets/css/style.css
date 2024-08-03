@@ -50,16 +50,25 @@ header {
 /* Sound Buttons */
 #btn-on,
 #btn-mute {
-    display: inline-block;
     text-transform: uppercase;
-    background-color: #ffffff;
-    color: #ce6228;
-    border: 1px solid #ce6228;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
     border-radius: 4px;
     font-weight: 600;
     letter-spacing: 2px;
     padding: 2px 5px;
     cursor: pointer;
+    margin-top: 8px;
+}
+
+/* Show which button is active */
+/* https://www.reddit.com/r/twinegames/comments/tn4hhi/help_keeping_an_element_active_after_clicking_on/ */
+#btn-on:focus, 
+#btn-mute:focus {
+    background-color: #ffffff;
+    color: #b5562c;
+    border: 1px solid #ffffff;
 }
 
 /* Main content */
