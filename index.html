@@ -28,7 +28,9 @@
         </label>
         <nav>
             <ul id="navbar">
-                <li><a href="rules.html" aria-label="Rules page navigation (opens rules page)">Rulebook</a></li>
+                <li><a href="index.html" class="active"
+                        aria-label="Rules page navigation (opens rules page)">Rulebook</a></li>
+                <li><a href="game.html" aria-label="Home page navigation (opens home page)">New Game</a></li>
                 <li><a href="https://theroarbots.com/roll-the-dice-a-brief-history-of-the-humble-d20/" target="_blank"
                         aria-label="A Brief History of the Humble D20 (opens external link)">What is a D20?</a></li>
                 <li><button id="btn-on" aria-label="Sound on"><i class="fa-solid fa-volume-high"></i></button>&nbsp;
@@ -37,10 +39,11 @@
         </nav>
     </header>
 
-    <main id="background" title=" ">
+    <main id="background" title="Dimly lit secluded passage towards a locked dungeon door">
         <!-- Dice roll -->
         <section id="dice-section">
             <div>
+                <h2 class="hidden">D20 Dice Roll</h2>
                 <img class="dice-img" src="assets/images/dice20.webp" alt="D20 dice">
             </div>
             <div>
@@ -50,12 +53,14 @@
 
         <!-- Message Panel -->
         <section>
+            <h2 class="hidden">Game Play Message</h2>
             <div id="message"></div>
         </section>
 
         <!-- Countdown timer -->
         <section>
             <div id="countdown">
+                <h2 class="hidden">Countdown Timer</h2>
                 <p id="timer">Roll dice to start</p>
             </div>
         </section>
@@ -63,18 +68,21 @@
         <!-- Called numbers panel -->
         <section>
             <div id="called-num">
+                <h2 class="hidden">Previous Number Rolled</h2>
                 <p id="numPanel"></p>
             </div>
         </section>
 
         <!-- Bingo grid -->
         <section id="grid">
+            <h2 class="hidden">Bingo Grid Box</h2>
             <div class="grid-box"></div>
         </section>
 
         <!-- Bingo Button -->
         <section>
             <div>
+                <h2 class="hidden">Call Bingo</h2>
                 <button type="button" id="bingo" class="btn-bingo">Bingo!</button>
             </div>
         </section>
@@ -82,7 +90,9 @@
 
     <!-- Footer -->
     <footer>
-        <div></div>
+        <div>
+            <h2 class="hidden">Footer</h2>
+        </div>
     </footer>
 
     <!-- Font Awesome Kit -->

@@ -193,7 +193,7 @@ function mark(rolledNumber) {
     if (allRolledNum.includes(rolledNumber)) {
         const markGrid = document.getElementById(rolledNumber);
         markGrid.style.backgroundImage = "url('assets/images/dabber-mark.webp')";
-        markGrid.style.backgroundSize = "52px";
+        markGrid.style.backgroundSize = "50px";
 
         if (!markedNumbers.includes(rolledNumber)) {
             markedNumbers.push(rolledNumber);

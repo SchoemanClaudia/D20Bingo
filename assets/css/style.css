@@ -30,6 +30,10 @@ a {
     color: inherit;
 }
 
+.hidden {
+    display: none;
+}
+
 /* Background image */
 #background {
     background: url("../images/background.webp") no-repeat center center/cover;
@@ -51,13 +55,13 @@ a {
 }
 
 .btn:hover {
-    background-color: #b5562c;
-    border: 2px solid #b5562c;
+    background-color: #ce6228;
+    border: 2px solid #ce6228;
 }
 
 /* Header */
 header {
-    background-color: #ce6228;
+    background-color: #b5562c;
     padding: 1rem;
     position: fixed;
     z-index: 99;
@@ -158,15 +162,16 @@ span {
     display: grid;
     text-align: center;
     grid-template-columns: repeat(4, 1fr);
-    background-color: #ce6228;
+    background-color: #b5562c;
     padding: 10px;
     margin: 15px auto;
 }
 
 .grid-box {
     color: black;
+    font-weight: 500;
     background-color: #ffffff;
-    border: 2px solid #ce6228;
+    border: 2px solid #b5562c;
     padding: 10px;
     font-size: 150%;
     text-align: center;
