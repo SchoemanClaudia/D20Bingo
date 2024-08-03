@@ -107,7 +107,6 @@ main {
     flex-direction: column;
 }
 
-
 /* Landing/Rulebook Page */
 /* Background image */
 #background-scroll {
@@ -116,10 +115,34 @@ main {
     width: auto;
 }
 
+/* About & Rules sections */
 #scroll-text {
-    margin-top: 10rem;
-    display: flex;
+    display:flex;
     flex-direction: column;
+    text-align: left;
+    background-color: rgba(184, 86, 44, .6);
+    margin: 20px;
+}
+
+.content {
+    margin: auto 1.5em;
+}
+
+.content>h3 {
+    font-size: 90%;
+    padding: 5px;
+}
+
+.content>p {
+    font-size: 80%;
+}
+
+h2 {
+    font-family: 'Anton SC', sans-serif;
+    color: #ffffff;
+    letter-spacing: 2px;
+    text-decoration: 2px overline #ce6228;
+    padding: 30px 0 10px 0;
 }
 
 .btn-start {
@@ -129,12 +152,10 @@ main {
     background-color: transparent;
     border: 3px solid #ce6228;
     font-weight: 600;
-    letter-spacing: 1px;
     padding: 10px 15px;
     cursor: pointer;
+    margin: 20px;
 }
-
-
 
 /* Game Page */
 /* Background image game.html */
@@ -142,13 +163,6 @@ main {
     background: url("../images/background.webp") no-repeat center center/cover;
     position: relative;
     width: auto;
-}
-
-h2 {
-    font-family: 'Anton SC', sans-serif;
-    color: #ffffff;
-    letter-spacing: 2px;
-    text-decoration: 2px overline #ce6228;
 }
 
 .btn-roll {
