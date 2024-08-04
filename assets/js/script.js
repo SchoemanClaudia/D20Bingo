@@ -20,7 +20,7 @@ const startGame = document.querySelector("#start");
  * timer starts on initial btn-roll click
  */
 function onStartRoll() {
-    let countdownTimer = 60 * .75;
+    let countdownTimer = 60 * 0.75;
     display = document.querySelector("#timer");
     timeAdjust = countdownTimer;
     // Reset when game starts again
@@ -114,6 +114,7 @@ const diceFrames = [
 /**
  * Rolls through D20 dice img at random from 1 to 20
  * https://www.youtube.com/watch?v=UkmNL7eJqsU
+ * D20 dice face image - https://g.co/kgs/yqNwzxd
  */
 function diceRoll() {
     // Hides message panel when alert completed
