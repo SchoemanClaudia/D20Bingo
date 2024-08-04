@@ -11,7 +11,6 @@
 /* Generic */
 h1 {
     font-family: 'Anton SC', sans-serif;
-    font-size: 200%;
     color: #ffffff;
     letter-spacing: 3px;
 }
@@ -38,7 +37,7 @@ a {
 /* Header */
 header {
     background-color: #b5562c;
-    padding: 1rem;
+    padding: 5px 30px;
     position: fixed;
     z-index: 99;
     width: 100%;
@@ -60,7 +59,7 @@ header {
     letter-spacing: 2px;
     padding: 2px 5px;
     cursor: pointer;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 /* Show which button is active */
@@ -83,7 +82,7 @@ header {
 main {
     /* Main takes up space to push footer down */
     flex: 1 0 auto;
-    margin-top: 100px;
+    margin-top: 80px;
     /* Enable flex properties for child elements */
     display: flex;
     flex-direction: column;
@@ -223,6 +222,22 @@ footer {
 
 /* Media query: large or landscape phones (576px and up) */
 @media screen and (min-width: 576px) {
+
+    /* Header */
+    header {
+        padding: 15px 30px;
+    }
+
+    /* Logo text */
+    h1 {
+        font-size: 200%;
+    }
+
+    /* Sound Buttons */
+    #btn-on,
+    #btn-mute {
+        margin-top: 15px;
+    }
 
     /* About & Rules sections */
     #scroll-text {
