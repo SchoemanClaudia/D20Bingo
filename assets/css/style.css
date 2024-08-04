@@ -103,6 +103,8 @@ main {
     margin: 0 20px;
 }
 
+/* Dropdown on text sections  */
+/* https://www.w3schools.com/howto/howto_js_accordion.asp */
 .dropdown {
     cursor: pointer;
     transition: 0.5s;
@@ -150,11 +152,6 @@ h2 {
     letter-spacing: 2px;
     padding: 10px 15px;
     cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #ce6228;
-    border: 2px solid #ce6228;
 }
 
 /* D20 dice */
@@ -215,6 +212,7 @@ span {
     margin-bottom: 30px;
 }
 
+/* Footer */
 footer {
     font-size: 80%;
     background-color: #000000;
@@ -241,7 +239,6 @@ footer {
     }
 
     main {
-        /* Main takes up space to push footer down */
         margin-top: 55px;
     }
 
@@ -255,8 +252,18 @@ footer {
         padding: 15px 60px;
     }
 
+    .dropdown:hover {
+        background-color: #ce6228;
+    }
+
     .text-panel {
         text-align: center;
+    }
+
+    .btn-roll:hover,
+    .btn-bingo:hover {
+        background-color: #b5562c;
+        border: 2px solid #b5562c;
     }
 
 }
