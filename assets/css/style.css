@@ -142,7 +142,8 @@ h2 {
 }
 
 /* Game Section */
-.btn-roll {
+.btn-roll,
+.btn-home {
     display: inline-block;
     text-transform: uppercase;
     color: #ffffff;
@@ -213,6 +214,23 @@ span {
     margin-bottom: 30px;
 }
 
+/* Error 404 Page */
+.error-page-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.dice-404 {
+    margin-top: 5em;
+    max-width: 200px;
+}
+
+.btn-home {
+    margin-top: 40px;
+}
+
 /* Footer */
 footer {
     font-size: 80%;
@@ -262,7 +280,8 @@ footer {
     }
 
     .btn-roll:hover,
-    .btn-bingo:hover {
+    .btn-bingo:hover,
+    .btn-home:hover {
         background-color: #b5562c;
         border: 2px solid #b5562c;
     }

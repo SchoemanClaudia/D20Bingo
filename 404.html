@@ -12,7 +12,7 @@
     <title>D20 Bingo</title>
     <!-- Prefetch to load img sooner -->
     <link rel="prefetch" href="assets/images/background.webp">
-    <link rel="prefetch" href="assets/images/dice20.webp">
+    <link rel="prefetch" href="assets/images/dice404.webp">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -43,41 +43,32 @@
 
     <main id="background" title="Dimly lit secluded passage towards a locked dungeon door">
         <!-- 404 Dice Display -->
-        <section id="dice-section">
+        <section class="error-page-text">
             <div>
                 <h2 class="hidden">404 Error Dice</h2>
-                <img class="dice-img" src="" alt="">
+                <img class="dice-404" src="assets/images/dice404.webp" alt="Error 404 die">
             </div>
-        </section>
 
-        <section>
             <!-- 404 Error Message -->
-            <div class="404-text">
+            <div>
                 <h2 class="hidden">404 Error</h2>
-                <p><br>
-                    <b>Oh, man.</b> Your D20 might have fallen off the table.
-                    Try returning back to a new game, we think your D20 will forgive us.
-                </p>
+                <h1>Oh, man. Your D20 might have fallen off the table.</h1>
+                <br>
+                <p>Try returning back to a new game, we think your D20 will forgive us.</p>
             </div>
+
             <!-- Back to Game Button -->
             <div>
                 <h2 class="hidden">Back to Game</h2>
-                <button type="button" id="home" class="btn-home"></button>
+                <a href="index.html" aria-label="Return to a new game of D20 (opens home page)">
+                    <button type="button" class="btn-home">Get back to rolling <i
+                            class="fa-solid fa-dice-d20"></i></button>
+                </a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div>
-            <h2 class="hidden">Footer</h2>
-            <p>
-                <a href="https://theroarbots.com/roll-the-dice-a-brief-history-of-the-humble-d20/" target="_blank"
-                    aria-label="A Brief History of the Humble D20 (opens external link)">What is a D20? &nbsp;<span><i
-                            class="fa-solid fa-dice-d20"></i></span></a>
-            </p>
-        </div>
-    </footer>
+    <!-- Footer excluded on error page-->
 
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/49f8c5c44f.js" crossorigin="anonymous"></script>
