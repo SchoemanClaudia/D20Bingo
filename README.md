@@ -1,131 +1,204 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# D20 Bingo
 
-Welcome Claudia Schoeman,
+D20 Bingo is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Responsive Mockup](assets/images/responsive-mockup.webp)
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 18, 2024**
+## Features 
 
-## Gitpod Reminders
+### Existing Features
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+- __Header with sound buttons__
 
-`python3 -m http.server`
+  - The site logo and emblem sets the main colour theme: 
+  - 
+  - 
 
-A blue button should appear to click: _Make Public_,
+![Header Desktop]()
+![Header Mobile]()
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+- __About Game__
 
-A blue button should appear to click: _Make Public_,
+  -  
+  -  
 
-Another blue button should appear to click: _Open Browser_.
+![About panel Desktop]()
+![About panel Mobile]()
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-To log into the Heroku toolbelt CLI:
+- __Game Rules__
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  - 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+![Rules Panel Desktop]()
+![Rules Panel Mobile]()
 
-### Connecting your Mongo database
 
-- **Connect to Mongo CLI on a IDE**
-- navigate to your MongoDB Clusters Sandbox
-- click **"Connect"** button
-- select **"Connect with the MongoDB shell"**
-- select **"I have the mongo shell installed"**
-- choose **mongosh (2.0 or later)** for : **"Select your mongo shell version"**
-- choose option: **"Run your connection string in your command line"**
-- in the terminal, paste the copied code `mongo "mongodb+srv://<CLUSTER-NAME>.mongodb.net/<DBname>" --apiVersion 1 --username <USERNAME>`
-  - replace all `<angle-bracket>` keys with your own data
-- enter password _(will not echo **\*\*\*\*** on screen)_
+- __D20 Dice Roll__
 
-------
+  - 
+  - 
 
-## Release History
+![D20 Dice Roll Desktop]()
+![D20 Dice Roll Mobile]()
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- __Message Panel__
 
-**June 18, 2024,** Add Mongo back into template
+  - 
+  - 
 
-**June 14, 2024,** Temporarily remove Mongo until the key issue is resolved
+![Bingo Message]()
+![No win Mssage]()
+![TimeupMessage]()
 
-**May 28 2024:** Fix Mongo and Links installs
+- __Countdown Timer__
 
-**April 26 2024:** Update node version to 16
+  - 
+  - 
 
-**September 20 2023:** Update Python version to 3.9.17.
+![Countdown Before Roll]()
+![Countdown During Game]()
+![Countdown Timeup]()
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+- __Previous Roll Panel__
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  - 
+  - 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Previous Roll Desktop]()
+![Previous Roll Mobile]()
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+- __Bingo Grid__
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+  - 
+  - 
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+![Bingo Grid Desktop]()
+![Bingo Grid Mobile]()
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+- __The Footer__ 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  - The footer section includes a link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user. 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+![Footer]()
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- __404 Error Page__
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+  - 
+  - 
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![404 Error Desktop]()
+![404 Error Mobile]()
 
-------
 
-## FAQ about the uptime script
+### UX/UI Wireframing
 
-**Why have you added this script?**
+- The site was developed with a mobile-first approach.
+- Main colour theme hex for rust (#) and (#).
+- Wireframe drawn up pre-development to assist with structure of elements on each page, panels are based on mobile view. As development commenced, elements on pages were adjusted for the best user experience.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Main Colour Palette](assets/images/hex-palette.webp)
+![Wireframe Sketch](assets/images/wireframe.webp)
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+### Future Features to Implement
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+-  
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+- 
 
-**So….?**
+-  
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
+## Testing 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+### Accessibility
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+- Ran the pages through Lighthouse, performance with initial load passed, and the site is accessible.
 
-**Anything more?**
+![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+- Tested color contrast and its affect on different visual impairments via [WhoCanUse.com](https://www.whocanuse.com/)
 
----
+![Who Can Use](assets/images/whocanuse.webp)
 
-Happy coding!
+-   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox.
+-   Tested and confirmed that all internal links are working 
+-   Tested that all external links are woking and opening in a separate tab.
+-   
+
+![Screenshot]()
+
+### Validator Testing 
+
+- HTML
+  - 
+  - After fixing above attributes, no errors found when running the code through the [W3C HTML Validator](https://validator.w3.org/)
+
+![Screenshot of the HTML Validator result](assets/images/html-validator.webp)
+
+- CSS
+  - 
+  - After fixing above attributes, no errors found when running the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+![Screenshot of the CSS validator result](assets/images/css-validator.webp)
+
+### Bugs Encountered
+
+- 
+  - 
+
+- 
+  - passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+  - 
+
+![Wave]()
+![Wave]()
+
+### Unfixed Bugs
+
+-   No unfixed bugs, [WAVE Tool](https://wave.webaim.org/) returned with no errors.
+
+![Wave Final Result](assets/images/wave-validator.webp)
+
+## Deployment
+
+### Version Control
+-   The site was created using Gitpod editor and pushed to Github to the remote repository 'D20Bingo'.
+-   Git commands were used throughout the development to push the code to the remote repository. The following git commands were used:
+    -   git add . - to add the files to the staging area before being committed.
+    -   git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step.
+    -   git push - to push all committed code to the remote repository on Github.
+
+### Deployment to Github Pages
+-   The site was deployed to Github pages as follows:
+    -   In the Github repository, navigate to Settings tab
+    -   From the source section drop-down menu, select the Master branch and Save
+    -   Once the Master branch was selected, the page provided the link to the website
+- The site was deployed to GitHub pages, the live link can be found here: https://schoemanclaudia.github.io/D20Bingo/index.html
+
+### Cloning of the Repository Code locally
+-   Go to the Github repository that you want to clone
+-   Click on the Code button located above all the project files
+-   Click on HTTPS and copy the repository link
+-   Open the IDE of your choice and and paste the copied git url into the IDE terminal
+-   The project is now created as a local clone
+
+
+## Credits 
+
+- Slack channel peer-code-review participants for assisting with bug fix.
+- My mentor for the support and knowledge shared.
+
+### Content 
+
+-   The icons throughout site were taken from [Font Awesome](https://fontawesome.com/)   
+-   m [Adobe Stock](https://stock.adobe.com/). Creative Cloud software was used for the changes to elements to suit site branding.
+-   
+
+### Media
+
+- 
