@@ -82,7 +82,7 @@ header {
 main {
     /* Main takes up space to push footer down */
     flex: 1 0 auto;
-    margin-top: 80px;
+    margin-top: 45px;
     /* Enable flex properties for child elements */
     display: flex;
     flex-direction: column;
@@ -160,7 +160,7 @@ h2 {
 /* D20 dice */
 .dice-img {
     margin: 0 auto;
-    max-width: 250px;
+    max-width: 200px;
 }
 
 #message {
@@ -226,7 +226,7 @@ footer {
 
     /* Header */
     header {
-        padding: 15px 30px;
+        padding: 5px 30px;
     }
 
     /* Logo text */
@@ -240,9 +240,14 @@ footer {
         margin-top: 15px;
     }
 
+    main {
+        /* Main takes up space to push footer down */
+        margin-top: 55px;
+    }
+
     /* About & Rules sections */
     #scroll-text {
-        margin: 20px;
+        margin: 5px 20px;
     }
 
     #about-section,
