@@ -160,7 +160,6 @@ function diceRoll() {
             allRolledNum.push(randomRoll);
         }
         previousNumRoll = randomRoll;
-        console.log(randomRoll);
 
         // Adjust countdown to +10sec if 20 rolled
         if (randomRoll === 20) {
@@ -193,9 +192,6 @@ function generateRandomArray() {
 
 // Display numbers to bingo grid
 const uniqueNumbers = generateRandomArray();
-// Enable display of unique number array
-console.log(uniqueNumbers);
-
 const grid = document.getElementById("grid");
 
 let bingoCard = "";
@@ -222,8 +218,6 @@ function mark(rolledNumber) {
         if (!markedNumbers.includes(rolledNumber)) {
             markedNumbers.push(rolledNumber);
         }
-    } else {
-        console.log("Number not rolled");
     }
 }
 
@@ -287,8 +281,6 @@ function validateWin() {
     } else {
         message.innerHTML = `<span>Oops!</span><p>No bingo just yet</p>`;
     }
-
-    console.log(isValid);
 }
 
 const callBingo = document.getElementById("bingo");
