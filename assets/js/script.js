@@ -68,12 +68,21 @@ diceActivate.addEventListener("click", function () {
     diceRoll();
 });
 
-/* Dropdown on text sections - https://www.w3schools.com/howto/howto_js_accordion.asp */
+// Dropdown on text sections - https://www.w3schools.com/howto/howto_js_accordion.asp
 const dropdowns = document.getElementsByClassName("dropdown");
+
+// Keeps dropdowns closed on initial page load
+window.addEventListener("load", function () {
+    for (let dropdownSections of dropdowns) {
+        let panel = dropdownSections.nextElementSibling;
+        panel.style.display = "none";
+    }
+});
+
 for (let dropdownSections of dropdowns) {
     dropdownSections.addEventListener('click', function () {
 
-        /* Toggle between showing & hiding panels */
+        // Toggle between showing & hiding panels
         let panel = this.nextElementSibling;
         if (panel.style.display === "block") {
             panel.style.display = "none";
