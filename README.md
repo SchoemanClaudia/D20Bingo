@@ -188,12 +188,12 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 - While testing the game play through on mobile, the random number array within the bingo grid would underline some of the integers within the grid. When the grid box is clicked to mark rolled number, the mobile device would recognise the array as a telephone number and prompt a call pop-up onto screen.
   - The CSS already specified no decoration on anchor tags within global styling, but after adding a meta tag within html that specifies the telephone format detection as =no, solved the problem when testing on mobile again.
-- 
-  - Low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
-  - 
+- Low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade for better visibilty of button test.
+  - Heading warning was corrected by modifying the html for timer message text from a paragraph to an h3 heading.
 
-![Wave]()
-![Wave]()
+![Mobile device grid with call pop-up]()
+![Wave error and warning]()
 
 ### Unfixed Bugs
 
@@ -229,7 +229,8 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 ## Credits 
 
 - Slack channel learn-javascript peers, for assisting with adding a meta tag telephone=no to eliminate grid numbers that were recognised as phone number prompt when clicked on.
-- Shoutout to henna.s_5P for the support when it all seemed to become overwhelming.
+- Slack channel peer-code-review for their feedback and taking the time to look at D20 Bingo with fresh eyes.
+- Shoutout to henna.s_5P for the support when it all seemed to become overwhelming, and all the extra tips during our chats.
 - My mentor for the support and knowledge shared.
 - Slack channel peers for breadcrumbs left to problem solve my own project, while testing and fixing bugs.
 
@@ -240,7 +241,7 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
   - Body content: [Inter](https://fonts.google.com/specimen/Inter)
 - The icons throughout site were taken from [Font Awesome](https://fontawesome.com/) 
 - Game content was inspired by catch phrases used when playing the classic Dungeons and Dragons [Adobe Stock](https://stock.adobe.com/)  
--   Background image is a licensed download from [Adobe Stock](https://stock.adobe.com/)
+- Background image is a licensed download from [Adobe Stock](https://stock.adobe.com/)
 
 ![Background licence]()
 
