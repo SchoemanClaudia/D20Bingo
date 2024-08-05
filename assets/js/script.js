@@ -196,11 +196,19 @@ const uniqueNumbers = generateRandomArray();
 
 let bingoCard = "";
 uniqueNumbers.forEach(num => {
-    let additional = `<div class='grid-box' id='${num}' onclick='mark(${num})'>${num}</div>`;
+    let additional = `<div class='grid-box' id='${num}'>${num}</div>`;
     bingoCard += additional;
 });
 
 grid.innerHTML = bingoCard;
+
+// Add event listeners to click bingo grid box
+uniqueNumbers.forEach(function(num) {
+    const gridBox = document.getElementById(num);
+    gridBox.addEventListener('click', function() {
+        mark(num);
+    });
+});
 
 /**
  * Manual mark of bingo grid boxes only when dice has rolled
