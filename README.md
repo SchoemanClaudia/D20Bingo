@@ -1,106 +1,152 @@
-# D20 Bingo
+# D20 Bingo!
 
-D20 Bingo is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
+D20 Bingo! is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
+
+Originally created with an RPG game in mind and opting for simplicity, I decided to create a basic dice game using a D20. However, I soon realized the game lacked depth. I found myself thinking one rainy weekend... 'What would it be like to start playing Bingo in my 30s?'. While researching bingo games, the inspiration struck to merge these concepts, blending the excitement of a D20 roll with the familiar mechanics of bingo. Thus, D20 Bingo! was born.
+
+Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 ![Responsive Mockup](assets/images/responsive-mockup.webp)
 
-Live Link: https://schoemanclaudia.github.io/D20Bingo/
+
+## Game Scope
+
+### Overview
+
+- D20 Bingo! is a solo game of chance that puts a twist on the classic bingo by combining its mechanics with the unpredictability of a 20-sided die. Players race against the clock to complete patterns on their bingo cards, each number determined by the roll of a D20. This blend of luck and strategy offers a unique and thrilling experience for solitary play.
+
+### Objectives
+
+- Create a fast-paced, engaging game suitable for solo play.
+- Merge elements of dice rolling and bingo to create a unique gameplay experience.
+- Design the game to be accessible and enjoyable for players of all ages.
+
+### Core Mechanics
+
+__Game Setup:__
+  - The player receives a 4x4 bingo card.
+  - The grid contains numbers from 1 to 20, randomly distributed.
+
+__Game Play__
+  - The player rolls a D20 die on first roll, thereafter it rolls automatically for duration of game.
+  - The number rolled is marked on the bingo card if it is present.
+  - The goal is to complete a specific pattern on the card as quickly as possible.
+  - Special rolls are included to keep the game interesting:
+    - 20 = Saving Throw: Adds 10 seconds to timer.
+    - 1 = Death Throw: Subtracts 10 seconds from timer.
+
+__Winning the Game:__
+  - The player wins by completing a row, column, diagonal, on the bingo grid.
+  - If the timer reaches 00:00 the game ends and player loses.
+
+__Components:__
+  - Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20.
+  - D20 Die: A standard 20-sided die used for rolling.
+  - Marker: Digital dabber for the player to mark their card on click.
+  - Countdown: Timer counting down from 45 seconds, player aims to achieve bingo as fast as possible.
+
+__Design Considerations:__
+  - Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game.
+  - Accessibility: Include clear instructions and simple rules to make the game easy to understand and play.
+  - Solo Play: Optimize the game mechanics for an engaging solo play experience.
+
+### Development Plan
+
+__Prototype Development:__
+  - Created initial prototype of bingo grid and test basic gameplay mechanics.
+  - Conducted solo playtesting sessions to gather feedback and refine rules.
+
+__Design & Layout:__
+  - Appealing visual designs for game theme and components.
+  - Ensure site theme is consistently reflected throughout game play.
+
+### Conclusion
+
+D20 Bingo! was created for a unique and enjoyable gaming experience by blending the thrill of D20 dice rolls with the classic fun of bingo. It's simple and engaging mechanics make it perfect for solo play, providing a challenging and entertaining way to test your luck and strategy skills.
+
 
 ## Features 
 
 ### Existing Features
 
-- __Header with sound buttons__
+__Header__
+  - Header sets the main rust colour theme, and styled to stay within screen view at all times
+  - The site logo was created using font [Archivo Black](https://fonts.google.com/specimen/Archivo+Black) 
+  - Sound buttons top right are always visible 
 
-  - The site logo and emblem sets the main colour theme: 
-  - 
-  - 
-
-![Header Desktop]()
-![Header Mobile]()
+![Header Desktop]() ![Header Mobile]()
 
 
-- __About Game__
+__About Game & Rules__
+  -  Dropdown added to reduce space within the game play area on screen.
+  -  Hover added on desktop to prompt accordian functionality.
 
-  -  
-  -  
+![About panel Desktop]() ![About panel Mobile]()
 
-![About panel Desktop]()
-![About panel Mobile]()
-
-
-- __Game Rules__
-
-  - 
-
-![Rules Panel Desktop]()
-![Rules Panel Mobile]()
+![Rules Panel Desktop]() ![Rules Panel Mobile]()
 
 
-- __D20 Dice Roll__
+__D20 Dice Roll__
+  - Dice image was inspired by the classic D20, which acts as the main feature alongside the bingo card.
+  - The dice is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds.
 
-  - 
-  - 
+![D20 Dice Roll Desktop]() ![D20 Dice Roll Mobile]()
 
-![D20 Dice Roll Desktop]()
-![D20 Dice Roll Mobile]()
+__Message Panel__
+  - These are prompts displayed during game play:
+    - Bingo won
+    - No bingo yet
+    - Time is up
+    - Saving Throw (+10 seconds to countdown)
+    - Death Throw (-10 seconds from countdown)
+  - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing.
 
-- __Message Panel__
+![Bingo Message]() ![No win Message]() ![Timeup Message]() ![Saving Throw Message]() ![Death Throw Message]()
 
-  - 
-  - 
+__Countdown Timer__
+  - Countdown panel prompts for dice roll, which activates timer on game start.
+  - The countdown timer starts at 00:45.
+  - If the timer runs out then the display will indicate 00:00
+  - The timer adjusts when a special roll is activated, a 20 or 1.
 
-![Bingo Message]()
-![No win Mssage]()
-![TimeupMessage]()
+![Countdown Before Roll]() ![Countdown During Game]() ![Countdown Timeup]()
 
-- __Countdown Timer__
+ __Previous Roll Panel__
+  - This is introduced to assist the player with recall of the previous dice roll.
+  - With game play at a fast pace and keeping dice rolling every 3 seconds, player needs to keep track or they will miss a number.
+  - By only previewing the last dice roll and not all numbers rolled, allows for players to think quickly.
 
-  - 
-  - 
+![Previous Roll Desktop]() ![Previous Roll Mobile]()
 
-![Countdown Before Roll]()
-![Countdown During Game]()
-![Countdown Timeup]()
+__Bingo Grid & Button__
+  - A 4x4 card with a randomised number array added into a grid format.
+  - The number array is setup to allow the card to refresh after every game, it keeps it random and to chance.
+  - The bingo grid is only markable if the number has rolled.
+  - If the number is missed and the timer runs out, no more marks can be actioned on grid.
+  - The aim is to complete a row, column, or diagonal line of 4 numbers and then call bingo.
+  - Bingo is called by on click of button, this validates the marked numbers on game card.
+  - Only marked numbers are validate, if a number was rolled but missed, then no bingo given.
+  - If no bingo is validated, the game continues and dice keeps rolling until time is up.
 
-- __Previous Roll Panel__
+![Bingo Grid Horizontal]() ![Bingo Grid Vertical]() ![Bingo Grid Diagonal]()
 
-  - 
-  - 
-
-![Previous Roll Desktop]()
-![Previous Roll Mobile]()
-
-- __Bingo Grid__
-
-  - 
-  - 
-
-![Bingo Grid Desktop]()
-![Bingo Grid Mobile]()
-
-
-- __The Footer__ 
-
+ __The Footer__ 
   - The footer section includes a link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user. 
 
 ![Footer]()
 
+__404 Error Page__
+  - A custom error page loads if incorrect url loads.
+  - Button on page redirects back to home page.
 
-- __404 Error Page__
-
-  - 
-  - 
-
-![404 Error Desktop]()
-![404 Error Mobile]()
+![404 Error Desktop]() ![404 Error Mobile]()
 
 
 ### UX/UI Wireframing
 
 - The site was developed with a mobile-first approach.
-- Main colour theme hex for rust (#) and (#).
-- Wireframe drawn up pre-development to assist with structure of elements on each page, panels are based on mobile view. As development commenced, elements on pages were adjusted for the best user experience.
+- Main colour theme hex for rust (#b5562c) and (#ce6228), secondary is standard white (#ffffff) and black (#000000).
+- Wireframe drawn up pre-development to assist with structure of elements durign game play. As development commenced, elements were adjusted for the best user experience.
 
 ![Main Colour Palette](assets/images/hex-palette.webp)
 ![Wireframe Sketch](assets/images/wireframe.webp)
@@ -108,11 +154,10 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 ### Future Features to Implement
 
--  
-
-- 
-
--  
+- Create 'Experience Level' revealer panel:
+- Allow player to collect tokens during various levels as they progress through bingo wins.
+- Once full panel of tokens have been collected, the dungeon doors unlock and reveal a 'Monster Level'
+- Monster Level will consist of a monster size bingo card to complete to win the ultimate battle.
 
 
 ## Testing 
