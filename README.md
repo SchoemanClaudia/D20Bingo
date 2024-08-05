@@ -4,6 +4,8 @@ D20 Bingo is a game of chance, with a twist on the classic bingo. Combining bing
 
 ![Responsive Mockup](assets/images/responsive-mockup.webp)
 
+Live Link: https://schoemanclaudia.github.io/D20Bingo/
+
 ## Features 
 
 ### Existing Features
@@ -132,27 +134,62 @@ D20 Bingo is a game of chance, with a twist on the classic bingo. Combining bing
 
 ![Screenshot]()
 
+## Technologies Used
+
+### Languages
+
+- HTML5
+- CSS3
+- JavaScript
+
+### Other Sites and Softwares
+
+- Image editing:
+  - Dabber mark for grid marking, D20 and 404 die face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and photoshop to make changes to elements to suit site branding and functionality.
+
+- Image assets reduced with online platfroms:
+  - Tinypng: https://tinypng.com/ 
+  - XConvert: https://www.xconvert.com/
+
+- Problem solving and video tutorials:
+  - Show active button: https://www.reddit.com/r/twinegames/comments/tn4hhi/help_keeping_an_element_active_after_clicking_on/
+  - Dropdown on text sections: https://www.w3schools.com/howto/howto_js_accordion.asp
+  - Dice Roll functionality: https://www.youtube.com/watch?v=UkmNL7eJqsU
+  - Set the final dice img after animation: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+  - Dice loop pause time delay - https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+  - Countdown timer: https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-javascript
+  - Validating bingo on marked grid: https://stackoverflow.com/questions/36840363/three-in-a-row-check-bingo and https://www.geeksforgeeks.org/create-a-bingo-game-using-javascript/
+
 ### Validator Testing 
 
 - HTML
-  - 
+  - There was an errors when running html through [W3C HTML Validator](https://validator.w3.org/):
+    - Stray closing tag for main section in body, by removing the extra closing tag the error was solved.
   - After fixing above attributes, no errors found when running the code through the [W3C HTML Validator](https://validator.w3.org/)
 
-![Screenshot of the HTML Validator result](assets/images/html-validator.webp)
+![Screenshot of HTML Validator error](assets/images/html-validator.webp)
+![Screenshot of HTML Validator result](assets/images/html-validator.webp)
 
 - CSS
-  - 
-  - After fixing above attributes, no errors found when running the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  - No errors were found when running the code through the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
-![Screenshot of the CSS validator result](assets/images/css-validator.webp)
+![Screenshot of CSS validator result](assets/images/css-validator.webp)
+
+- JavaScript
+  - There were 2 errors when running script through [JSHint](https://jshint.com/):
+    - Undefined display variable, after declaring variable within js the error was corrected.
+    - Unused mark variable, this needed some modification to the code that displays the uniqueNumbers to the bingo grid. After adjusting the html used to call on click within the forEach statement, the best solution was to then add a seperate event listener to add on click to bingo grid. In turn this solved the error by calling mark(num) within the event listener.
+
+  - After fixing above attributes, no errors were found when running the code through the [JSHint](https://jshint.com/)
+
+![Screenshot of JSHint errors]()
 
 ### Bugs Encountered
 
+- While testing the game play through on mobile, the random number array within the bingo grid would underline some of the integers within the grid. When the grid box is clicked to mark rolled number, the mobile device would recognise the array as a telephone number and prompt a call pop-up onto screen.
+  - The CSS already specified no decoration on anchor tags within global styling, but after adding a meta tag within html that specifies the telephone format detection as =no, solved the problem when testing on mobile again.
 - 
-  - 
-
-- 
-  - passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+  - Low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
   - 
 
 ![Wave]()
@@ -163,6 +200,7 @@ D20 Bingo is a game of chance, with a twist on the classic bingo. Combining bing
 -   No unfixed bugs, [WAVE Tool](https://wave.webaim.org/) returned with no errors.
 
 ![Wave Final Result](assets/images/wave-validator.webp)
+
 
 ## Deployment
 
@@ -190,15 +228,26 @@ D20 Bingo is a game of chance, with a twist on the classic bingo. Combining bing
 
 ## Credits 
 
-- Slack channel peer-code-review participants for assisting with bug fix.
+- Slack channel learn-javascript peers, for assisting with adding a meta tag telephone=no to eliminate grid numbers that were recognised as phone number prompt when clicked on.
+- Shoutout to henna.s_5P for the support when it all seemed to become overwhelming.
 - My mentor for the support and knowledge shared.
+- Slack channel peers for breadcrumbs left to problem solve my own project, while testing and fixing bugs.
 
 ### Content 
 
--   The icons throughout site were taken from [Font Awesome](https://fontawesome.com/)   
--   m [Adobe Stock](https://stock.adobe.com/). Creative Cloud software was used for the changes to elements to suit site branding.
--   
+- Fonts used for site content imported from [Google Fonts](https://fonts.google.com/)
+  - Logo and main headings: [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)
+  - Body content: [Inter](https://fonts.google.com/specimen/Inter)
+- The icons throughout site were taken from [Font Awesome](https://fontawesome.com/) 
+- Game content was inspired by catch phrases used when playing the classic Dungeons and Dragons [Adobe Stock](https://stock.adobe.com/)  
+-   Background image is a licensed download from [Adobe Stock](https://stock.adobe.com/)
 
-### Media
+![Background licence]()
 
-- 
+### Media Source Links
+
+- Background music: https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
+- Dice roll sound effect: https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
+- Background image: https://stock.adobe.com/ie/images/underground-dungeon-fantasy-adventure-tabletop-role-play-game-setting-dark-and-creepy-background-created-with-generative-ai/766587031
+- D20 and 404 dice face images, screenshots taken and backgrounds removed in Adobe CC: https://g.co/kgs/RjNcAcV
+- Animate dice roll - https://learn.newmedia.dog/tutorials/p5-js/remainder/

@@ -62,7 +62,7 @@ function onStartRoll() {
     resetGame();
 }
 
-// Create loop for background music -https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
+// Create loop for background music - https://pixabay.com/music/main-title-battle-of-the-dragons-8037/
 const backgroundMusic = new Audio("assets/sounds/backgroundMusic.mp3");
 backgroundMusic.loop = true;
 
@@ -140,7 +140,8 @@ function diceRoll() {
 
     // Set the final dice img after animation - https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
     setTimeout(() => {
-        clearInterval(animateInterval); // https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+        // Pause time delay - https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+        clearInterval(animateInterval);
         document.querySelectorAll(".dice-img").forEach(function (dice) {
             dice.setAttribute("src", diceImage);
         });
