@@ -1,5 +1,31 @@
 const diceActivate = document.querySelector(".btn-roll");
+const dropdowns = document.getElementsByClassName("dropdown");
 const message = document.getElementById("message");
+const grid = document.getElementById("grid");
+
+// Start timer on initial roll with click of roll button
+const startGame = document.querySelector("#start");
+
+const diceFrames = [
+    "assets/images/frame1.webp",
+    "assets/images/frame2.webp",
+    "assets/images/frame3.webp",
+    "assets/images/frame4.webp",
+    "assets/images/frame5.webp",
+    "assets/images/frame6.webp"
+];
+
+// Track time on countdown
+let isTimeUp = false;
+
+let soundMute = true;
+let display;
+let autoRollInterval;
+let timerInterval;
+let timeAdjust;
+let previousNumRoll = null;
+let markedNumbers = [];
+let allRolledNum = [];
 
 /**
  * Activates auto loop function on game start
@@ -11,9 +37,6 @@ function autoDiceRoll() {
         // 3000ms = 3sec (Dice roll interval)
     }, 3000);
 }
-
-// Start timer on initial roll with click of roll button
-const startGame = document.querySelector("#start");
 
 /**
  * Countdown timer activates only on game start
@@ -48,8 +71,6 @@ window.addEventListener("load", function () {
     backgroundMusic.pause();
 });
 
-let soundMute = true;
-
 // Controls for sound playback
 document.getElementById("btn-on").addEventListener("click", function () {
     soundMute = false;
@@ -69,8 +90,6 @@ diceActivate.addEventListener("click", function () {
 });
 
 // Dropdown on text sections - https://www.w3schools.com/howto/howto_js_accordion.asp
-const dropdowns = document.getElementsByClassName("dropdown");
-
 // Keeps dropdowns closed on initial page load
 window.addEventListener("load", function () {
     for (let dropdownSections of dropdowns) {
@@ -91,25 +110,6 @@ for (let dropdownSections of dropdowns) {
         }
     });
 }
-
-// Track time on countdown
-let isTimeUp = false;
-
-let autoRollInterval;
-let timerInterval;
-let timeAdjust;
-let previousNumRoll = null;
-let markedNumbers = [];
-let allRolledNum = [];
-
-const diceFrames = [
-    "assets/images/frame1.webp",
-    "assets/images/frame2.webp",
-    "assets/images/frame3.webp",
-    "assets/images/frame4.webp",
-    "assets/images/frame5.webp",
-    "assets/images/frame6.webp"
-];
 
 /**
  * Rolls through D20 dice img at random from 1 to 20
@@ -193,7 +193,6 @@ function generateRandomArray() {
 
 // Display numbers to bingo grid
 const uniqueNumbers = generateRandomArray();
-const grid = document.getElementById("grid");
 
 let bingoCard = "";
 uniqueNumbers.forEach(num => {
