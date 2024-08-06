@@ -75,12 +75,10 @@ __Header__
 
 
 __About Game & Rules__
-  -  Dropdown added to reduce space within the game play area on screen.
-  -  Hover added on desktop to prompt accordian functionality.
+  -  Modal added to reduce space within the game play area on screen.
+  -  Hover added on desktop to prompt button functionality.
 
-![About panel Desktop]() ![About panel Mobile]()
-
-![Rules Panel Desktop]() ![Rules Panel Mobile]()
+![Rules Modal Desktop]() ![Rules Modal Mobile]()
 
 
 __D20 Dice Roll__
@@ -117,7 +115,7 @@ __Bingo Grid & Button__
 ![Bingo Grid Horizontal]() ![Bingo Grid Vertical]() ![Bingo Grid Diagonal]()
 
 __Message Panel__
-  - These are prompts displayed during game play:
+  - These are prompts displayed during game play to give feedback:
     - Bingo won
     - No bingo yet
     - Time is up
