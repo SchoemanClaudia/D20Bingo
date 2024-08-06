@@ -85,7 +85,7 @@ __D20 Dice Roll__
   - Dice image was inspired by the classic D20, which acts as the main feature alongside the bingo card.
   - The dice is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds.
 
-![D20 Dice Roll Desktop]() ![D20 Dice Roll Mobile]()
+![D20 Dice with Roll Button]()
 
 __Countdown Timer__
   - Countdown panel prompts for dice roll, which activates timer on game start.
@@ -100,7 +100,7 @@ __Countdown Timer__
   - With game play at a fast pace and keeping dice rolling every 3 seconds, player needs to keep track or they will miss a number.
   - By only previewing the last dice roll and not all numbers rolled, allows for players to think quickly.
 
-![Previous Roll Desktop]() ![Previous Roll Mobile]()
+![Previous Roll Panel]() 
 
 __Bingo Grid & Button__
   - A 4x4 card with a randomised number array added into a grid format.
@@ -158,6 +158,11 @@ __404 Error Page__
 
 ### Accessibility
 
+-   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox.
+-   Tested and confirmed that all internal links are working 
+-   Tested that all external links are woking and opening in a separate tab.
+-   Tested all gameplay functionality within these browsers and screen sizes.
+
 - Ran the pages through Lighthouse, performance  level was 67 with initial load, but the sites accessiblity above 90.
   - Fixed the performance on page initial load:
     - Modifying aspect ratio on all images used, by specifying exact sizes with space needed improved the CLS.
@@ -165,7 +170,7 @@ __404 Error Page__
     - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disapeared and re-appeared during game play.
     - Modifying the accordian sections for rules to a modal, this eliminated the large layout shifts when testing lighhouse diagnosticsby.
   
-  - After fixing above attributes, the sites performance and accessiblity are great. Improve performance on the next version of mobile app.
+  - After chnaging to a modal design and restesting, the sites performance and accessiblity improved greatly at 90 and above.
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
@@ -173,12 +178,6 @@ __404 Error Page__
 
 ![Who Can Use](assets/images/whocanuse1.webp) ![Who Can Use](assets/images/whocanuse2.webp)
 
--   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox.
--   Tested and confirmed that all internal links are working 
--   Tested that all external links are woking and opening in a separate tab.
--   Tested all game play functionality within these browsers and screen sizes.
-
-![Screenshot]()
 
 ## Technologies Used
 
@@ -191,7 +190,7 @@ __404 Error Page__
 ### Other Sites and Softwares
 
 - Image editing:
-  - Dabber mark for grid marking, D20 and 404 die face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and photoshop to make changes to elements to suit site branding and functionality.
+  - Dabber mark for grid marking, D20 and 404 die face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and Photoshop to create and make changes to elements to suit site branding and functionality.
 
 - Image assets reduced with online platfroms:
   - TinyPNG: https://tinypng.com/ 
@@ -211,9 +210,9 @@ __404 Error Page__
 - HTML
   - There was an errors when running html through [W3C HTML Validator](https://validator.w3.org/):
     - Stray closing tag for main section in body, by removing the extra closing tag the error was solved.
+    - Within the 404.html there was a button element inside the anchor tag. The button redirects back to index.html, by removing the button element and placing href link back into anchor, the problem was solved.
   - After fixing above attributes, no errors found when running the code through the [W3C HTML Validator](https://validator.w3.org/)
 
-![Screenshot of HTML Validator error](assets/images/html-validator.webp)
 ![Screenshot of HTML Validator result](assets/images/html-validator.webp)
 
 - CSS
@@ -228,7 +227,7 @@ __404 Error Page__
 
   - After fixing above attributes, no errors were found when running the code through the [JSHint](https://jshint.com/)
 
-![Screenshot of JSHint errors]()
+![Screenshot of JSHint errors](assets/images/jshint-error.webp)
 
 ### Bugs Encountered
 
@@ -238,14 +237,14 @@ __404 Error Page__
   - Low contrast error was corrected by modifying the button background-color in styles to a darker shade for better visibilty of button test.
   - Heading warning was corrected by modifying the html for timer message text from a paragraph to an h3 heading.
 
-![Mobile device grid with call pop-up]()
-![Wave error and warning]()
+![Mobile device grid with call pop-up](assets/images/tel-error-mobile.webp)
+![Wave error and warning](assets/images/wave-error.webp)
 
 ### Unfixed Bugs
 
 -   No unfixed bugs, [WAVE Tool](https://wave.webaim.org/) returned with no errors.
 
-![Wave Final Result](assets/images/wave-validator.webp)
+![Wave Final Result](assets/images/wave-result.webp)
 
 
 ## Deployment
