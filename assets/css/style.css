@@ -55,7 +55,7 @@ header {
     align-items: start;
 }
 
-/* Reserve space for sound buttons */
+/* Sound Buttons */
 #btn-on,
 #btn-mute {
     text-transform: uppercase;
@@ -177,14 +177,20 @@ h2 {
     font-size: 130%;
     width: auto; 
     padding-top: 10px;
-    height: 50px; 
+    height: 55px; 
+    width: auto;
 }
 
 #countdown {
     color: #ce6228;
-    font-size: 190%;
+    font-size: 160%;
     padding-top: 15px;
     font-weight: 700;
+}
+
+#called-num {
+    height: 20px; 
+    width: auto;
 }
 
 span {
@@ -298,7 +304,6 @@ footer {
     .btn-bingo:hover,
     .btn-home:hover {
         background-color: #ce6228;
-        border: 2px solid #ce6228;
     }
 
 }
