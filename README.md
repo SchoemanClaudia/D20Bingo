@@ -4,9 +4,9 @@ D20 Bingo! is a game of chance, with a twist on the classic bingo. Combining bin
 
 Originally created with an RPG game in mind and opting for simplicity, I decided to create a basic dice game using a D20. However, I soon realized the game lacked depth. I found myself thinking one rainy weekend... 'What would it be like to start playing Bingo in my 30s?'. While researching bingo games, the inspiration struck to merge these concepts, blending the excitement of a D20 roll with the familiar mechanics of bingo. Thus, D20 Bingo! was born.
 
-Live Link: https://schoemanclaudia.github.io/D20Bingo/
-
 ![Responsive Mockup](assets/images/responsive-mockup.webp)
+
+Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 
 ## Game Scope
@@ -14,6 +14,7 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 ### Overview
 
 - D20 Bingo! is a solo game of chance that puts a twist on the classic bingo by combining its mechanics with the unpredictability of a 20-sided die. Players race against the clock to complete patterns on their bingo cards, each number determined by the roll of a D20. This blend of luck and strategy offers a unique and thrilling experience for solitary play.
+Created for a unique and enjoyable gaming experience for all ages, by blending the thrill of D20 dice rolls with the classic fun of bingo. It's simple and engaging mechanics make it perfect for solo play, providing a challenging and entertaining way to test your luck and strategy skills.
 
 ### Objectives
 
@@ -60,10 +61,6 @@ __Design & Layout:__
   - Appealing visual designs for game theme and components.
   - Ensure site theme is consistently reflected throughout game play.
 
-### Conclusion
-
-D20 Bingo! was created for a unique and enjoyable gaming experience by blending the thrill of D20 dice rolls with the classic fun of bingo. It's simple and engaging mechanics make it perfect for solo play, providing a challenging and entertaining way to test your luck and strategy skills.
-
 
 ## Features 
 
@@ -92,17 +89,6 @@ __D20 Dice Roll__
 
 ![D20 Dice Roll Desktop]() ![D20 Dice Roll Mobile]()
 
-__Message Panel__
-  - These are prompts displayed during game play:
-    - Bingo won
-    - No bingo yet
-    - Time is up
-    - Saving Throw (+10 seconds to countdown)
-    - Death Throw (-10 seconds from countdown)
-  - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing.
-
-![Bingo Message]() ![No win Message]() ![Timeup Message]() ![Saving Throw Message]() ![Death Throw Message]()
-
 __Countdown Timer__
   - Countdown panel prompts for dice roll, which activates timer on game start.
   - The countdown timer starts at 00:45.
@@ -130,6 +116,17 @@ __Bingo Grid & Button__
 
 ![Bingo Grid Horizontal]() ![Bingo Grid Vertical]() ![Bingo Grid Diagonal]()
 
+__Message Panel__
+  - These are prompts displayed during game play:
+    - Bingo won
+    - No bingo yet
+    - Time is up
+    - Saving Throw (+10 seconds to countdown)
+    - Death Throw (-10 seconds from countdown)
+  - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing.
+
+![Bingo Message]() ![No win Message]() ![Timeup Message]() ![Saving Throw Message]() ![Death Throw Message]()
+
  __The Footer__ 
   - The footer section includes a link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user. 
 
@@ -148,7 +145,6 @@ __404 Error Page__
 - Main colour theme hex for rust (#b5562c) and (#ce6228), secondary is standard white (#ffffff) and black (#000000).
 - Wireframe drawn up pre-development to assist with structure of elements durign game play. As development commenced, elements were adjusted for the best user experience.
 
-![Main Colour Palette](assets/images/hex-palette.webp)
 ![Wireframe Sketch](assets/images/wireframe.webp)
 
 
@@ -164,18 +160,22 @@ __404 Error Page__
 
 ### Accessibility
 
-- Ran the pages through Lighthouse, performance with initial load passed, and the site is accessible.
+- Ran the pages through Lighthouse, performance with initial load needed some attention, but the sites accessiblity is great.
+  - Fixed the performance on page initial load:
+    - Modifying aspect ratio on all images used, by specifying exact sizes with space needed improved the CLS.
+    - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on dice roll.
+    - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disapeared and re-appeared during game play.
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
 - Tested color contrast and its affect on different visual impairments via [WhoCanUse.com](https://www.whocanuse.com/)
 
-![Who Can Use](assets/images/whocanuse.webp)
+![Who Can Use](assets/images/whocanuse1.webp) ![Who Can Use](assets/images/whocanuse2.webp)
 
 -   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox.
 -   Tested and confirmed that all internal links are working 
 -   Tested that all external links are woking and opening in a separate tab.
--   
+-   Tested all game play functionality within these browsers and screen sizes.
 
 ![Screenshot]()
 
