@@ -105,46 +105,22 @@ main {
     flex-direction: column;
 }
 
-/* About & Rules sections */
-#scroll-text {
-    text-align: center;
-    margin: 5px;
-}
-
-#about-section,
-#rules-section {
-    background-color: rgba(0, 0, 0, .8);
-    padding: 15px;
-    margin: 0 20px;
-}
-
-/* Dropdown on text sections  */
-/* https://www.w3schools.com/howto/howto_js_accordion.asp */
-.dropdown {
-    cursor: pointer;
-    transition: 0.5s;
+/* Modal Panel Popup */
+.modal {
+    /* Hidden by default */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    /* Location of the modal box */
+    left: 0;
+    top: 0;
     width: 100%;
-}
-
-.panel {
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-}
-
-.text-panel {
-    text-align: left;
-    line-height: 20px;
-}
-
-.text-panel>h3 {
-    color: #ce6228;
-    font-size: 90%;
-    padding-top: 10px;
-    padding-bottom: 5px;
-}
-
-.text-panel>p {
-    font-size: 80%;
+    height: 100%;
+    overflow: auto;
+    /* Fallback color */
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 h2 {
@@ -153,6 +129,34 @@ h2 {
     color: #ffffff;
     letter-spacing: 2px;
     text-decoration: 2px overline #ce6228;
+    padding-top: 20px;
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    line-height: 20px;
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #ce6228;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-content>h3 {
+    color: #ce6228;
+    font-size: 90%;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.modal-content>p {
+    font-size: 80%;
 }
 
 /* Game Section */
@@ -280,25 +284,20 @@ footer {
     }
 
     main {
-        margin-top: 55px;
+        margin-top: 65px;
     }
 
-    /* About & Rules sections */
-    #scroll-text {
-        margin: 5px 20px;
+    .modal {
+        /* Hidden by default */
+        padding-top: 120px;
     }
 
-    #about-section,
-    #rules-section {
-        padding: 15px 60px;
-    }
-
-    .dropdown:hover {
-        background-color: #ce6228;
-    }
-
-    .text-panel {
-        text-align: center;
+    /* Modal Close Button */
+    .close:hover,
+    .close:focus {
+        color: #b5562c;
+        text-decoration: none;
+        cursor: pointer;
     }
 
     .btn-roll:hover,

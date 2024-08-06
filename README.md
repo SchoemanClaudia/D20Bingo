@@ -163,6 +163,9 @@ __404 Error Page__
     - Modifying aspect ratio on all images used, by specifying exact sizes with space needed improved the CLS.
     - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on dice roll.
     - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disapeared and re-appeared during game play.
+    - Modifying the accordian sections for rules to a modal, this eliminated the large layout shifts when testing lighhouse diagnosticsby.
+  
+  - After fixing above attributes, the sites performance and accessiblity was great.
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
@@ -191,12 +194,12 @@ __404 Error Page__
   - Dabber mark for grid marking, D20 and 404 die face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and photoshop to make changes to elements to suit site branding and functionality.
 
 - Image assets reduced with online platfroms:
-  - Tinypng: https://tinypng.com/ 
+  - TinyPNG: https://tinypng.com/ 
   - XConvert: https://www.xconvert.com/
 
 - Problem solving and video tutorials:
   - Show active button: https://www.reddit.com/r/twinegames/comments/tn4hhi/help_keeping_an_element_active_after_clicking_on/
-  - Dropdown on text sections: https://www.w3schools.com/howto/howto_js_accordion.asp
+  - Modal Rules Popup - https://www.w3schools.com/howto/howto_css_modals.asp
   - Dice Roll functionality: https://www.youtube.com/watch?v=UkmNL7eJqsU
   - Set the final dice img after animation: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
   - Dice loop pause time delay - https://developer.mozilla.org/en-US/docs/Web/API/setInterval
@@ -274,7 +277,7 @@ __404 Error Page__
 - Slack channel learn-javascript peers, for assisting with adding a meta tag telephone=no to eliminate grid numbers that were recognised as phone number prompt when clicked on.
 - Slack channel peer-code-review for their feedback and taking the time to look at D20 Bingo with fresh eyes.
 - Shoutout to henna.s_5P for the support when it all seemed to become overwhelming, and all the extra tips during our chats.
-- My mentor for the support and knowledge shared.
+- My mentor for the support and knowledge shared, which has been invaluable.
 - Slack channel peers for breadcrumbs left to problem solve my own project, while testing and fixing bugs.
 
 ### Content 

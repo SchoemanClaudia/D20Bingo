@@ -1,5 +1,4 @@
 const diceActivate = document.querySelector(".btn-roll");
-const dropdowns = document.getElementsByClassName("dropdown");
 const message = document.getElementById("message");
 const grid = document.getElementById("grid");
 
@@ -89,27 +88,27 @@ diceActivate.addEventListener("click", function () {
     diceRoll();
 });
 
-// Dropdown on text sections - https://www.w3schools.com/howto/howto_js_accordion.asp
-// Keeps dropdowns closed on initial page load
-window.addEventListener("load", function () {
-    for (let dropdownSections of dropdowns) {
-        let panel = dropdownSections.nextElementSibling;
-        panel.style.display = "none";
+// Modal Rules Popup - https://www.w3schools.com/howto/howto_css_modals.asp
+const modal = document.getElementById("rules-modal");
+const btn = document.getElementById("btn-modal");
+const span = document.getElementsByClassName("close")[0];
+
+// Open on click 
+btn.onclick = function () {
+    modal.style.display = "block";
+};
+
+// Close on click x
+span.onclick = function () {
+    modal.style.display = "none";
+};
+
+// Close on click outer modal box
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-});
-
-for (let dropdownSections of dropdowns) {
-    dropdownSections.addEventListener('click', function () {
-
-        // Toggle between showing & hiding panels
-        let panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
+};
 
 /**
  * Rolls through D20 dice img at random from 1 to 20
@@ -319,7 +318,7 @@ function startTimer(duration, display) {
         if (--timeAdjust < 0) {
             clearInterval(timerInterval);
             display.textContent = "00:00";
-            message.innerHTML = `<p><b>Your time ran out!</b> Better luck on next roll</p>`;
+            message.innerHTML = `<p><b>Your time ran out!</b> Better luck on the next roll</p>`;
             isTimeUp = true;
 
             // Reset btn-roll for new game
