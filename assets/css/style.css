@@ -9,10 +9,12 @@
 }
 
 /* Generic */
-/* Fix aspect ration for page loading time */
+/* Fix aspect ratio for page loading time */
 /* https://web.dev/articles/optimize-cls?utm_source=lighthouse&utm_medium=devtools */
 img {
     display: block;
+    width: 100%; 
+    height: auto; 
 }
 
 h1 {
@@ -53,7 +55,7 @@ header {
     align-items: start;
 }
 
-/* Sound Buttons */
+/* Reserve space for sound buttons */
 #btn-on,
 #btn-mute {
     text-transform: uppercase;
@@ -66,6 +68,7 @@ header {
     padding: 2px 5px;
     cursor: pointer;
     margin-top: 8px;
+    width: 30px; 
 }
 
 /* Show which button is active */
@@ -163,22 +166,24 @@ h2 {
 
 /* D20 dice */
 .dice-img {
-    margin: 0 auto;
+    margin: auto;
     display: block; 
     width: 200px; 
-    height: auto
+    height: 220px; 
 }
 
 #message {
     color: #ffffff;
     font-size: 130%;
-    padding-top: 15px;
+    width: auto; 
+    padding-top: 10px;
+    height: 50px; 
 }
 
 #countdown {
     color: #ce6228;
-    font-size: 220%;
-    padding: 10px;
+    font-size: 190%;
+    padding-top: 15px;
     font-weight: 700;
 }
 
@@ -233,7 +238,7 @@ span {
     margin-top: 5em;
     display: block; 
     width: 200px; 
-    height: auto
+    height: 220px; 
 }
 
 .btn-home {
