@@ -176,9 +176,9 @@ h2 {
     color: #ffffff;
     font-size: 130%;
     width: auto; 
-    padding-top: 10px;
     height: 55px; 
     width: auto;
+    margin: 10px 0 30px 0;
 }
 
 #countdown {
@@ -229,7 +229,6 @@ span {
     font-size: 120%;
     letter-spacing: 2px;
     padding: 10px 4em;
-    margin-bottom: 30px;
 }
 
 /* Error 404 Page */
