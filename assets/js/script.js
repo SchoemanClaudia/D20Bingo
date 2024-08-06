@@ -166,12 +166,12 @@ function diceRoll() {
         // Adjust countdown to +10sec if 20 rolled
         if (randomRoll === 20) {
             timeAdjust += 10;
-            message.innerHTML = `<span>Saving throw &nbsp; <i class="fa-solid fa-hand-fist"></i></span>`;
+            message.innerHTML = `<p>Saving throw &nbsp; <span><i class="fa-solid fa-hand-fist"></i></span></p>`;
         }
         // Adjust countdown to -10sec if 1 rolled
         if (randomRoll === 1) {
             timeAdjust -= 10;
-            message.innerHTML = `<span>Death throw &nbsp; <i class="fa-solid fa-skull-crossbones"></i></span>`;
+            message.innerHTML = `<p>Death throw &nbsp; <span><i class="fa-solid fa-skull-crossbones"></i></span></p>`;
         }
     }, animateTimeFrame);
 }
@@ -204,9 +204,9 @@ uniqueNumbers.forEach(num => {
 grid.innerHTML = bingoCard;
 
 // Add event listeners to click bingo grid box
-uniqueNumbers.forEach(function(num) {
+uniqueNumbers.forEach(function (num) {
     const gridBox = document.getElementById(num);
-    gridBox.addEventListener('click', function() {
+    gridBox.addEventListener('click', function () {
         mark(num);
     });
 });
@@ -280,7 +280,7 @@ function validateWin() {
     });
 
     if (isValid) {
-        message.innerHTML = `<span>You beat the clock & won!</span><p>The roll of the D20 was in your favour</p>`;
+        message.innerHTML = `<p><span>You beat the clock & won!</span> The roll of the D20 was in your favour</p>`;
         // Stop all game play functions
         clearInterval(autoRollInterval);
         clearInterval(timerInterval);
@@ -288,7 +288,7 @@ function validateWin() {
         // Re-enable the roll button and reset the game state
         enableRollBtn();
     } else {
-        message.innerHTML = `<span>Oops!</span><p>No bingo just yet</p>`;
+        message.innerHTML = `<p><span>Oops!</span> No bingo just yet</p>`;
     }
 }
 
@@ -319,7 +319,7 @@ function startTimer(duration, display) {
         if (--timeAdjust < 0) {
             clearInterval(timerInterval);
             display.textContent = "00:00";
-            message.innerHTML = `<span>Your time ran out!</span><p>Better luck on next roll</p>`;
+            message.innerHTML = `<p><b>Your time ran out!</b> Better luck on next roll</p>`;
             isTimeUp = true;
 
             // Reset btn-roll for new game

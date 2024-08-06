@@ -13,8 +13,8 @@
 /* https://web.dev/articles/optimize-cls?utm_source=lighthouse&utm_medium=devtools */
 img {
     display: block;
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
 }
 
 h1 {
@@ -31,6 +31,12 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+span {
+    color: #ce6228;
+    font-size: 110%;
+    font-weight: 700;
 }
 
 a {
@@ -68,7 +74,7 @@ header {
     padding: 2px 5px;
     cursor: pointer;
     margin-top: 8px;
-    width: 30px; 
+    width: 30px;
 }
 
 /* Show which button is active */
@@ -130,14 +136,14 @@ main {
     line-height: 20px;
 }
 
-.text-panel > h3 {
+.text-panel>h3 {
     color: #ce6228;
     font-size: 90%;
     padding-top: 10px;
     padding-bottom: 5px;
 }
 
-.text-panel > p {
+.text-panel>p {
     font-size: 80%;
 }
 
@@ -167,18 +173,9 @@ h2 {
 /* D20 dice */
 .dice-img {
     margin: auto;
-    display: block; 
-    width: 200px; 
-    height: 220px; 
-}
-
-#message {
-    color: #ffffff;
-    font-size: 130%;
-    width: auto; 
-    height: 55px; 
-    width: auto;
-    margin: 10px 0 30px 0;
+    display: block;
+    width: 200px;
+    height: 220px;
 }
 
 #countdown {
@@ -188,15 +185,10 @@ h2 {
     font-weight: 700;
 }
 
+/* Previous number rolled panel */
 #called-num {
-    height: 20px; 
+    height: 20px;
     width: auto;
-}
-
-span {
-    color: #ce6228;
-    font-size: 110%;
-    font-weight: 700;
 }
 
 /* Bingo number grid */
@@ -231,6 +223,16 @@ span {
     padding: 10px 4em;
 }
 
+/* Bingo validation message panel */
+#message {
+    color: #ffffff;
+    font-size: 115%;
+    width: auto;
+    height: 55px;
+    width: auto;
+    margin: 10px 10px 30px 10px;
+}
+
 /* Error 404 Page */
 .error-page-text {
     display: flex;
@@ -241,9 +243,9 @@ span {
 
 .dice-404 {
     margin-top: 5em;
-    display: block; 
-    width: 200px; 
-    height: 220px; 
+    display: block;
+    width: 200px;
+    height: 220px;
 }
 
 .btn-home {
