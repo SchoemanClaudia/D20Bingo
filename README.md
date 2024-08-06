@@ -158,14 +158,14 @@ __404 Error Page__
 
 ### Accessibility
 
-- Ran the pages through Lighthouse, performance with initial load needed some attention, but the sites accessiblity is great.
+- Ran the pages through Lighthouse, performance  level was 67 with initial load, but the sites accessiblity above 90.
   - Fixed the performance on page initial load:
     - Modifying aspect ratio on all images used, by specifying exact sizes with space needed improved the CLS.
     - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on dice roll.
     - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disapeared and re-appeared during game play.
     - Modifying the accordian sections for rules to a modal, this eliminated the large layout shifts when testing lighhouse diagnosticsby.
   
-  - After fixing above attributes, the sites performance and accessiblity was great.
+  - After fixing above attributes, the sites performance and accessiblity are great. Improve performance on the next version of mobile app.
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 

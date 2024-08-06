@@ -243,6 +243,7 @@ h2 {
     flex-direction: column;
     text-align: center;
     padding: 20px;
+    align-items: center;
 }
 
 .dice-404 {
@@ -250,6 +251,8 @@ h2 {
     display: block;
     width: 200px;
     height: 220px;
+    padding-bottom: 20px;
+    transform: rotate(325deg);
 }
 
 .btn-home {
