@@ -86,7 +86,7 @@ __About Game & Rules__
 
 __D20 Dice Roll__
   - Dice image was inspired by the classic D20, which acts as the main feature alongside the bingo card.
-  - The die is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds.
+  - The die is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds
 
 ![D20 Dice with Roll Button](assets/images/D20-button.webp)  ![D20 Dice Rolling...](assets/images/D20-rolling.webp)
 
@@ -99,13 +99,13 @@ __Countdown Timer__
 ![Countdown Before Roll](assets/images/timer-before.webp)  ![Countdown Start Game](assets/images/timer-start.webp)  ![Countdown Time Up](assets/images/timer-end.webp)
 
  __Previous Roll Panel__
-  - This is introduced to assist the player with recall of the previous dice roll.
-  - With game play at a fast pace and keeping dice rolling every 3 seconds, player needs to keep track or they will miss a number.
-  - By only previewing the last dice roll and not all numbers rolled, allows for players to think quickly.
+  - This is introduced to assist the player with recall of the previous dice roll
+  - With game play at a fast pace and keeping dice rolling every 3 seconds, player needs to keep track or they will miss a number
+  - By only previewing the last dice roll and not all numbers rolled, allows for players to think quickly
 
 ![Previous Roll Panel](assets/images/timer-during.webp)  ![Previous Roll Saving Throw](assets/images/previous-20.webp)  ![Previous Roll Death Throw](assets/images/previous-1.webp) 
 
-__Bingo Grid & Button__
+__Bingo Grid & Validation__
   - A 4x4 bingo card with a randomised number array added into a grid format
   - The number array is setup to allow the card to refresh after every game, it keeps it random and to chance
   - The bingo grid is only markable if the number has been rolled
@@ -118,14 +118,15 @@ __Bingo Grid & Button__
 
 ![Bingo Grid Horizontal](assets/images/horizontal.webp)  ![Bingo Grid Vertical](assets/images/vertical.webp)  ![Bingo Grid Diagonal](assets/images/diagonal.webp)
 
-__Message Panel__
-  - These are prompts displayed during game play to give feedback:
-    - Bingo won
-    - No bingo yet
-    - Time is up
+__Bingo Button & Message Panel__
+  - The message panel reserves space for prompts displayed during gameplay to give feedback:
+    - Bingo won: 'You beat the clock and won! The roll of the D20 was in your favour'
+    - No bingo: 'Oops! No bingo just yet'
+    - Time up: 'Your time ran out! Better luck on the next roll'
     - Saving Throw (+10 seconds to countdown)
     - Death Throw (-10 seconds from countdown)
-  - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing
+  - Messages are activated with special rolls and on click of 'Bingo!' button
+  - If the messages are prompted during gameplay, they disappear with next dice roll to keep game flowing
 
 ![Bingo Message](assets/images/msg-bingo.webp) ![No win Message](assets/images/msg-nobingo.webp) ![Time Up Message](assets/images/msg-timeup.webp) ![Saving Throw Message](assets/images/msg-saving.webp) ![Death Throw Message](assets/images/msg-death.webp)
 
@@ -155,8 +156,8 @@ __404 Error Page__
 - Create a 'Experience Level' reveal panel:
   - Allow player to collect tokens during various levels as they progress through bingo wins
   - Tokens are revealed after each bingo win and levelling up to next gameplay
-  - Collected tokens could potentially cosist of scrolls, potions, gems, maps and keys
-  - Tokens can be used to exchange for gameplay advantages, such a extra time on countdown
+  - Collected tokens could potentially consist of scrolls, potions, gems, maps and keys
+  - Tokens can be used to exchange for gameplay advantages, such as extra time on countdown
 - Once full panel of tokens have been collected, the dungeon doors unlock and reveal a 'Monster Level'
 - Monster Level will consist of a monster size bingo card to complete to win the ultimate battle
 - Introduce different game objectives within levels as player progresses through XP Levels, this will entail timer adjustments and game card validation to vary depending on bingo requirements for that level
@@ -183,7 +184,7 @@ __404 Error Page__
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
-- Tested colour contrast and its affect on different visual impairments via [WhoCanUse.com](https://www.whocanuse.com/)
+- Tested colour contrast and its effect on different visual impairments via [WhoCanUse.com](https://www.whocanuse.com/)
 
 ![Who Can Use](assets/images/whocanuse1.webp) ![Who Can Use](assets/images/whocanuse2.webp)
 
@@ -243,7 +244,7 @@ __404 Error Page__
 - While testing the game play through on mobile, the random number array within the bingo grid would underline some of the integers within the grid. When the grid box is clicked to mark the rolled number, the mobile device would recognise the array as a telephone number and prompt a call pop-up onto the mobile screen
   - The CSS already specified no decoration on anchor tags within global styling, but after adding a meta tag within html that specifies the telephone format detection as =no, solved the problem when testing on mobile again
 - Initial low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
-  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade of rust color palette, this improved visibility of the button when retesting
+  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade of rust colour palette, this improved visibility of the button when retesting
   - Heading warning was corrected by modifying the html for timer message text, from a paragraph to an h3 heading
 
 ![Mobile device grid with call pop-up](assets/images/tel-error-mobile.webp)
