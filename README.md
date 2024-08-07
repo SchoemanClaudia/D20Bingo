@@ -1,10 +1,10 @@
 # D20 Bingo!
 
-Not your casual neighborhood bingo... D20 Bingo! is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
+Not your casual neighbourhood bingo... D20 Bingo! is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
 
-Originally created with an RPG game in mind and opting for simplicity, I decided to create a basic dice game using a D20. However, I soon realized the game lacked depth. I found myself thinking one rainy weekend... 'What would it be like to start playing Bingo in my 30s?'. While researching bingo games, the inspiration struck to merge these concepts, blending the excitement of a D20 roll with the familiar mechanics of bingo. Thus, D20 Bingo! was born.
+Originally created with an RPG game in mind and opting for simplicity, I decided to create a basic dice game using a D20. However, soon realising the game lacked depth. I found myself thinking one rainy weekend, 'What would it be like to start playing Bingo in my 30s?'. While researching bingo games online, the inspiration struck to merge these concepts, blending the excitement of a D20 roll with the familiarity of bingo. Thus, D20 Bingo! was born.
 
-![Responsive Mockup](assets/images/responsive-mockup.webp)
+![Responsive Mock-up](assets/images/responsive-mockup.webp)
 
 Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
@@ -19,47 +19,49 @@ Created for a unique and enjoyable gaming experience for all ages, by blending t
 ### Objectives
 
 - Create a fast-paced, engaging game suitable for solo play.
-- Merge elements of dice rolling and bingo to create a unique gameplay experience.
+- Merge elements of unpredictable dice rolling and bingo to create a unique gameplay experience.
 - Design the game to be accessible and enjoyable for players of all ages.
 
 ### Core Mechanics
 
-__Game Setup:__
-  - The player receives a 4x4 bingo card.
-  - The grid contains numbers from 1 to 20, randomly distributed.
+__Game Setup & Components:__
+- Sound: Set to auto.mute on page load, buttons located in header.
+- Rules: Give more information on gameplay within a modal, to not take up space within gameplay area.
+- D20 Die: A standard 20-sided die used for rolling.
+- Roll CTA: D20 and timer is activated by on click of button.
+- Countdown: Timer counting down from 00:45, player aims to achieve bingo as fast as possible.
+- Previous Roll: Displays previous die roll number.
+- Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20, randomly distributed.
+- Marker: Digital dabber for player to mark their card on click.
+- Bingo button located below game card to call validation.
+- Message panel which give feedback to player during gameplay.
 
 __Game Play__
-  - The player rolls a D20 die on first roll, thereafter it rolls automatically for duration of game.
-  - The number rolled is marked on the bingo card if it is present.
-  - The goal is to complete a specific pattern on the card as quickly as possible.
-  - Special rolls are included to keep the game interesting:
-    - 20 = Saving Throw: Adds 10 seconds to timer.
-    - 1 = Death Throw: Subtracts 10 seconds from timer.
+- The player rolls a D20 die on first roll, thereafter it rolls automatically for duration of game.
+- The number rolled is marked on the bingo card if it is present.
+- The goal is to complete a specific pattern on the card as quickly as possible.
+- Special rolls are included to keep the game interesting:
+  - 20 = Saving Throw: Adds 10 seconds to timer.
+  - 1 = Death Throw: Subtracts 10 seconds from timer.
 
 __Winning the Game:__
-  - The player wins by completing a row, column, diagonal, on the bingo grid.
-  - If the timer reaches 00:00 the game ends and player loses.
-
-__Components:__
-  - Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20.
-  - D20 Die: A standard 20-sided die used for rolling.
-  - Marker: Digital dabber for the player to mark their card on click.
-  - Countdown: Timer counting down from 45 seconds, player aims to achieve bingo as fast as possible.
+- The player wins by completing a row, column, diagonal, on the bingo grid.
+- If the timer reaches 00:00 the game ends and player loses.
 
 __Design Considerations:__
-  - Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game.
-  - Accessibility: Include clear instructions and simple rules to make the game easy to understand and play.
-  - Solo Play: Optimize the game mechanics for an engaging solo play experience.
+- Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game.
+- Accessibility: Include clear instructions and simple rules to make the game easy to understand and play.
+- Solo Play: Optimize the game mechanics for an engaging solo play experience.
 
 ### Development Plan
 
 __Prototype Development:__
-  - Created initial prototype of bingo grid and test basic gameplay mechanics.
-  - Conducted solo playtesting sessions to gather feedback and refine rules.
+- Created initial prototype of bingo grid and test basic gameplay mechanics.
+- Conducted solo playtesting sessions to gather feedback and refine rules.
 
 __Design & Layout:__
-  - Appealing visual designs for game theme and components.
-  - Ensure site theme is consistently reflected throughout game play.
+- Appealing visual designs for game theme and components.
+- Ensure site theme is consistently reflected throughout game play.
 
 
 ## Features 
@@ -93,7 +95,7 @@ __Countdown Timer__
   - If the timer runs out then the display will indicate 00:00
   - The timer adjusts when a special roll is activated, a 20 or 1.
 
-![Countdown Before Roll]() ![Countdown During Game]() ![Countdown Timeup]()
+![Countdown Before Roll]() ![Countdown During Game]() ![Countdown Time Up]()
 
  __Previous Roll Panel__
   - This is introduced to assist the player with recall of the previous dice roll.
@@ -123,7 +125,7 @@ __Message Panel__
     - Death Throw (-10 seconds from countdown)
   - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing.
 
-![Bingo Message]() ![No win Message]() ![Timeup Message]() ![Saving Throw Message]() ![Death Throw Message]()
+![Bingo Message]() ![No win Message]() ![Time Up Message]() ![Saving Throw Message]() ![Death Throw Message]()
 
  __The Footer__ 
   - The footer section includes a link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user. 
@@ -141,17 +143,18 @@ __404 Error Page__
 
 - The site was developed with a mobile-first approach.
 - Main colour theme hex for rust (#b5562c) and (#ce6228), secondary is standard white (#ffffff) and black (#000000).
-- Wireframe drawn up pre-development to assist with structure of elements durign game play. As development commenced, elements were adjusted for the best user experience.
+- Wireframe drawn up pre-development to assist with structure of elements during gameplay. As development commenced, elements were adjusted for the best user experience.
 
 ![Wireframe Sketch](assets/images/wireframe.webp)
 
 
 ### Future Features to Implement
 
-- Create 'Experience Level' revealer panel:
+- Create 'Experience Level' reveal panel:
 - Allow player to collect tokens during various levels as they progress through bingo wins.
 - Once full panel of tokens have been collected, the dungeon doors unlock and reveal a 'Monster Level'
 - Monster Level will consist of a monster size bingo card to complete to win the ultimate battle.
+- Introduce different game objectives within levels as player progresses through XP Levels, this will entail timer adjustments and game card validation to vary depending on bingo requirements for that level.
 
 
 ## Testing 
@@ -160,21 +163,21 @@ __404 Error Page__
 
 -   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox.
 -   Tested and confirmed that all internal links are working 
--   Tested that all external links are woking and opening in a separate tab.
+-   Tested that all external links are working and opening in a separate tab.
 -   Tested all gameplay functionality within these browsers and screen sizes.
 
-- Ran the pages through Lighthouse, performance  level was 67 with initial load, but the sites accessiblity above 90.
+- Ran the pages through Lighthouse, performance  level was 67 with initial load, but the sites accessibility above 90.
   - Fixed the performance on page initial load:
     - Modifying aspect ratio on all images used, by specifying exact sizes with space needed improved the CLS.
     - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on dice roll.
-    - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disapeared and re-appeared during game play.
-    - Modifying the accordian sections for rules to a modal, this eliminated the large layout shifts when testing lighhouse diagnosticsby.
+    - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disappeared and re-appeared during gameplay.
+    - Modifying the accordion sections for rules to a modal, this eliminated the large layout shifts when running lighhouse diagnostics.
   
-  - After chnaging to a modal design and restesting, the sites performance and accessiblity improved greatly at 90 and above.
+  - After changing to a modal design and retesting, the sites performance and accessibility improved greatly at 90 and above.
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
-- Tested color contrast and its affect on different visual impairments via [WhoCanUse.com](https://www.whocanuse.com/)
+- Tested colour contrast and its affect on different visual impairments via [WhoCanUse.com](https://www.whocanuse.com/)
 
 ![Who Can Use](assets/images/whocanuse1.webp) ![Who Can Use](assets/images/whocanuse2.webp)
 
@@ -187,12 +190,12 @@ __404 Error Page__
 - CSS3
 - JavaScript
 
-### Other Sites and Softwares
+### Other Sites and Software
 
 - Image editing:
   - Dabber mark for grid marking, D20 and 404 die face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and Photoshop to create and make changes to elements to suit site branding and functionality.
 
-- Image assets reduced with online platfroms:
+- Image assets reduced with online platforms:
   - TinyPNG: https://tinypng.com/ 
   - XConvert: https://www.xconvert.com/
 
@@ -223,7 +226,7 @@ __404 Error Page__
 - JavaScript
   - There were 2 errors when running script through [JSHint](https://jshint.com/):
     - Undefined display variable, after declaring variable within js the error was corrected.
-    - Unused mark variable, this needed some modification to the code that displays the uniqueNumbers to the bingo grid. After adjusting the html used to call on click within the forEach statement, the best solution was to then add a seperate event listener to add on click to bingo grid. In turn this solved the error by calling mark(num) within the event listener.
+    - Unused mark variable, this needed some modification to the code that displays the uniqueNumbers to the bingo grid. After adjusting the html used to call on click within the forEach statement, the best solution was to then add a separate event listener to add on click to bingo grid. In turn this solved the error by calling mark(num) within the event listener.
 
   - After fixing above attributes, no errors were found when running the code through the [JSHint](https://jshint.com/)
 
@@ -234,7 +237,7 @@ __404 Error Page__
 - While testing the game play through on mobile, the random number array within the bingo grid would underline some of the integers within the grid. When the grid box is clicked to mark rolled number, the mobile device would recognise the array as a telephone number and prompt a call pop-up onto screen.
   - The CSS already specified no decoration on anchor tags within global styling, but after adding a meta tag within html that specifies the telephone format detection as =no, solved the problem when testing on mobile again.
 - Low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
-  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade for better visibilty of button test.
+  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade for better visibility of button test.
   - Heading warning was corrected by modifying the html for timer message text from a paragraph to an h3 heading.
 
 ![Mobile device grid with call pop-up](assets/images/tel-error-mobile.webp)
@@ -267,7 +270,7 @@ __404 Error Page__
 -   Go to the Github repository that you want to clone
 -   Click on the Code button located above all the project files
 -   Click on HTTPS and copy the repository link
--   Open the IDE of your choice and and paste the copied git url into the IDE terminal
+-   Open the IDE of your choice and paste the copied git url into the IDE terminal
 -   The project is now created as a local clone
 
 
