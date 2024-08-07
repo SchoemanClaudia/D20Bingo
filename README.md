@@ -1,6 +1,6 @@
 # D20 Bingo!
 
-D20 Bingo! is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
+Not your casual neighborhood bingo... D20 Bingo! is a game of chance, with a twist on the classic bingo. Combining bingo mechanics with the unpredictability of a 20 sided die, the user will race against the clock in this solo adventure. The goal is to complete a pattern on a 4x4 game card, with each number determined by the roll of a D20. 
 
 Originally created with an RPG game in mind and opting for simplicity, I decided to create a basic dice game using a D20. However, I soon realized the game lacked depth. I found myself thinking one rainy weekend... 'What would it be like to start playing Bingo in my 30s?'. While researching bingo games, the inspiration struck to merge these concepts, blending the excitement of a D20 roll with the familiar mechanics of bingo. Thus, D20 Bingo! was born.
 
@@ -13,7 +13,7 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 ### Overview
 
-- D20 Bingo! is a solo game of chance that puts a twist on the classic bingo by combining its mechanics with the unpredictability of a 20-sided die. Players race against the clock to complete patterns on their bingo cards, each number determined by the roll of a D20. This blend of luck and strategy offers a unique and thrilling experience for solitary play.
+- D20 Bingo! is a solo game where the unpredictability of a 20-sided die determines the marking of a 4x4 game card. The dice might roll the same number twice, three or maybe even four times during game play, which starts to make the game interesting when special rolls are introduced. Players race against the clock to complete patterns on their bingo cards, each number determined by the roll of a D20. This blend of luck and strategy offers a unique and thrilling experience for solitary play.
 Created for a unique and enjoyable gaming experience for all ages, by blending the thrill of D20 dice rolls with the classic fun of bingo. It's simple and engaging mechanics make it perfect for solo play, providing a challenging and entertaining way to test your luck and strategy skills.
 
 ### Objectives
@@ -261,7 +261,7 @@ __404 Error Page__
     -   In the Github repository, navigate to Settings tab
     -   From the source section drop-down menu, select the Master branch and Save
     -   Once the Master branch was selected, the page provided the link to the website
-- The site was deployed to GitHub pages, the live link can be found here: https://schoemanclaudia.github.io/D20Bingo/index.html
+- The site was deployed to GitHub pages, the live link can be found here: https://schoemanclaudia.github.io/D20Bingo/
 
 ### Cloning of the Repository Code locally
 -   Go to the Github repository that you want to clone
