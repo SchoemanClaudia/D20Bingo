@@ -26,18 +26,18 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 __Game Setup & Components:__
 - Sound: Set to auto mute on page load with buttons located in header
 - Rules: Give more information on gameplay within a modal, to not take up space within gameplay area
-- D20 Die: A standard 20-sided die used to roll random numbers 1-20
+- D20 Die: A standard 20-sided die used to roll random numbers 1 to 20
 - Roll CTA: D20 and timer is activated by on click of 'Roll' button
 - Countdown: Timer counts down from 00:45, player aims to achieve bingo before timer reaches 00:00
 - Previous Roll: Displays previous die roll number
 - Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20, randomly distributed with every new game
 - Marker: Digital dabber for player to mark their card on click within bingo card box
-- Bingo: A button located below game card to check validation of marked bingo card
-- Message panel: Below bingo button to give feedback to player during gameplay
+- Bingo: A button located below game card to check validation of manually marked bingo card
+- Message panel: Prompts below bingo button to give feedback to player during gameplay
 
 __Gameplay__
 - The player rolls a D20 die on first roll, thereafter die rolls automatically for the duration of game
-- Player marks the rolled number on the bingo card, only numbers rolled will be able to be marked within card grid
+- Manually marking the rolled numbers on the bingo card on click, only numbers rolled will be able to be marked within card grid
 - The goal is to complete a row, column or diagonal line of a 4 number pattern on the card as quickly as possible
 - Special rolls are included to keep the game interesting:
   - 20 = Saving Throw: Adds 10 seconds to timer
@@ -48,7 +48,7 @@ __Winning the Game:__
 - If the timer reaches 00:00 the game ends and player loses, but with the option to roll again for new game
 
 __Design Considerations:__
-- Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game
+- Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game. D20 die roll creates more random chance encounters with each new game, with added special roll functions introduced
 - Accessibility: Include clear instructions and simple rules to make the game easy to understand and play
 - Solo Play: Optimize the game mechanics for an engaging solo play experience
 
@@ -59,7 +59,7 @@ __Prototype Development:__
 - Conducted solo playtesting sessions to gather feedback and refine rules
 
 __Design & Layout:__
-- Appealing visual designs for game theme and components
+- Rusty dungeon visuals and components that appeal to game theme
 - Ensure site theme is consistently reflected throughout gameplay
 
 
@@ -69,30 +69,32 @@ __Design & Layout:__
 
 __Header__
   - Header sets the main rust colour theme, and styled to stay within screen view at all times
-  - The site logo was created using font [Archivo Black](https://fonts.google.com/specimen/Archivo+Black), icons taken from [Font Awesome](https://fontawesome.com/)
+  - The site logo was created using font [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)
+  - Sound button icons taken from [Font Awesome](https://fontawesome.com/)
   - Sound buttons top right are always visible, with background music set to mute on site load
 
 ![Header Mobile](assets/images/header-mobile.webp)  ![Header Desktop](assets/images/header-desktop.webp)
 
 
 __About Game & Rules__
-  -  Modal added to reduce space within the game play area on screen.
-  -  Hover added on desktop to prompt button functionality.
+  - Modal added to house rules and reduce space within the gameplay area on screen
+  - Hover added on desktop screens to prompt button functionality
+  - Close modal box on click added to easily navigate back to main game screen
 
 ![Rules Modal Mobile](assets/images/modal-mobile.webp)   ![Rules Modal Desktop](assets/images/modal-desktop.webp)
 
 
 __D20 Dice Roll__
   - Dice image was inspired by the classic D20, which acts as the main feature alongside the bingo card.
-  - The dice is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds.
+  - The die is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds.
 
 ![D20 Dice with Roll Button](assets/images/D20-button.webp)  ![D20 Dice Rolling...](assets/images/D20-rolling.webp)
 
 __Countdown Timer__
-  - Countdown panel prompts for dice roll, which activates timer on game start.
-  - The countdown timer starts at 00:45.
+  - Countdown panel prompts for dice roll on initial page load, which activates timer on game start
+  - The countdown timer starts at 00:45 when dice roll is activated
   - If the timer runs out then the display will indicate 00:00
-  - The timer adjusts when a special roll is activated, a 20 or 1.
+  - The timer adjusts when a special die roll of 1 or 20 is activated
 
 ![Countdown Before Roll](assets/images/timer-before.webp)  ![Countdown Start Game](assets/images/timer-start.webp)  ![Countdown Time Up](assets/images/timer-end.webp)
 
@@ -104,14 +106,15 @@ __Countdown Timer__
 ![Previous Roll Panel](assets/images/timer-during.webp)  ![Previous Roll Saving Throw](assets/images/previous-20.webp)  ![Previous Roll Death Throw](assets/images/previous-1.webp) 
 
 __Bingo Grid & Button__
-  - A 4x4 card with a randomised number array added into a grid format.
-  - The number array is setup to allow the card to refresh after every game, it keeps it random and to chance.
-  - The bingo grid is only markable if the number has rolled.
-  - If the number is missed and the timer runs out, no more marks can be actioned on grid.
-  - The aim is to complete a row, column, or diagonal line of 4 numbers and then call bingo.
-  - Bingo is called by on click of button, this validates the marked numbers on game card.
-  - Only marked numbers are validate, if a number was rolled but missed, then no bingo given.
-  - If no bingo is validated, the game continues and dice keeps rolling until time is up.
+  - A 4x4 bingo card with a randomised number array added into a grid format
+  - The number array is setup to allow the card to refresh after every game, it keeps it random and to chance
+  - The bingo grid is only markable if the number has been rolled
+  - If the number is missed and the timer runs out, no more marks can be actioned on grid
+  - The aim is to complete a row, column, or diagonal line of 4 numbers and then call bingo
+  - Bingo is called by on click of 'Bingo!' button, this validates the manually marked numbers on game card
+  - Only marked numbers are validated, if a number was rolled but missed, then no bingo will be given
+  - A successful validation prompts a win message below 'Bingo!' button and allows user to start a new game
+  - If no bingo and card is unsuccessfully validated, the game continues and die keeps rolling until timer reaches 00:00
 
 ![Bingo Grid Horizontal](assets/images/horizontal.webp)  ![Bingo Grid Vertical](assets/images/vertical.webp)  ![Bingo Grid Diagonal](assets/images/diagonal.webp)
 
@@ -122,58 +125,61 @@ __Message Panel__
     - Time is up
     - Saving Throw (+10 seconds to countdown)
     - Death Throw (-10 seconds from countdown)
-  - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing.
+  - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing
 
 ![Bingo Message](assets/images/msg-bingo.webp) ![No win Message](assets/images/msg-nobingo.webp) ![Time Up Message](assets/images/msg-timeup.webp) ![Saving Throw Message](assets/images/msg-saving.webp) ![Death Throw Message](assets/images/msg-death.webp)
 
- __The Footer__ 
-  - The footer section includes a link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user. 
+ __Footer__ 
+  - The footer section includes an external link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user back to D20 Bingo! site
 
 ![Footer](assets/images/footer.webp)
 
 __404 Error Page__
-  - A custom error page loads if incorrect url loads.
-  - Button on page redirects back to home page.
+  - A custom error page loads if navigated to an incorrect url within site
+  - Main button visible on page redirects back to working home page
 
  ![404 Error Mobile](assets/images/404-error-mobile.webp)  ![404 Error Desktop](assets/images/404-error-desktop.webp)
 
 
 ### UX/UI Wireframing
 
-- The site was developed with a mobile-first approach.
-- Main colour theme hex for rust (#b5562c) and (#ce6228), secondary is standard white (#ffffff) and black (#000000).
-- Wireframe drawn up pre-development to assist with structure of elements during gameplay. As development commenced, elements were adjusted for the best user experience.
+- The site was developed with a mobile-first approach
+- Main colour theme hex for rust (#b5562c) and (#ce6228), secondary is standard white (#ffffff) and black (#000000)
+- Wireframe was drawn up pre-development to assist with structure of elements during gameplay. As development commenced, elements were adjusted for the best user experience and functionality
 
 ![Wireframe Sketch](assets/images/wireframe.webp)
 
 
 ### Future Features to Implement
 
-- Create 'Experience Level' reveal panel:
+- Create a 'Experience Level' reveal panel:
   - Allow player to collect tokens during various levels as they progress through bingo wins
+  - Tokens are revealed after each bingo win and levelling up to next gameplay
+  - Collected tokens could potentially cosist of scrolls, potions, gems, maps and keys
+  - Tokens can be used to exchange for gameplay advantages, such a extra time on countdown
 - Once full panel of tokens have been collected, the dungeon doors unlock and reveal a 'Monster Level'
 - Monster Level will consist of a monster size bingo card to complete to win the ultimate battle
 - Introduce different game objectives within levels as player progresses through XP Levels, this will entail timer adjustments and game card validation to vary depending on bingo requirements for that level
-- Create a video play through of game and all levels, add to a designated Twitch channel
+- Create a video play through of game and all levels, add video content to a designated Twitch channel
 
 
 ## Testing 
 
 ### Accessibility
 
--   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox.
+-   Tested and confirmed that the site works in different browsers; Chrome, Safari and Firefox
 -   Tested and confirmed that all internal links are working 
--   Tested that all external links are working and opening in a separate tab.
--   Tested all gameplay functionality within these browsers and screen sizes.
+-   Tested that all external links are working and opening in a separate tab
+-   Tested all gameplay functionality within these browsers and screen sizes
 
-- Ran the pages through Lighthouse, performance  level was 67 with initial load, but the sites accessibility above 90.
+- Ran the pages through Lighthouse, performance level was 67 with initial load, but the sites accessibility rated above 90
   - Fixed the performance on page initial load:
-    - Modifying aspect ratio on all images used, by specifying exact sizes with space needed improved the CLS.
-    - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on dice roll.
-    - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disappeared and re-appeared during gameplay.
-    - Modifying the accordion sections for rules to a modal, this eliminated the large layout shifts when running lighhouse diagnostics.
+    - Modifying aspect ratio on all images used, by specifying exact sizes with space needed to improve the CLS
+    - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on die roll
+    - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disappeared and re-appeared during gameplay
+    - Modifying the accordion sections for rules to a modal, this eliminated the large layout shifts when running lighhouse diagnostics on desktop and mobile
   
-  - After changing to a modal design and retesting, the sites performance and accessibility improved greatly at 90 and above.
+  - After changing to a modal design and retesting, the sites performance and accessibility improved greatly at 90 and above for both desktop and mobile
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
