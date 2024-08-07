@@ -18,50 +18,50 @@ Created for a unique and enjoyable gaming experience for all ages, by blending t
 
 ### Objectives
 
-- Create a fast-paced, engaging game suitable for solo play.
-- Merge elements of unpredictable dice rolling and bingo to create a unique gameplay experience.
-- Design the game to be accessible and enjoyable for players of all ages.
+- Create a fast-paced, engaging game suitable for solo play
+- Merge elements of unpredictable dice rolling and bingo to create a unique gameplay experience
+- Design the game to be accessible and enjoyable for players of all ages
 
 ### Core Mechanics
 
 __Game Setup & Components:__
-- Sound: Set to auto.mute on page load, buttons located in header.
-- Rules: Give more information on gameplay within a modal, to not take up space within gameplay area.
-- D20 Die: A standard 20-sided die used for rolling.
-- Roll CTA: D20 and timer is activated by on click of button.
-- Countdown: Timer counting down from 00:45, player aims to achieve bingo as fast as possible.
-- Previous Roll: Displays previous die roll number.
-- Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20, randomly distributed.
-- Marker: Digital dabber for player to mark their card on click.
-- Bingo button located below game card to call validation.
-- Message panel which give feedback to player during gameplay.
+- Sound: Set to auto.mute on page load, buttons located in header
+- Rules: Give more information on gameplay within a modal, to not take up space within gameplay area
+- D20 Die: A standard 20-sided die used for rolling
+- Roll CTA: D20 and timer is activated by on click of button
+- Countdown: Timer counting down from 00:45, player aims to achieve bingo as fast as possible
+- Previous Roll: Displays previous die roll number
+- Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20, randomly distributed
+- Marker: Digital dabber for player to mark their card on click
+- Bingo button located below game card to call validation
+- Message panel which give feedback to player during gameplay
 
-__Game Play__
-- The player rolls a D20 die on first roll, thereafter it rolls automatically for duration of game.
-- The number rolled is marked on the bingo card if it is present.
-- The goal is to complete a specific pattern on the card as quickly as possible.
+__Gameplay__
+- The player rolls a D20 die on first roll, thereafter it rolls automatically for duration of game
+- The number rolled is marked on the bingo card if it is present
+- The goal is to complete a specific pattern on the card as quickly as possible
 - Special rolls are included to keep the game interesting:
-  - 20 = Saving Throw: Adds 10 seconds to timer.
-  - 1 = Death Throw: Subtracts 10 seconds from timer.
+  - 20 = Saving Throw: Adds 10 seconds to timer
+  - 1 = Death Throw: Subtracts 10 seconds from timer
 
 __Winning the Game:__
-- The player wins by completing a row, column, diagonal, on the bingo grid.
-- If the timer reaches 00:00 the game ends and player loses.
+- The player wins by completing a row, column, diagonal, on the bingo grid
+- If the timer reaches 00:00 the game ends and player loses
 
 __Design Considerations:__
-- Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game.
-- Accessibility: Include clear instructions and simple rules to make the game easy to understand and play.
-- Solo Play: Optimize the game mechanics for an engaging solo play experience.
+- Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game
+- Accessibility: Include clear instructions and simple rules to make the game easy to understand and play
+- Solo Play: Optimize the game mechanics for an engaging solo play experience
 
 ### Development Plan
 
 __Prototype Development:__
-- Created initial prototype of bingo grid and test basic gameplay mechanics.
-- Conducted solo playtesting sessions to gather feedback and refine rules.
+- Created initial prototype of bingo grid and test basic gameplay mechanics
+- Conducted solo playtesting sessions to gather feedback and refine rules
 
 __Design & Layout:__
-- Appealing visual designs for game theme and components.
-- Ensure site theme is consistently reflected throughout game play.
+- Appealing visual designs for game theme and components
+- Ensure site theme is consistently reflected throughout game play
 
 
 ## Features 
@@ -70,24 +70,24 @@ __Design & Layout:__
 
 __Header__
   - Header sets the main rust colour theme, and styled to stay within screen view at all times
-  - The site logo was created using font [Archivo Black](https://fonts.google.com/specimen/Archivo+Black) 
-  - Sound buttons top right are always visible 
+  - The site logo was created using font [Archivo Black](https://fonts.google.com/specimen/Archivo+Black), icons taken from [Font Awesome](https://fontawesome.com/)
+  - Sound buttons top right are always visible, with background music set to mute on site load
 
-![Header Desktop]() ![Header Mobile]()
+![Header Mobile](assets/images/header-mobile.webp)  ![Header Desktop](assets/images/header-desktop.webp)
 
 
 __About Game & Rules__
   -  Modal added to reduce space within the game play area on screen.
   -  Hover added on desktop to prompt button functionality.
 
-![Rules Modal Desktop]() ![Rules Modal Mobile]()
+![Rules Modal Mobile](assets/images/modal-mobile.webp)   ![Rules Modal Desktop](assets/images/modal-desktop.webp)
 
 
 __D20 Dice Roll__
   - Dice image was inspired by the classic D20, which acts as the main feature alongside the bingo card.
   - The dice is set to roll automatically on first activation of roll button, and animates a roll action every 3 seconds.
 
-![D20 Dice with Roll Button]()
+![D20 Dice with Roll Button](assets/images/D20-button.webp)  ![D20 Dice Rolling...](assets/images/D20-rolling.webp)
 
 __Countdown Timer__
   - Countdown panel prompts for dice roll, which activates timer on game start.
@@ -95,14 +95,14 @@ __Countdown Timer__
   - If the timer runs out then the display will indicate 00:00
   - The timer adjusts when a special roll is activated, a 20 or 1.
 
-![Countdown Before Roll]() ![Countdown During Game]() ![Countdown Time Up]()
+![Countdown Before Roll](assets/images/timer-before.webp)  ![Countdown Start Game](assets/images/timer-start.webp)  ![Countdown Time Up](assets/images/timer-end.webp)
 
  __Previous Roll Panel__
   - This is introduced to assist the player with recall of the previous dice roll.
   - With game play at a fast pace and keeping dice rolling every 3 seconds, player needs to keep track or they will miss a number.
   - By only previewing the last dice roll and not all numbers rolled, allows for players to think quickly.
 
-![Previous Roll Panel]() 
+![Previous Roll Panel](assets/images/timer-during.webp)  ![Previous Roll Saving Throw](assets/images/previous-20.webp)  ![Previous Roll Death Throw](assets/images/previous-1.webp) 
 
 __Bingo Grid & Button__
   - A 4x4 card with a randomised number array added into a grid format.
@@ -114,7 +114,7 @@ __Bingo Grid & Button__
   - Only marked numbers are validate, if a number was rolled but missed, then no bingo given.
   - If no bingo is validated, the game continues and dice keeps rolling until time is up.
 
-![Bingo Grid Horizontal]() ![Bingo Grid Vertical]() ![Bingo Grid Diagonal]()
+![Bingo Grid Horizontal](assets/images/horizontal.webp)  ![Bingo Grid Vertical](assets/images/vertical.webp)  ![Bingo Grid Diagonal](assets/images/diagonal.webp)
 
 __Message Panel__
   - These are prompts displayed during game play to give feedback:
@@ -125,18 +125,18 @@ __Message Panel__
     - Death Throw (-10 seconds from countdown)
   - If the messages are prompted during game play, they disappear with next dice roll to keep game flowing.
 
-![Bingo Message]() ![No win Message]() ![Time Up Message]() ![Saving Throw Message]() ![Death Throw Message]()
+![Bingo Message](assets/images/msg-bingo.webp) ![No win Message](assets/images/msg-nobingo.webp) ![Time Up Message](assets/images/msg-timeup.webp) ![Saving Throw Message](assets/images/msg-saving.webp) ![Death Throw Message](assets/images/msg-death.webp)
 
  __The Footer__ 
   - The footer section includes a link to a site called The Roarbots, which explains a brief history of the D20. The link will open to a new tab to allow easy navigation for the user. 
 
-![Footer]()
+![Footer](assets/images/footer.webp)
 
 __404 Error Page__
   - A custom error page loads if incorrect url loads.
   - Button on page redirects back to home page.
 
-![404 Error Desktop]() ![404 Error Mobile]()
+ ![404 Error Mobile](assets/images/404-error-mobile.webp)  ![404 Error Desktop](assets/images/404-error-desktop.webp)
 
 
 ### UX/UI Wireframing
@@ -291,7 +291,7 @@ __404 Error Page__
 - Game content was inspired by catch phrases used when playing the classic Dungeons and Dragons [Adobe Stock](https://stock.adobe.com/)  
 - Background image is a licensed download from [Adobe Stock](https://stock.adobe.com/)
 
-![Background licence]()
+![Background licence](assets/images/background-license.webp)
 
 ### Media Source Links
 
