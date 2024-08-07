@@ -13,8 +13,7 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 ### Overview
 
-- D20 Bingo! is a solo game where the unpredictability of a 20-sided die determines the marking of a 4x4 game card. The dice might roll the same number twice, three or maybe even four times during game play, which starts to make the game interesting when special rolls are introduced. Players race against the clock to complete patterns on their bingo cards, each number determined by the roll of a D20. This blend of luck and strategy offers a unique and thrilling experience for solitary play.
-Created for a unique and enjoyable gaming experience for all ages, by blending the thrill of D20 dice rolls with the classic fun of bingo. It's simple and engaging mechanics make it perfect for solo play, providing a challenging and entertaining way to test your luck and strategy skills.
+- D20 Bingo! is a solo game where the unpredictability of a 20-sided die determines the marking of a 4x4 game card. The die might roll the same number twice, three or maybe even four times during gameplay, which starts to make the game interesting when special rolls are introduced. Players race against the clock to complete patterns on a bingo card, each number determined by the roll of a D20. Created for a unique and enjoyable gaming experience for all ages, with the combination of luck and strategy, D20 Bingo! offers a unique and thrilling experience. It's simple and engaging mechanics makes it the perfect single player game, providing a challenging and entertaining way to test your luck and strategy skills.
 
 ### Objectives
 
