@@ -13,7 +13,7 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 
 ### Overview
 
-- D20 Bingo! is a solo game where the unpredictability of a 20-sided die determines the marking of a 4x4 game card. The die might roll the same number twice, three or maybe even four times during gameplay, which starts to make the game interesting when special rolls are introduced. Players race against the clock to complete patterns on a bingo card, each number determined by the roll of a D20. Created for a unique and enjoyable gaming experience for all ages, with the combination of luck and strategy, D20 Bingo! offers a unique and thrilling experience. It's simple and engaging mechanics makes it the perfect single player game, providing a challenging and entertaining way to test your luck and strategy skills.
+- D20 Bingo! is a solo game where the unpredictability of a 20-sided die determines the marking of a 4x4 game card. The die might roll the same number twice, three or maybe even four times during gameplay, which starts to make the game interesting when special rolls are introduced. Players race against the clock to complete patterns on a bingo card, each number determined by the roll of a D20. Created for a unique and enjoyable gaming experience for all ages, with the combination of luck and strategy, D20 Bingo! offers a unique and thrilling experience. It's simple and engaging mechanics makes it the perfect single player game, providing a challenging and entertaining way to pass time.
 
 ### Objectives
 
@@ -24,28 +24,28 @@ Live Link: https://schoemanclaudia.github.io/D20Bingo/
 ### Core Mechanics
 
 __Game Setup & Components:__
-- Sound: Set to auto.mute on page load, buttons located in header
+- Sound: Set to auto mute on page load with buttons located in header
 - Rules: Give more information on gameplay within a modal, to not take up space within gameplay area
-- D20 Die: A standard 20-sided die used for rolling
-- Roll CTA: D20 and timer is activated by on click of button
-- Countdown: Timer counting down from 00:45, player aims to achieve bingo as fast as possible
+- D20 Die: A standard 20-sided die used to roll random numbers 1-20
+- Roll CTA: D20 and timer is activated by on click of 'Roll' button
+- Countdown: Timer counts down from 00:45, player aims to achieve bingo before timer reaches 00:00
 - Previous Roll: Displays previous die roll number
-- Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20, randomly distributed
-- Marker: Digital dabber for player to mark their card on click
-- Bingo button located below game card to call validation
-- Message panel which give feedback to player during gameplay
+- Bingo Grid: Randomised 4x4 grid card containing numbers 1 to 20, randomly distributed with every new game
+- Marker: Digital dabber for player to mark their card on click within bingo card box
+- Bingo: A button located below game card to check validation of marked bingo card
+- Message panel: Below bingo button to give feedback to player during gameplay
 
 __Gameplay__
-- The player rolls a D20 die on first roll, thereafter it rolls automatically for duration of game
-- The number rolled is marked on the bingo card if it is present
-- The goal is to complete a specific pattern on the card as quickly as possible
+- The player rolls a D20 die on first roll, thereafter die rolls automatically for the duration of game
+- Player marks the rolled number on the bingo card, only numbers rolled will be able to be marked within card grid
+- The goal is to complete a row, column or diagonal line of a 4 number pattern on the card as quickly as possible
 - Special rolls are included to keep the game interesting:
   - 20 = Saving Throw: Adds 10 seconds to timer
   - 1 = Death Throw: Subtracts 10 seconds from timer
 
 __Winning the Game:__
-- The player wins by completing a row, column, diagonal, on the bingo grid
-- If the timer reaches 00:00 the game ends and player loses
+- The player wins by completing either a horizontal, vertical or diagonal line of 4 numbers on the bingo grid
+- If the timer reaches 00:00 the game ends and player loses, but with the option to roll again for new game
 
 __Design Considerations:__
 - Replayability: Ensure high replayability by varying the number distribution on the bingo grid and introducing randomised cards every game
@@ -55,12 +55,12 @@ __Design Considerations:__
 ### Development Plan
 
 __Prototype Development:__
-- Created initial prototype of bingo grid and test basic gameplay mechanics
+- Created initial prototype of bingo grid and tested basic gameplay mechanics
 - Conducted solo playtesting sessions to gather feedback and refine rules
 
 __Design & Layout:__
 - Appealing visual designs for game theme and components
-- Ensure site theme is consistently reflected throughout game play
+- Ensure site theme is consistently reflected throughout gameplay
 
 
 ## Features 
@@ -150,10 +150,11 @@ __404 Error Page__
 ### Future Features to Implement
 
 - Create 'Experience Level' reveal panel:
-- Allow player to collect tokens during various levels as they progress through bingo wins.
+  - Allow player to collect tokens during various levels as they progress through bingo wins
 - Once full panel of tokens have been collected, the dungeon doors unlock and reveal a 'Monster Level'
-- Monster Level will consist of a monster size bingo card to complete to win the ultimate battle.
-- Introduce different game objectives within levels as player progresses through XP Levels, this will entail timer adjustments and game card validation to vary depending on bingo requirements for that level.
+- Monster Level will consist of a monster size bingo card to complete to win the ultimate battle
+- Introduce different game objectives within levels as player progresses through XP Levels, this will entail timer adjustments and game card validation to vary depending on bingo requirements for that level
+- Create a video play through of game and all levels, add to a designated Twitch channel
 
 
 ## Testing 
