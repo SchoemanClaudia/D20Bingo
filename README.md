@@ -175,11 +175,11 @@ __404 Error Page__
 - Ran the pages through Lighthouse, performance level was 67 with initial load, but the sites accessibility rated above 90
   - Fixed the performance on page initial load:
     - Modifying aspect ratio on all images used, by specifying exact sizes with space needed to improve the CLS
-    - Adding styling for the previous roller number panel, by specifying the space needed avoids content shifting when panel appears on die roll
+    - Add in styles for the previous rolled number panel, by specifying the space needed avoids content shifting when panel appears on die roll
     - Modifying the message panel to the bottom of the bingo button, this eliminated the shifting of content when messages disappeared and re-appeared during gameplay
     - Modifying the accordion sections for rules to a modal, this eliminated the large layout shifts when running lighhouse diagnostics on desktop and mobile
   
-  - After changing to a modal design and retesting, the sites performance and accessibility improved greatly at 90 and above for both desktop and mobile
+  - After the above adjustments were made and retesting done, the sites performance and accessibility improved greatly at 90 and above for both desktop and mobile
 
 ![Lighthouse score for mobile](assets/images/lighthouse-score.webp)
 
@@ -199,28 +199,28 @@ __404 Error Page__
 ### Other Sites and Software
 
 - Image editing:
-  - Dabber mark for grid marking, D20 and 404 die face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and Photoshop to create and make changes to elements to suit site branding and functionality.
+  - Dabber mark for grid marking, D20 and 404 dice face images were edited with Adobe Creative Cloud software. The editing was done in Illustrator and Photoshop to create and make changes to elements to suit site theme and functionality
 
 - Image assets reduced with online platforms:
   - TinyPNG: https://tinypng.com/ 
   - XConvert: https://www.xconvert.com/
 
-- Problem solving and video tutorials:
+- Assisted problem solving and video tutorials:
   - Show active button: https://www.reddit.com/r/twinegames/comments/tn4hhi/help_keeping_an_element_active_after_clicking_on/
-  - Modal Rules Popup - https://www.w3schools.com/howto/howto_css_modals.asp
+  - Modal Rules Popup: https://www.w3schools.com/howto/howto_css_modals.asp
   - Dice Roll functionality: https://www.youtube.com/watch?v=UkmNL7eJqsU
   - Set the final dice img after animation: https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
-  - Dice loop pause time delay - https://developer.mozilla.org/en-US/docs/Web/API/setInterval
+  - Dice loop pause time delay: https://developer.mozilla.org/en-US/docs/Web/API/setInterval
   - Countdown timer: https://stackoverflow.com/questions/20618355/how-to-write-a-countdown-timer-in-javascript
   - Validating bingo on marked grid: https://stackoverflow.com/questions/36840363/three-in-a-row-check-bingo and https://www.geeksforgeeks.org/create-a-bingo-game-using-javascript/
 
 ### Validator Testing 
 
 - HTML
-  - There was an errors when running html through [W3C HTML Validator](https://validator.w3.org/):
-    - Stray closing tag for main section in body, by removing the extra closing tag the error was solved.
-    - Within the 404.html there was a button element inside the anchor tag. The button redirects back to index.html, by removing the button element and placing href link back into anchor, the problem was solved.
-  - After fixing above attributes, no errors found when running the code through the [W3C HTML Validator](https://validator.w3.org/)
+  - There were initial errors when running html through [W3C HTML Validator](https://validator.w3.org/):
+    - Stray closing tag for main section in body, by removing the extra closing tag the error was solved
+    - Within the 404.html there was a button element inside the anchor tag that returns back to a working html page, by removing the button element and placing the href link correctly into anchor tag, the problem was solved
+  - After fixing the above attributes, no errors were found when running the code through the [W3C HTML Validator](https://validator.w3.org/)
 
 ![Screenshot of HTML Validator result](assets/images/html-validator.webp)
 
@@ -231,8 +231,8 @@ __404 Error Page__
 
 - JavaScript
   - There were 2 errors when running script through [JSHint](https://jshint.com/):
-    - Undefined display variable, after declaring variable within js the error was corrected.
-    - Unused mark variable, this needed some modification to the code that displays the uniqueNumbers to the bingo grid. After adjusting the html used to call on click within the forEach statement, the best solution was to then add a separate event listener to add on click to bingo grid. In turn this solved the error by calling mark(num) within the event listener.
+    - Undefined display variable, after declaring variable within script file the error was corrected
+    - Unused mark variable, this needed some modification to the script that displays the uniqueNumbers to the bingo grid. After adjusting the html used to call on click within the forEach statement, the best solution was to then add a separate event listener, to add on click to bingo grid. In turn, this solved the error by calling mark(num) within the event listener
 
   - After fixing above attributes, no errors were found when running the code through the [JSHint](https://jshint.com/)
 
@@ -240,18 +240,18 @@ __404 Error Page__
 
 ### Bugs Encountered
 
-- While testing the game play through on mobile, the random number array within the bingo grid would underline some of the integers within the grid. When the grid box is clicked to mark rolled number, the mobile device would recognise the array as a telephone number and prompt a call pop-up onto screen.
-  - The CSS already specified no decoration on anchor tags within global styling, but after adding a meta tag within html that specifies the telephone format detection as =no, solved the problem when testing on mobile again.
-- Low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
-  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade for better visibility of button test.
-  - Heading warning was corrected by modifying the html for timer message text from a paragraph to an h3 heading.
+- While testing the game play through on mobile, the random number array within the bingo grid would underline some of the integers within the grid. When the grid box is clicked to mark the rolled number, the mobile device would recognise the array as a telephone number and prompt a call pop-up onto the mobile screen
+  - The CSS already specified no decoration on anchor tags within global styling, but after adding a meta tag within html that specifies the telephone format detection as =no, solved the problem when testing on mobile again
+- Initial low contrast error and possible heading warning when passing through the official [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/)
+  - Low contrast error was corrected by modifying the button background-color in styles to a darker shade of rust color palette, this improved visibility of the button when retesting
+  - Heading warning was corrected by modifying the html for timer message text, from a paragraph to an h3 heading
 
 ![Mobile device grid with call pop-up](assets/images/tel-error-mobile.webp)
 ![Wave error and warning](assets/images/wave-error.webp)
 
 ### Unfixed Bugs
 
--   No unfixed bugs, [WAVE Tool](https://wave.webaim.org/) returned with no errors.
+- No unfixed bugs, [WAVE Tool](https://wave.webaim.org/) returned with no errors.
 
 ![Wave Final Result](assets/images/wave-result.webp)
 
@@ -259,34 +259,35 @@ __404 Error Page__
 ## Deployment
 
 ### Version Control
--   The site was created using Gitpod editor and pushed to Github to the remote repository 'D20Bingo'.
--   Git commands were used throughout the development to push the code to the remote repository. The following git commands were used:
-    -   git add . - to add the files to the staging area before being committed.
-    -   git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step.
-    -   git push - to push all committed code to the remote repository on Github.
+- The site was created using Gitpod editor and pushed to Github to the remote repository 'D20Bingo'
+- Git commands were used throughout the development to push the code to the remote repository. 
+- The following git commands were used:
+  - git add . - to add the files to the staging area before being committed
+  - git commit -m "commit message" - to commit changes to the local repository queue that are ready for the final step
+  - git push - to push all committed code to the remote repository on Github
 
 ### Deployment to Github Pages
--   The site was deployed to Github pages as follows:
-    -   In the Github repository, navigate to Settings tab
-    -   From the source section drop-down menu, select the Master branch and Save
-    -   Once the Master branch was selected, the page provided the link to the website
+- The site was deployed to Github pages as follows:
+  - In the Github repository, navigate to Settings tab
+  - From the source section drop-down menu, select the Master branch and Save
+  - Once the Master branch was selected, the page provided the link to the website
 - The site was deployed to GitHub pages, the live link can be found here: https://schoemanclaudia.github.io/D20Bingo/
 
 ### Cloning of the Repository Code locally
--   Go to the Github repository that you want to clone
--   Click on the Code button located above all the project files
--   Click on HTTPS and copy the repository link
--   Open the IDE of your choice and paste the copied git url into the IDE terminal
--   The project is now created as a local clone
+- Go to the Github repository that you want to clone
+- Click on the Code button located above all the project files
+- Click on HTTPS and copy the repository link
+- Open the IDE of your choice and paste the copied git url into the IDE terminal
+- The project is now created as a local clone
 
 
 ## Credits 
 
-- Slack channel learn-javascript peers, for assisting with adding a meta tag telephone=no to eliminate grid numbers that were recognised as phone number prompt when clicked on.
-- Slack channel peer-code-review for their feedback and taking the time to look at D20 Bingo with fresh eyes.
-- Shoutout to henna.s_5P for the support when it all seemed to become overwhelming, and all the extra tips during our chats.
-- My mentor for the support and knowledge shared, which has been invaluable.
-- Slack channel peers for breadcrumbs left to problem solve my own project, while testing and fixing bugs.
+- Slack channel learn-javascript peers, for assisting with adding a meta tag telephone=no to eliminate grid numbers that were recognised as a phone number prompt when clicked on
+- Slack channel peer-code-review for their feedback and taking the time to look at D20 Bingo! with fresh eyes
+- Shoutout to [henna.s_5P](https://github.com/hennasingh) for the support when it all seemed to become overwhelming, and all the extra tips during our chats
+- My mentor for the support and knowledge shared, which has been invaluable during our mentor calls
+- Slack channel peers for their breadcrumbs left to problem solve this project, while testing and fixing bugs
 
 ### Content 
 
@@ -294,7 +295,7 @@ __404 Error Page__
   - Logo and main headings: [Archivo Black](https://fonts.google.com/specimen/Archivo+Black)
   - Body content: [Inter](https://fonts.google.com/specimen/Inter)
 - The icons throughout site were taken from [Font Awesome](https://fontawesome.com/) 
-- Game content was inspired by catch phrases used when playing the classic Dungeons and Dragons [Adobe Stock](https://stock.adobe.com/)  
+- Game content was inspired by catch phrases used when playing the classic [Dungeons and Dragons](https://en.wikipedia.org/wiki/Dungeons_%26_Dragons) tabletop role-playing game
 - Background image is a licensed download from [Adobe Stock](https://stock.adobe.com/)
 
 ![Background licence](assets/images/background-license.webp)
@@ -305,4 +306,4 @@ __404 Error Page__
 - Dice roll sound effect: https://pixabay.com/sound-effects/rpg-dice-rolling-95182/
 - Background image: https://stock.adobe.com/ie/images/underground-dungeon-fantasy-adventure-tabletop-role-play-game-setting-dark-and-creepy-background-created-with-generative-ai/766587031
 - D20 and 404 dice face images, screenshots taken and backgrounds removed in Adobe CC: https://g.co/kgs/RjNcAcV
-- Animate dice roll - https://learn.newmedia.dog/tutorials/p5-js/remainder/
+- Animated die roll effect: https://learn.newmedia.dog/tutorials/p5-js/remainder/
